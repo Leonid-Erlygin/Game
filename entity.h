@@ -15,7 +15,6 @@ public:
     sf::RectangleShape bound;
     sf::Sprite sprite;
     sf::Text text;
-
 };
 
 

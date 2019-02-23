@@ -8,7 +8,15 @@
 object::object() {
 
 }
+object::~object(){
+
+}
 void object::bodyInit(b2World &world) {
+    bound.setSize(sf::Vector2f(sprite.getTextureRect().width,sprite.getTextureRect().height));
+    bound.setScale(sprite.getScale());
+    bound.setRotation(sprite.getRotation());
+
+
 
     realBodyDef.position.Set(bound.getPosition().x/scale_factorX,bound.getPosition().y/scale_factorY);
     realBody = world.CreateBody(&realBodyDef);
@@ -23,9 +31,11 @@ void object::update() {
 
 
     //bound.setRotation(-(angle*180)/(float32)(3.141));
-    sprite.setRotation(-(realBody->GetAngle()*180)/(float32)(3.141));
-    bound.setRotation(-(realBody->GetAngle()*180)/(float32)(3.141));
-    bound.setPosition(scale_factorX*realBody->GetPosition().x+shape.m_vertices[0].x*scale_factorX,scale_factorY*realBody->GetPosition().y+shape.m_vertices[0].y*scale_factorX);
+    bound.setOrigin(bound.getSize().x/2,bound.getSize().y/2);
+    sprite.setOrigin(bound.getSize().x/2,bound.getSize().y/2);
+    sprite.setRotation(-(realBody->GetAngle()*180)/(3.14159265f));
+    bound.setRotation(-(realBody->GetAngle()*180)/(3.14159265f));
+    bound.setPosition(scale_factorX*realBody->GetPosition().x/*+shape.m_vertices[0].x*scale_factorX*/,scale_factorY*realBody->GetPosition().y/*shape.m_vertices[0].y*scale_factorX*/);
 
     sprite.setPosition(bound.getPosition());
     //print();

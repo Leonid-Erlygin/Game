@@ -10,10 +10,12 @@
 
 class object: public entity {
 public:
+
     b2FixtureDef Fixture;
     b2BodyDef realBodyDef;
     b2Body* realBody;
     b2PolygonShape shape;
+    ~object();
     object();
     void update();
     void bodyInit(b2World &world);

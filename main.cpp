@@ -41,17 +41,42 @@ int main() {
 
 
 
-    floor.bound.setSize(sf::Vector2f(floor.sprite.getTextureRect().width,floor.sprite.getTextureRect().height));
+
     //std::cout<<floor.bound.getSize().x<<" "<<floor.bound.getSize().y<<'\n';
     //std::cout<<floor.sprite.getTextureRect().width<<" "<<floor.sprite.getTextureRect().height<<'\n';
-    floor.sprite.scale(3,3);//Не изменяет значения границ, нужно домножать на этот коэфицент при переводе в метры
-    floor.bound.scale(3,3);
+
+    floor.sprite.scale(20,3);//Не изменяет значения границ, нужно домножать на этот коэфицент при переводе в метры
+
     //std::cout<<floor.bound.getSize().x<<" "<<floor.bound.getSize().y<<'\n';
     //std::cout<<floor.sprite.getTextureRect().width<<" "<<floor.sprite.getTextureRect().height;
 
     floor.bodyInit(world);
     floor.realBody->CreateFixture(&floor.shape,0.f);
+/*
+    object wall1;
 
+    wall1.sprite.setTexture(textureCastle);
+    wall1.sprite.setTextureRect(sf::IntRect(0,65,96,14));
+    wall1.bound.setPosition(0,500);
+    wall1.sprite.scale(20,3);
+    wall1.sprite.setRotation(90);
+
+    wall1.bodyInit(world);
+
+    wall1.realBody->CreateFixture(&wall1.shape,0.f);
+
+*//*
+    object wall2;
+
+    wall2.sprite.setTexture(textureCastle);
+    wall2.sprite.setTextureRect(sf::IntRect(0,65,96,14));
+    wall2.bound.setPosition(1000,500);
+    wall2.sprite.scale(20,3);
+    wall2.sprite.setRotation(90);
+
+    wall2.bodyInit(world);
+    wall2.realBody->CreateFixture(&wall2.shape,0.f);
+*/
     sf::View view1;
     view1.setSize(sf::Vector2f(window.getSize().x,window.getSize().y));
     view1.setCenter(sf::Vector2f(view1.getSize().x/2,view1.getSize().y/2));
@@ -115,7 +140,6 @@ int main() {
 
     Player1.sprite.setTexture(textureSans);
 
-    Player1.print();
 
 
 
@@ -190,7 +214,8 @@ int main() {
 
         floor.update();
 
-
+        //window.draw(wall1.sprite);
+        //window.draw(wall2.sprite);
         window.draw(floor.sprite);
         window.draw(barrel.sprite);
 

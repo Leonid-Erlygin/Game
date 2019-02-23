@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/leonid/CLionProjects/Game/enemy.h
-entity.h
-/home/leonid/CLionProjects/Game/entity.h
-
 /home/leonid/CLionProjects/Game/entity.h
 SFML/Graphics/RectangleShape.hpp
 -
@@ -20,25 +16,7 @@ SFML/Graphics/Text.hpp
 SFML/Graphics.hpp
 -
 
-/home/leonid/CLionProjects/Game/main.cpp
-SFML/Graphics.hpp
--
-unistd.h
--
-vector
--
-player.h
-/home/leonid/CLionProjects/Game/player.h
-weapon.h
-/home/leonid/CLionProjects/Game/weapon.h
-enemy.h
-/home/leonid/CLionProjects/Game/enemy.h
-stdio.h
--
-iostream
--
-Box2D/Box2D.h
-/home/leonid/CLionProjects/Game/Box2D/Box2D.h
+/home/leonid/CLionProjects/Game/object.cpp
 object.h
 /home/leonid/CLionProjects/Game/object.h
 
@@ -47,12 +25,4 @@ entity.h
 /home/leonid/CLionProjects/Game/entity.h
 Box2D/Box2D.h
 /home/leonid/CLionProjects/Game/Box2D/Box2D.h
-
-/home/leonid/CLionProjects/Game/player.h
-object.h
-/home/leonid/CLionProjects/Game/object.h
-
-/home/leonid/CLionProjects/Game/weapon.h
-entity.h
-/home/leonid/CLionProjects/Game/entity.h
 
