@@ -9,6 +9,7 @@
 
 class player: public object{
 public:
+    void print();
     float movementSpeed;
     int attackDamage;
     int counterWalking;
@@ -19,6 +20,7 @@ public:
     void move();
 
 private:
+
     int scale_factorX = 40;
     int scale_factorY = -40;
 };

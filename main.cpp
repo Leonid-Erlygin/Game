@@ -31,20 +31,26 @@ int main() {
         return EXIT_FAILURE;
     }
     window.setFramerateLimit(60);
-    //View
+    //Viewm
 
     object floor;
 
     floor.sprite.setTexture(textureCastle);
-    floor.bound.setSize(sf::Vector2f(96,79-65));
     floor.bound.setPosition(400,500);
     floor.sprite.setTextureRect(sf::IntRect(0,65,96,79-65));
-    floor.sprite.setScale(3,3);
-    floor.bound.setScale(3,3);
 
+
+
+    floor.bound.setSize(sf::Vector2f(floor.sprite.getTextureRect().width,floor.sprite.getTextureRect().height));
+    //std::cout<<floor.bound.getSize().x<<" "<<floor.bound.getSize().y<<'\n';
+    //std::cout<<floor.sprite.getTextureRect().width<<" "<<floor.sprite.getTextureRect().height<<'\n';
+    floor.sprite.scale(3,3);//Не изменяет значения границ, нужно домножать на этот коэфицент при переводе в метры
+    floor.bound.scale(3,3);
+    //std::cout<<floor.bound.getSize().x<<" "<<floor.bound.getSize().y<<'\n';
+    //std::cout<<floor.sprite.getTextureRect().width<<" "<<floor.sprite.getTextureRect().height;
 
     floor.bodyInit(world);
-
+    floor.realBody->CreateFixture(&floor.shape,0.f);
 
     sf::View view1;
     view1.setSize(sf::Vector2f(window.getSize().x,window.getSize().y));
@@ -63,21 +69,18 @@ int main() {
     }
     class object barrel;
     barrel.sprite.setTexture(textureBox);
-    barrel.sprite.setScale(0.25,0.25);
+    barrel.sprite.scale(0.25,0.25);
     barrel.bound.setSize(sf::Vector2f(textureBox.getSize().x,textureBox.getSize().y));
-    barrel.bound.setScale(0.25,0.25);
+    barrel.bound.scale(0.25,0.25);
     barrel.bound.setPosition(500,100);
 
 
     // Define the dynamic body. We set its position and call the body factory.
     barrel.realBodyDef.type = b2_dynamicBody;
-    barrel.realBodyDef.position.Set(barrel.bound.getPosition().x/scaleX, barrel.bound.getPosition().y/scaleY);
-    barrel.realBody = world.CreateBody(&barrel.realBodyDef);
+    barrel.bodyInit(world);
 
     // Define another box shape for our dynamic body.
     //b2PolygonShape dynamicBox;
-
-    barrel.shape.SetAsBox((textureBox.getSize().x/(float32)(8*scaleX)), (textureBox.getSize().x/(float32)(8*scaleX)));
 
     // Define the dynamic body fixture.
 
@@ -112,7 +115,7 @@ int main() {
 
     Player1.sprite.setTexture(textureSans);
 
-
+    Player1.print();
 
 
 
@@ -135,6 +138,7 @@ int main() {
         // check all the window's events that were triggered since the last iteration of the loop
         sf::Event event;
         while (window.pollEvent(event)) {
+
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
                 window.close();
@@ -143,7 +147,6 @@ int main() {
         window.clear(sf::Color::Black);
 
         //столкновения
-
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 
@@ -186,10 +189,11 @@ int main() {
 
 
         floor.update();
-        //window.draw(floor.sprite);
-        window.draw(floor.bound);
 
+
+        window.draw(floor.sprite);
         window.draw(barrel.sprite);
+
         window.setView(view1);
         view1.setCenter(Player1.bound.getPosition());
         window.draw(Player1.bound);

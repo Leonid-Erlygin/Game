@@ -17,6 +17,7 @@ public:
     object();
     void update();
     void bodyInit(b2World &world);
+    void print();
 
 private:
     float32 scale_factorX = 40;//1 м = 40 pxl

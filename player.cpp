@@ -5,7 +5,7 @@
 #include "player.h"
 
 
-player::player() {
+player::player() {//Тут все заточено под конкретный спрайт, нужно исправить
     bound.setPosition(400,200);
     sprite.scale(0.25,0.25);
 
@@ -34,7 +34,7 @@ player::player(b2World &world)//игрока не бывает без физик
     realBodyDef.type = b2_dynamicBody;
     realBodyDef.position.Set(bound.getPosition().x/scale_factorX, bound.getPosition().y/scale_factorY);
     realBody = world.CreateBody(&realBodyDef);
-    shape.SetAsBox((bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().x, (bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().y);
+    shape.SetAsBox((bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().x, (bound.getSize().y/(float32)(2*scale_factorX))*bound.getScale().y);
     Fixture.shape = &shape;
     Fixture.density = 1.0f;
 
@@ -70,4 +70,12 @@ void player::move() {
     if(counterWalking==2){
         counterWalking = 0;
     }
+}
+
+
+
+void player::print(){
+    printf("Bound height:%f Bound width:%f\nBox height:%f Box width:%f\n",bound.getSize().y*bound.getScale().y,
+            bound.getSize().x*bound.getScale().x,(bound.getSize().y/(float32)(2*scale_factorX))*bound.getScale().y,
+           (bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().x);
 }
