@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/leonid/CLionProjects/Game/MyContactListener.h
+Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+-
+object.h
+/home/leonid/CLionProjects/Game/object.h
+player.h
+/home/leonid/CLionProjects/Game/player.h
+
+/home/leonid/CLionProjects/Game/enemy.h
+entity.h
+/home/leonid/CLionProjects/Game/entity.h
+
 /home/leonid/CLionProjects/Game/entity.h
 SFML/Graphics/RectangleShape.hpp
 -
@@ -16,13 +28,35 @@ SFML/Graphics/Text.hpp
 SFML/Graphics.hpp
 -
 
-/home/leonid/CLionProjects/Game/object.cpp
+/home/leonid/CLionProjects/Game/main.cpp
+SFML/Graphics.hpp
+-
+unistd.h
+-
+vector
+-
+player.h
+/home/leonid/CLionProjects/Game/player.h
+enemy.h
+/home/leonid/CLionProjects/Game/enemy.h
+stdio.h
+-
+iostream
+-
+Box2D/Box2D.h
+/home/leonid/CLionProjects/Game/Box2D/Box2D.h
 object.h
 /home/leonid/CLionProjects/Game/object.h
+MyContactListener.h
+/home/leonid/CLionProjects/Game/MyContactListener.h
 
 /home/leonid/CLionProjects/Game/object.h
 entity.h
 /home/leonid/CLionProjects/Game/entity.h
 Box2D/Box2D.h
 /home/leonid/CLionProjects/Game/Box2D/Box2D.h
+
+/home/leonid/CLionProjects/Game/player.h
+object.h
+/home/leonid/CLionProjects/Game/object.h
 

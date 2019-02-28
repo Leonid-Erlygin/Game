@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.h">
+			<Option target="Game"/>
+		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/enemy.cpp">
 			<Option target="Game"/>
 		</Unit>
@@ -109,12 +115,6 @@
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/player.h">
-			<Option target="Game"/>
-		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/weapon.cpp">
-			<Option target="Game"/>
-		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/weapon.h">
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/CMakeLists.txt">

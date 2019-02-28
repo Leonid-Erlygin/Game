@@ -10,13 +10,18 @@
 class player: public object{
 public:
     void print();
+
+    object* cariedObject = nullptr;
+    int remainingJumpSteps = 0;
+    int jumpHieght = 6;
     float movementSpeed;
     int attackDamage;
     int counterWalking;
     int direction;//1 - up,2 - down, 3 - left, 4 - right
-
     player();
-    player(b2World &world);
+    void grabe();
+    void update();
+    player(b2World &world,sf::Texture&);
     void move();
 
 private:

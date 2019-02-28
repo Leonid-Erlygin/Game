@@ -123,6 +123,33 @@ Game/fast:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/build
 .PHONY : Game/fast
 
+MyContactListener.o: MyContactListener.cpp.o
+
+.PHONY : MyContactListener.o
+
+# target to build an object file
+MyContactListener.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.o
+.PHONY : MyContactListener.cpp.o
+
+MyContactListener.i: MyContactListener.cpp.i
+
+.PHONY : MyContactListener.i
+
+# target to preprocess a source file
+MyContactListener.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.i
+.PHONY : MyContactListener.cpp.i
+
+MyContactListener.s: MyContactListener.cpp.s
+
+.PHONY : MyContactListener.s
+
+# target to generate assembly for a file
+MyContactListener.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.s
+.PHONY : MyContactListener.cpp.s
+
 enemy.o: enemy.cpp.o
 
 .PHONY : enemy.o
@@ -258,33 +285,6 @@ player.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/player.cpp.s
 .PHONY : player.cpp.s
 
-weapon.o: weapon.cpp.o
-
-.PHONY : weapon.o
-
-# target to build an object file
-weapon.cpp.o:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.o
-.PHONY : weapon.cpp.o
-
-weapon.i: weapon.cpp.i
-
-.PHONY : weapon.i
-
-# target to preprocess a source file
-weapon.cpp.i:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.i
-.PHONY : weapon.cpp.i
-
-weapon.s: weapon.cpp.s
-
-.PHONY : weapon.s
-
-# target to generate assembly for a file
-weapon.cpp.s:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.s
-.PHONY : weapon.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -294,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Game"
 	@echo "... edit_cache"
+	@echo "... MyContactListener.o"
+	@echo "... MyContactListener.i"
+	@echo "... MyContactListener.s"
 	@echo "... enemy.o"
 	@echo "... enemy.i"
 	@echo "... enemy.s"
@@ -309,9 +312,6 @@ help:
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"
-	@echo "... weapon.o"
-	@echo "... weapon.i"
-	@echo "... weapon.s"
 .PHONY : help
 
 

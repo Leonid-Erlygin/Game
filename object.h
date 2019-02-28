@@ -8,15 +8,25 @@
 #define GAME_OBJECT_H
 #pragma once
 
+enum _entityCategory {
+    PLAYER =          4,
+};
+
+
 class object: public entity {
 public:
 
-    b2FixtureDef Fixture;
-    b2BodyDef realBodyDef;
+   // b2FixtureDef fixture;//can be many of them, so this member is useless
+    //b2BodyDef realBodyDef;//Можно не хранить объявления
     b2Body* realBody;
-    b2PolygonShape shape;
+    //b2PolygonShape shape;//Это тоже можно удалить
     ~object();
     object();
+    bool moveable;
+    bool isBeingCaried = false;
+    bool m_contacting = false;
+    void startContact() { m_contacting = true; }
+    void endContact() { m_contacting = false; }
     void update();
     void bodyInit(b2World &world);
     void print();
