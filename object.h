@@ -4,6 +4,8 @@
 
 #include "entity.h"
 #include "Box2D/Box2D.h"
+
+
 #ifndef GAME_OBKECT_H
 #define GAME_OBJECT_H
 #pragma once
@@ -24,10 +26,11 @@ public:
     object();
     bool moveable;
     bool isBeingCaried = false;
+    b2Body* isBeingCariedBy = nullptr;
     bool m_contacting = false;
     void startContact() { m_contacting = true; }
     void endContact() { m_contacting = false; }
-    void update();
+    void virtual update();
     void bodyInit(b2World &world);
     void print();
 

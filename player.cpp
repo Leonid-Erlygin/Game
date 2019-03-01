@@ -34,9 +34,10 @@ player::player(b2World &world,sf::Texture &Player_texture)
     realBody = world.CreateBody(&realBodyDef);
     shape.SetAsBox((bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().x, (bound.getSize().y/(float32)(2*scale_factorX))*bound.getScale().y);
 
+
+
     fixture.shape = &shape;
     fixture.density = 5.0f;
-
 
     fixture.filter.categoryBits = PLAYER;//I'm a...
     fixture.filter.maskBits = 1 ; //I will collide with...
@@ -47,23 +48,20 @@ player::player(b2World &world,sf::Texture &Player_texture)
     fixture.friction = 0.3f;
 
     b2PolygonShape shape2;
-    shape2.SetAsBox(shape.m_normals[3].x, shape.m_normals[3].y);
+    shape2.SetAsBox((bound.getSize().x/(float32)(2*scale_factorX))*bound.getScale().x, (bound.getSize().y/(float32)(2*scale_factorX))*bound.getScale().y);
     b2FixtureDef fixture2;
     fixture2.shape = &shape2;
     fixture2.density = 0;
     fixture2.isSensor = true;
-    fixture2.filter.categoryBits = 6;
-    fixture2.filter.categoryBits = 2;
+
 
     // Add the shape to the body.
+
 
     realBody->CreateFixture(&fixture);
     realBody->CreateFixture(&fixture2);//sensor
     realBody->SetFixedRotation(true);
     realBody->SetUserData( this );
-}
-void physicsDef(){
-
 }
 #if 1
 void player::update() {
@@ -83,20 +81,22 @@ void player::move() {
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
+        direction = -1;
         realBody->ApplyLinearImpulseToCenter(b2Vec2(-3,0), true);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
+        direction = 1;
         realBody->ApplyLinearImpulseToCenter(b2Vec2(3,0), true);
     }
 
-    counterWalking++;
-    if(counterWalking==2){
-        counterWalking = 0;
-    }
+
 }
 
 
+void player::throwObject(b2Body &body){
+    body.ApplyLinearImpulseToCenter(b2Vec2(10*direction*strength,0),true);
+}
 
 void player::print(){
     printf("Bound height:%f Bound width:%f\nBox height:%f Box width:%f\n",bound.getSize().y*bound.getScale().y,

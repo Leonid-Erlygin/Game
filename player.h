@@ -10,19 +10,21 @@
 class player: public object{
 public:
     void print();
-
+    int strength = 10;
     object* cariedObject = nullptr;
     int remainingJumpSteps = 0;
     int jumpHieght = 6;
+    b2RevoluteJoint* JointToHold = nullptr;
     float movementSpeed;
     int attackDamage;
     int counterWalking;
-    int direction;//1 - up,2 - down, 3 - left, 4 - right
+    int direction;// -1 - left, 1 - right
     player();
     void grabe();
     void update();
     player(b2World &world,sf::Texture&);
     void move();
+    void throwObject(b2Body &);
 
 private:
 

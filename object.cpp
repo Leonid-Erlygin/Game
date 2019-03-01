@@ -28,16 +28,18 @@ void object::bodyInit(b2World &world) {
     shape.SetAsBox((bound.getSize().x/(2*scale_factorX))*bound.getScale().x,(bound.getSize().y/(2*scale_factorX))*bound.getScale().y);
 
     if(moveable){
+
         fixture.shape = &shape;
         realBodyDef.type = b2_dynamicBody;
         // Set the box density to be non-zero, so it will be dynamic.
-        fixture.density = 1.0f;
+        fixture.density = 10.0f;
 
         // Override the default friction.
         fixture.friction = 0.3f;
 
         fixture.filter.categoryBits = 2;//
         fixture.filter.maskBits = 6|1|4;
+        fixture.userData = (void *)2;
         realBody = world.CreateBody(&realBodyDef);
         realBody->CreateFixture(&fixture);
 
@@ -51,11 +53,8 @@ void object::bodyInit(b2World &world) {
 
 
 }
-void object::update() {
+void object:: update() {
 
-
-
-    //bound.setRotation(-(angle*180)/(float32)(3.141));
     bound.setOrigin(bound.getSize().x/2,bound.getSize().y/2);
     sprite.setOrigin(bound.getSize().x/2,bound.getSize().y/2);
     sprite.setRotation(-(realBody->GetAngle()*180)/(3.14159265f));
@@ -63,7 +62,6 @@ void object::update() {
     bound.setPosition(scale_factorX*realBody->GetPosition().x/*+shape.m_vertices[0].x*scale_factorX*/,scale_factorY*realBody->GetPosition().y/*shape.m_vertices[0].y*scale_factorX*/);
     sprite.setPosition(bound.getPosition());
 
-    //print();
 }
 /*
 void object::print() {
