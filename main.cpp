@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <unistd.h>
 #include <vector>
 #include "player.h"
@@ -8,8 +9,8 @@
 #include "Box2D/Box2D.h"
 #include "object.h"
 #include "MyContactListener.h"
-
-
+#include "virtualPlayer.h"
+#include "weapon.h"
 int main() {
 
     MyContactListener myContactListenerInstance;
@@ -81,96 +82,83 @@ int main() {
     }
 
 
-    class player Player1(world, textureSans);
+    class player Player1(world, textureSans, 400, 0);
+
+    std::vector<player> MultiPlayer;
+
+
+    class virtualPlayer Player2(world, textureSans, 200, 0);
 
 
     float32 timeStep = 1.0f / 60.0f;
     int32 velocityIterations = 6;
     int32 positionIterations = 2;
 
-
-    //Крепления
-
-
-/*
-    b2RevoluteJointDef jointDef;
-    jointDef.Initialize(Player1.realBody, barrel.realBody, Player1.realBody->GetWorldCenter());
-    b2RevoluteJoint* joint = (b2RevoluteJoint*)world.CreateJoint(&jointDef);
-*/
-
+    floor.update();
 
     barrel.realBody->SetSleepingAllowed(false);
 
-    while (window.isOpen()) {
+    sf::TcpSocket socket;
+   // sf::Socket::Status status = socket.connect("127.0.1.1", 2000);
+/*
+    if (status != sf::Socket::Done) {
+        printf("SocketConnectionError\n");
+        exit(0);
+    }
+    sf::TcpListener listener;
 
-        // check all the window's events that were triggered since the last iteration of the loop
+    // bind the listener to a port
+    if (listener.listen(2000) != sf::Socket::Done) {
+        printf("ListenerConnectionError\n");
+    }
+
+    // accept a new connection
+    sf::TcpSocket client;
+    if (listener.accept(client) != sf::Socket::Done) {
+        printf("ClientSocketConnectionError\n");
+    }
+*/
+    class weapon weapon(world);
+
+
+    while (window.isOpen()) {
 
         sf::Event event;
 
         while (window.pollEvent(event)) {
 
-            // "close requested" event: we close the window
+
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Up) {
-                    //Прыжки
-
-                    Player1.remainingJumpSteps = Player1.jumpHieght;
-                }
-                if (event.key.code == sf::Keyboard::G) {
-                    //Grabbing stuff
-
-                    if (Player1.cariedObject != nullptr) {
-                        b2Body *box = Player1.cariedObject->realBody;
-
-                        if (Player1.JointToHold == nullptr) {
-                            b2RevoluteJointDef jointDef;
-
-                            box->SetTransform(Player1.realBody->GetPosition(), 0);
-                            box->SetFixedRotation(true);
-                            jointDef.Initialize(Player1.realBody, box,
-                                                Player1.realBody->GetWorldCenter());
-                            b2RevoluteJoint *joint = (b2RevoluteJoint *) world.CreateJoint(&jointDef);
-                            Player1.JointToHold = joint;
-                        } else {
-                            world.DestroyJoint(Player1.JointToHold);
-                            box->SetFixedRotation(false);
-                            Player1.throwObject(*box);
-
-                            Player1.JointToHold = nullptr;
-                            Player1.cariedObject = nullptr;
-                        }
-                    } else {
-
-                    }
-
-
-                }
+            if (event.key.code == sf::Keyboard::Space){
+                weapon.strike();
             }
+
+            Player1.checkEvents(event, world, socket);//and send to socket;
+
+
+
         }
 
         window.clear(sf::Color::Black);
 
 
-
-        //обновление мира Box2D
         world.Step(timeStep, velocityIterations, positionIterations);
-        Player1.update();
-        Player1.move();
 
+
+        Player1.update();
+        //Player2.update(listener,client,world);
         barrel.update();
 
-        floor.update();
+        window.draw(Player2.sprite);
+
         window.draw(Player1.sprite);
-        //window.draw(Player1.bound);
         window.draw(floor.sprite);
         window.draw(barrel.sprite);
-
         window.setView(view1);
+        weapon.weapon_update();
         view1.setCenter(Player1.bound.getPosition());
-
-
+        window.draw(weapon.sprite);
         window.display();
     }
 #endif

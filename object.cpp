@@ -63,13 +63,3 @@ void object:: update() {
     sprite.setPosition(bound.getPosition());
 
 }
-/*
-void object::print() {
-    printf("Bound Position x:%f ,Bound Position y:%f\n Body position x:%f,Body position y:%f\n",bound.getPosition().x,bound.getPosition().y,
-            realBody->GetPosition().x*scale_factorX,realBody->GetPosition().y*scale_factorY);
-    printf("BoxParam width:%f,height%f\n",shape.m_vertices[1].x*scale_factorX-shape.m_vertices[0].x*scale_factorX,shape.m_vertices[2].y*scale_factorX-shape.m_vertices[1].y*scale_factorX);
-    printf("Bound param width:%f, height:%f\n",bound.getSize().x*bound.getScale().x,bound.getSize().y*bound.getScale().y);
-    printf("Sprite param width:%f, height:%f\n",sprite.getTextureRect().width*sprite.getScale().x,sprite.getTextureRect().height*sprite.getScale().y);
-}
-
-*/

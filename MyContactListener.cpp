@@ -49,7 +49,7 @@ void MyContactListener::BeginContact(b2Contact *contact) {
     player *playerEntity;
 
     if (getContactInfo(contact, playerEntity, moveableEntity)) {
-
+        playerEntity->canTake = true;
         moveableEntity->isBeingCaried = true;
         moveableEntity->isBeingCariedBy = playerEntity->realBody;
         playerEntity->cariedObject = moveableEntity;
@@ -64,6 +64,7 @@ void MyContactListener::EndContact(b2Contact *contact) {
 
     if (getContactInfo(contact, playerEntity, moveableEntity)) {
         moveableEntity->isBeingCaried = false;
+        playerEntity->canTake = false;
         moveableEntity->isBeingCariedBy = nullptr;
     }
 }

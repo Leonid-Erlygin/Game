@@ -5,10 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 
 
-add_executable(Game main.cpp entity.cpp entity.h player.cpp player.h enemy.cpp enemy.h object.cpp object.h MyContactListener.cpp MyContactListener.h)
+add_executable(Game main.cpp entity.cpp entity.h player.cpp player.h enemy.cpp enemy.h object.cpp object.h MyContactListener.cpp MyContactListener.h virtualPlayer.cpp virtualPlayer.h weapon.h weapon.cpp)
 
 
 
 
 target_link_libraries(Game -lsfml-graphics -lsfml-window
-        -lsfml-system -lGL /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a)
+        -lsfml-system -lGL -lsfml-network /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a)

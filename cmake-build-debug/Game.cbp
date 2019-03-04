@@ -117,6 +117,18 @@
 		<Unit filename="/home/leonid/CLionProjects/Game/player.h">
 			<Option target="Game"/>
 		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/virtualPlayer.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/virtualPlayer.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/weapon.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/weapon.h">
+			<Option target="Game"/>
+		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/leonid/CLionProjects/Game/MyContactListener.cpp
+MyContactListener.h
+/home/leonid/CLionProjects/Game/MyContactListener.h
+object.h
+/home/leonid/CLionProjects/Game/object.h
+
 /home/leonid/CLionProjects/Game/MyContactListener.h
 Box2D/Box2D/Dynamics/b2WorldCallbacks.h
 -
@@ -31,6 +37,8 @@ SFML/Graphics.hpp
 /home/leonid/CLionProjects/Game/main.cpp
 SFML/Graphics.hpp
 -
+SFML/Network.hpp
+-
 unistd.h
 -
 vector
@@ -49,6 +57,10 @@ object.h
 /home/leonid/CLionProjects/Game/object.h
 MyContactListener.h
 /home/leonid/CLionProjects/Game/MyContactListener.h
+virtualPlayer.h
+/home/leonid/CLionProjects/Game/virtualPlayer.h
+weapon.h
+/home/leonid/CLionProjects/Game/weapon.h
 
 /home/leonid/CLionProjects/Game/object.h
 entity.h
@@ -56,7 +68,31 @@ entity.h
 Box2D/Box2D.h
 /home/leonid/CLionProjects/Game/Box2D/Box2D.h
 
+/home/leonid/CLionProjects/Game/player.cpp
+player.h
 /home/leonid/CLionProjects/Game/player.h
+
+/home/leonid/CLionProjects/Game/player.h
+object.h
+/home/leonid/CLionProjects/Game/object.h
+weapon.h
+/home/leonid/CLionProjects/Game/weapon.h
+SFML/Network.hpp
+-
+
+/home/leonid/CLionProjects/Game/virtualPlayer.cpp
+virtualPlayer.h
+/home/leonid/CLionProjects/Game/virtualPlayer.h
+
+/home/leonid/CLionProjects/Game/virtualPlayer.h
+player.h
+/home/leonid/CLionProjects/Game/player.h
+
+/home/leonid/CLionProjects/Game/weapon.cpp
+weapon.h
+/home/leonid/CLionProjects/Game/weapon.h
+
+/home/leonid/CLionProjects/Game/weapon.h
 object.h
 /home/leonid/CLionProjects/Game/object.h
 

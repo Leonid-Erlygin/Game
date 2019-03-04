@@ -285,6 +285,60 @@ player.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/player.cpp.s
 .PHONY : player.cpp.s
 
+virtualPlayer.o: virtualPlayer.cpp.o
+
+.PHONY : virtualPlayer.o
+
+# target to build an object file
+virtualPlayer.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/virtualPlayer.cpp.o
+.PHONY : virtualPlayer.cpp.o
+
+virtualPlayer.i: virtualPlayer.cpp.i
+
+.PHONY : virtualPlayer.i
+
+# target to preprocess a source file
+virtualPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/virtualPlayer.cpp.i
+.PHONY : virtualPlayer.cpp.i
+
+virtualPlayer.s: virtualPlayer.cpp.s
+
+.PHONY : virtualPlayer.s
+
+# target to generate assembly for a file
+virtualPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/virtualPlayer.cpp.s
+.PHONY : virtualPlayer.cpp.s
+
+weapon.o: weapon.cpp.o
+
+.PHONY : weapon.o
+
+# target to build an object file
+weapon.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.o
+.PHONY : weapon.cpp.o
+
+weapon.i: weapon.cpp.i
+
+.PHONY : weapon.i
+
+# target to preprocess a source file
+weapon.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.i
+.PHONY : weapon.cpp.i
+
+weapon.s: weapon.cpp.s
+
+.PHONY : weapon.s
+
+# target to generate assembly for a file
+weapon.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/weapon.cpp.s
+.PHONY : weapon.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +366,12 @@ help:
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"
+	@echo "... virtualPlayer.o"
+	@echo "... virtualPlayer.i"
+	@echo "... virtualPlayer.s"
+	@echo "... weapon.o"
+	@echo "... weapon.i"
+	@echo "... weapon.s"
 .PHONY : help
 
 

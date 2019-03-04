@@ -5,25 +5,40 @@
 #ifndef GAME_PLAYER_H
 #define GAME_PLAYER_H
 #pragma once
-#include "object.h"
 
-class player: public object{
+#include "object.h"
+#include "weapon.h"
+
+#include <SFML/Network.hpp>
+class player : public object {
 public:
     void print();
-    int strength = 10;
-    object* cariedObject = nullptr;
+
+    int strength = 5;
+    object *cariedObject = nullptr;
     int remainingJumpSteps = 0;
     int jumpHieght = 6;
-    b2RevoluteJoint* JointToHold = nullptr;
-    float movementSpeed;
-    int attackDamage;
-    int counterWalking;
+    b2RevoluteJoint *JointToHold = nullptr;
+    bool canTake = false;
+
+    weapon * cariedWeapon;
+    bool moveRight;
+    bool moveLeft;
     int direction;// -1 - left, 1 - right
     player();
-    void grabe();
-    void update();
-    player(b2World &world,sf::Texture&);
-    void move();
+
+    void grabe(b2World &);
+
+    void virtual update();
+
+    void sendEvent(sf::Event &,sf::UdpSocket&);
+
+
+
+    void checkEvents(sf::Event &, b2World &,sf::TcpSocket &);
+
+    player(b2World &world, sf::Texture &,int x,int y);
+
     void throwObject(b2Body &);
 
 private:
