@@ -35,7 +35,7 @@ public:
 
 
 
-    void checkEvents(sf::Event &, b2World &,sf::TcpSocket &);
+    void checkEvents(sf::Event &, b2World &,std::vector<sf::UdpSocket> &,int x);
 
     player(b2World &world, sf::Texture &,int x,int y);
 

@@ -13,6 +13,15 @@
 #include "weapon.h"
 int main() {
 
+
+    int x;
+    std::cin>>x;
+
+
+
+
+
+#if 1
     MyContactListener myContactListenerInstance;
     // Define the gravity vector.
     b2Vec2 gravity(0.0f, -9.81f);
@@ -25,7 +34,7 @@ int main() {
     /* ContactFilter filter;
      world.SetContactFilter(&filter);*/
 
-#if 1
+
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
     std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
@@ -80,14 +89,32 @@ int main() {
     if (!textureSans.loadFromFile(Path_to_res + "sans.png")) {
         return EXIT_FAILURE;
     }
+    int a;
+    int b;
+    int c;
+    int d;
+    if(x){
+        a = 400;
+        b = 0;
+    } else{
+        a = 200;
+        b = 0;
+    }
 
+    if(x){
+        c = 200;
+        d = 0;
+    } else{
+        c = 400;
+        d = 0;
+    }
 
-    class player Player1(world, textureSans, 400, 0);
+    class player Player1(world, textureSans, a, b);
 
     std::vector<player> MultiPlayer;
 
 
-    class virtualPlayer Player2(world, textureSans, 200, 0);
+    class virtualPlayer Player2(world, textureSans, c, d);
 
 
     float32 timeStep = 1.0f / 60.0f;
@@ -98,27 +125,26 @@ int main() {
 
     barrel.realBody->SetSleepingAllowed(false);
 
-    sf::TcpSocket socket;
-   // sf::Socket::Status status = socket.connect("127.0.1.1", 2000);
-/*
-    if (status != sf::Socket::Done) {
-        printf("SocketConnectionError\n");
-        exit(0);
-    }
-    sf::TcpListener listener;
 
-    // bind the listener to a port
-    if (listener.listen(2000) != sf::Socket::Done) {
-        printf("ListenerConnectionError\n");
-    }
 
-    // accept a new connection
-    sf::TcpSocket client;
-    if (listener.accept(client) != sf::Socket::Done) {
-        printf("ClientSocketConnectionError\n");
-    }
-*/
+
     class weapon weapon(world);
+
+
+    std::vector<sf::UdpSocket>sockets(2);
+  if (x){
+      if (sockets[x].bind(54000) != sf::Socket::Done) {
+          printf("Error\n");
+          exit(0);
+      }
+  } else{
+      if (sockets[x].bind(54001) != sf::Socket::Done) {
+          printf("Error\n");
+          exit(0);
+      }
+  }
+    sockets[0].setBlocking(false);
+    sockets[1].setBlocking(false);
 
 
     while (window.isOpen()) {
@@ -134,8 +160,9 @@ int main() {
                 weapon.strike();
             }
 
-            Player1.checkEvents(event, world, socket);//and send to socket;
+            Player1.checkEvents(event, world, sockets,x);//and send to socket;
 
+            Player2.update(sockets,world,x);
 
 
         }
@@ -149,6 +176,8 @@ int main() {
         Player1.update();
         //Player2.update(listener,client,world);
         barrel.update();
+
+
 
         window.draw(Player2.sprite);
 

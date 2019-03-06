@@ -2,6 +2,7 @@
 // Created by leonid on 12.02.19.
 //
 
+#include <SFML/Network/IpAddress.hpp>
 #include "player.h"
 
 
@@ -133,7 +134,7 @@ void player::update() {
 }
 
 
-void player::checkEvents(sf::Event &event, b2World &world, sf::TcpSocket &socket) {
+void player::checkEvents(sf::Event &event, b2World &world, std::vector<sf::UdpSocket> &socket,int x) {
     sf::Packet packet;
 
     packet<<event.type;
@@ -187,8 +188,12 @@ void player::checkEvents(sf::Event &event, b2World &world, sf::TcpSocket &socket
         }
     }
 
-
-   // socket.send(packet);//Отправление пакета.
+    if(x){
+        socket[0].send(packet,sf::IpAddress::LocalHost,54001);
+    } else{
+        socket[1].send(packet,sf::IpAddress::LocalHost,54000);
+    }
+    //Отправление пакета.
 
 
 }

@@ -5,17 +5,20 @@
 #include "virtualPlayer.h"
 
 
-void virtualPlayer::update(sf::TcpListener &listener, sf::TcpSocket &socket,b2World& world) {
+void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int x) {
     sf::Packet packet;
-    socket.receive(packet);
-    sf::Event event;
-    int x;
-    int y;
-    packet >> x;
+    sf::IpAddress sender;
+    unsigned short port;
+    socket[x].receive(packet,sender,port);
 
-    if (x == sf::Event::EventType::KeyPressed || x == sf::Event::EventType::KeyReleased) {
+    sf::Event event;
+    int c;
+    int y;
+    packet >> c;
+
+    if (c == sf::Event::EventType::KeyPressed || c == sf::Event::EventType::KeyReleased) {
         packet >> y;
-        event.type = sf::Event::EventType(x);
+        event.type = sf::Event::EventType(c);
         event.key.code = sf::Keyboard::Key(y);
 
     }
@@ -59,6 +62,7 @@ void virtualPlayer::update(sf::TcpListener &listener, sf::TcpSocket &socket,b2Wo
             moveLeft = false;
         }
     }
+    player::update();
 
 }
 
