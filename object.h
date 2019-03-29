@@ -21,6 +21,14 @@ public:
    // b2FixtureDef fixture;//can be many of them, so this member is useless
     //b2BodyDef realBodyDef;//Можно не хранить объявления
     b2Body* realBody;
+
+   bool isThisHandWeapon = false;
+   bool isThisFireWeapon = false;
+   bool isPlayer = false;
+    float ancorPointShiftBodyAX = 0;
+    float ancorPointShiftBodyBX = 0;
+    float ancorPointShiftBodyAY= 0;
+    float ancorPointShiftBodyBY= 0;
     //b2PolygonShape shape;//Это тоже можно удалить
     ~object();
     object();

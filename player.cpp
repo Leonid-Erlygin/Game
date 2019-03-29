@@ -3,17 +3,19 @@
 //
 
 #include <SFML/Network/IpAddress.hpp>
+#include <iostream>
 #include "player.h"
-
+#include "weapon.h"
+#include "handWeapon.h"
 
 player::player() {
 }
 
-player::player(b2World &world, sf::Texture &Player_texture,int x,int y) {
+player::player(b2World &world, sf::Texture &Player_texture, int x, int y) {
 
     moveable = true;
 
-
+    isPlayer  = true;
     sprite.setTexture(Player_texture);
     sprite.setTextureRect(sf::IntRect(30, 0, 235, 310));
     bound.setPosition(x, y);
@@ -81,31 +83,77 @@ void player::print() {
 void player::grabe(b2World &world) {
     if (cariedObject != nullptr) {
         b2Body *box = cariedObject->realBody;
-        if (canTake) {
 
 
-            if (JointToHold == nullptr) {
+        if (JointToHold == nullptr) {
 
-                b2RevoluteJointDef jointDef;
+            b2RevoluteJointDef jointDef;
 
-                canTake = true;
-                box->SetTransform(realBody->GetPosition(), 0);
-                box->SetFixedRotation(true);
-                jointDef.Initialize(realBody, box,
-                                    realBody->GetWorldCenter());
-                b2RevoluteJoint *joint = (b2RevoluteJoint *) world.CreateJoint(&jointDef);
-                JointToHold = joint;
-            } else {
-                cariedObject = nullptr;
+
+
+            b2Vec2 r1(cariedObject->ancorPointShiftBodyAX/scale_factorX,
+                      cariedObject->ancorPointShiftBodyAY/scale_factorX);
+
+            b2Vec2 r2(cariedObject->ancorPointShiftBodyBX/scale_factorX,
+                      cariedObject->ancorPointShiftBodyBY/scale_factorX );
+
+            b2Vec2 shift(r1.x-r2.x,r1.y-r2.y);
+
+            b2Vec2 pos(realBody->GetWorldCenter().x+shift.x,
+                    realBody->GetWorldCenter().y+shift.y);
+
+            box->SetTransform(pos, 0);
+            box->SetFixedRotation(true);
+
+            jointDef.bodyA = realBody;
+            jointDef.bodyB = box;
+            jointDef.collideConnected = false;
+
+            jointDef.localAnchorA.Set(r1.x,r1.y);
+            jointDef.localAnchorB.Set(r2.x,r2.y);
+
+            b2RevoluteJoint *joint = (b2RevoluteJoint *) world.CreateJoint(&jointDef);
+            grab = true;
+
+            if (cariedObject->isThisHandWeapon) {
+
+                try {
+
+                    auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                    weapon->isInHands = true;
+
+                }
+                catch (const std::bad_cast &e) {
+                    std::cout << e.what() << std::endl;
+                    std::cout << "Этот объект не является объектом типа Weapon\n" << std::endl;
+                }
             }
+
+            JointToHold = joint;
         } else {
-            if (JointToHold != nullptr) {
+
                 world.DestroyJoint(JointToHold);
                 box->SetFixedRotation(false);
                 throwObject(*box);
+                if (cariedObject->isThisHandWeapon) {
+
+                    try {
+
+                        auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                        weapon->isInHands = false;
+
+                    }
+                    catch (const std::bad_cast &e) {
+                        std::cout << e.what() << std::endl;
+                        std::cout << "Этот объект не является объектом типа Weapon\n" << std::endl;
+                    }
+                }
+                grab = false;
+
                 JointToHold = nullptr;
                 cariedObject = nullptr;
-            }
+
+
         }
     }
 }
@@ -134,33 +182,76 @@ void player::update() {
 }
 
 
-void player::checkEvents(sf::Event &event, b2World &world, std::vector<sf::UdpSocket> &socket,int x) {
-    sf::Packet packet;
-
-    packet<<event.type;
-
+void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
 
 
     if (event.type == sf::Event::KeyPressed) {
 
-        packet<<event.key.code;
 
-        if (event.key.code == sf::Keyboard::Space){
+        if (event.key.code == sf::Keyboard::Space&&playerInd==1) {
+            if (grab) {
+                if (cariedObject->isThisFireWeapon || cariedObject->isThisHandWeapon) {
 
+                    try {
+
+
+                        if (cariedObject->isThisFireWeapon) {
+                            auto weapon = dynamic_cast<class weapon *>(cariedObject);
+                            weapon->strike();
+                        }
+                        if (cariedObject->isThisHandWeapon) {
+                            auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                            weapon->strike();
+                        }
+
+                    }
+                    catch (const std::bad_cast &e) {
+                        std::cout << e.what() << std::endl;
+                        std::cout << "Этот объект не является объектом типа Weapon\n" << std::endl;
+                    }
+
+                }
+            }
         }
 
-        if (event.key.code == sf::Keyboard::Right) {
+        if (event.key.code == sf::Keyboard::E&&playerInd==2) {
+            if (grab) {
+                if (cariedObject->isThisFireWeapon || cariedObject->isThisHandWeapon) {
+
+                    try {
+
+
+                        if (cariedObject->isThisFireWeapon) {
+                            auto weapon = dynamic_cast<class weapon *>(cariedObject);
+                            weapon->strike();
+                        }
+                        if (cariedObject->isThisHandWeapon) {
+                            auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                            weapon->strike();
+                        }
+
+                    }
+                    catch (const std::bad_cast &e) {
+                        std::cout << e.what() << std::endl;
+                        std::cout << "Этот объект не является объектом типа Weapon\n" << std::endl;
+                    }
+
+                }
+            }
+        }
+
+        if (event.key.code == sf::Keyboard::Right&&playerInd==1) {
             moveRight = true;
 
         }
 
 
-        if (event.key.code == sf::Keyboard::Left) {
+        if (event.key.code == sf::Keyboard::Left&&playerInd==1) {
             moveLeft = true;
         }
 
-        if (event.key.code == sf::Keyboard::Up) {
+        if (event.key.code == sf::Keyboard::Up&&playerInd==1) {
             //Прыжки
 
             remainingJumpSteps = jumpHieght;
@@ -168,7 +259,33 @@ void player::checkEvents(sf::Event &event, b2World &world, std::vector<sf::UdpSo
 
         }
 
-        if (event.key.code == sf::Keyboard::G) {
+        if (event.key.code == sf::Keyboard::G&&playerInd==1) {
+
+            grabe(world);
+
+
+        }
+
+
+        if (event.key.code == sf::Keyboard::D&&playerInd==2) {
+            moveRight = true;
+
+        }
+
+
+        if (event.key.code == sf::Keyboard::A&&playerInd==2) {
+            moveLeft = true;
+        }
+
+        if (event.key.code == sf::Keyboard::W&&playerInd==2) {
+            //Прыжки
+
+            remainingJumpSteps = jumpHieght;
+
+
+        }
+
+        if (event.key.code == sf::Keyboard::F&&playerInd==2) {
 
             grabe(world);
 
@@ -178,22 +295,22 @@ void player::checkEvents(sf::Event &event, b2World &world, std::vector<sf::UdpSo
 
 
     if (event.type == sf::Event::KeyReleased) {
-        packet<<event.key.code;
-        if (event.key.code == sf::Keyboard::Right) {
+
+        if (event.key.code == sf::Keyboard::Right&&playerInd==1) {
             moveRight = false;
             //Send Message to virtualPlayers
         }
-        if (event.key.code == sf::Keyboard::Left) {
+        if (event.key.code == sf::Keyboard::Left&&playerInd==1) {
+            moveLeft = false;
+        }
+        if (event.key.code == sf::Keyboard::D&&playerInd==2) {
+            moveRight = false;
+            //Send Message to virtualPlayers
+        }
+        if (event.key.code == sf::Keyboard::A&&playerInd==2) {
             moveLeft = false;
         }
     }
-
-    if(x){
-        socket[0].send(packet,sf::IpAddress::LocalHost,54001);
-    } else{
-        socket[1].send(packet,sf::IpAddress::LocalHost,54000);
-    }
-    //Отправление пакета.
 
 
 }

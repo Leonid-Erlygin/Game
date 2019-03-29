@@ -5,20 +5,22 @@ CMakeFiles/Game.dir/MyContactListener.cpp.o
  /home/leonid/CLionProjects/Game/MyContactListener.cpp
  /home/leonid/CLionProjects/Game/MyContactListener.h
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.h
  /home/leonid/CLionProjects/Game/weapon.h
-CMakeFiles/Game.dir/enemy.cpp.o
- /home/leonid/CLionProjects/Game/enemy.cpp
- /home/leonid/CLionProjects/Game/enemy.h
- /home/leonid/CLionProjects/Game/entity.h
 CMakeFiles/Game.dir/entity.cpp.o
  /home/leonid/CLionProjects/Game/entity.cpp
  /home/leonid/CLionProjects/Game/entity.h
+CMakeFiles/Game.dir/handWeapon.cpp.o
+ /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/handWeapon.cpp
+ /home/leonid/CLionProjects/Game/handWeapon.h
+ /home/leonid/CLionProjects/Game/object.h
 CMakeFiles/Game.dir/main.cpp.o
  /home/leonid/CLionProjects/Game/MyContactListener.h
- /home/leonid/CLionProjects/Game/enemy.h
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/main.cpp
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.h
@@ -30,6 +32,7 @@ CMakeFiles/Game.dir/object.cpp.o
  /home/leonid/CLionProjects/Game/object.h
 CMakeFiles/Game.dir/player.cpp.o
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.cpp
  /home/leonid/CLionProjects/Game/player.h

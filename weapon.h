@@ -1,37 +1,58 @@
 /*
  * weapon.h
  *
- *  Created on: 3 пїЅпїЅпїЅ. 2019 пїЅ.
- *      Author: пїЅпїЅпїЅпїЅпїЅпїЅ
+ *  Created on: 3 мар. 2019 г.
+ *      Author: Никита
  */
 #pragma once
 #include "object.h"
+#include <map>
+#include <tuple>
+#include <vector>
 #define PI 3.141593
 
 #ifndef WEAPON_H_
 #define WEAPON_H_
 
+struct bullet
+{
+	bullet();
+	bullet(b2Vec2 r, float angle);
+	b2Vec2 r;
+	float angle;
+};
+
 
 class weapon : public object {
 public:
 
-	weapon(b2World& world);
+	sf::RenderWindow& window;
+	b2World& world;
+
+	weapon(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&);
 	void strike();
 	void weapon_update();
-	unsigned time_to_strike();
 
-	double RayAngle = 0;
-	b2World& world;
-	b2Vec2 bullet_position;
-	double bullet_angle;
+	float RayAngle = 0;
+
+	std::map<unsigned, bullet> bullets;
+	std::vector<unsigned> used_bullets;
+
+	unsigned free_bullet = 1;
+	unsigned bullets_count = 0;
+
+	bool flag = true;
 	bool is_strike = 0;
 
 private:
-
+	sf::Texture& texture_bullet;
 	int damage = 10;
-	int range = 2000000;
-	double velocity = 1000;
-	double recoil = 10 * (PI / 180); //an angle to diflect weapon of one shot
+	int range = 50; //max distance for a bullet to fly
+	int xlim = 50; //bounds a bullet can't go through
+	int ylim = 50;
+	float velocity = 25;
+	float angle_recoil = 10 * (PI / 180); //the angle to be diflected at after strike
+	float line_recoil = 0.5; //the distance to be trown at after strike
 };
 
 #endif /* WEAPON_H_ */

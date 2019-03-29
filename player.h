@@ -13,15 +13,13 @@
 class player : public object {
 public:
     void print();
-
+    bool grab = false;
     int strength = 5;
     object *cariedObject = nullptr;
     int remainingJumpSteps = 0;
     int jumpHieght = 6;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
-
-    weapon * cariedWeapon;
     bool moveRight;
     bool moveLeft;
     int direction;// -1 - left, 1 - right
@@ -29,13 +27,13 @@ public:
 
     void grabe(b2World &);
 
-    void virtual update();
+    void update();
 
     void sendEvent(sf::Event &,sf::UdpSocket&);
 
 
 
-    void checkEvents(sf::Event &, b2World &,std::vector<sf::UdpSocket> &,int x);
+    void checkEvents(sf::Event &, b2World &,int player);
 
     player(b2World &world, sf::Texture &,int x,int y);
 

@@ -96,22 +96,9 @@ CMakeFiles/Game.dir/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/player.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/player.cpp -o CMakeFiles/Game.dir/player.cpp.s
 
-CMakeFiles/Game.dir/enemy.cpp.o: CMakeFiles/Game.dir/flags.make
-CMakeFiles/Game.dir/enemy.cpp.o: ../enemy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game.dir/enemy.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/enemy.cpp.o -c /home/leonid/CLionProjects/Game/enemy.cpp
-
-CMakeFiles/Game.dir/enemy.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/enemy.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/enemy.cpp > CMakeFiles/Game.dir/enemy.cpp.i
-
-CMakeFiles/Game.dir/enemy.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/enemy.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/enemy.cpp -o CMakeFiles/Game.dir/enemy.cpp.s
-
 CMakeFiles/Game.dir/object.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/object.cpp.o: ../object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game.dir/object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game.dir/object.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/object.cpp.o -c /home/leonid/CLionProjects/Game/object.cpp
 
 CMakeFiles/Game.dir/object.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/Game.dir/object.cpp.s: cmake_force
 
 CMakeFiles/Game.dir/MyContactListener.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../MyContactListener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Game.dir/MyContactListener.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game.dir/MyContactListener.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/MyContactListener.cpp.o -c /home/leonid/CLionProjects/Game/MyContactListener.cpp
 
 CMakeFiles/Game.dir/MyContactListener.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/Game.dir/MyContactListener.cpp.s: cmake_force
 
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../virtualPlayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Game.dir/virtualPlayer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Game.dir/virtualPlayer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/virtualPlayer.cpp.o -c /home/leonid/CLionProjects/Game/virtualPlayer.cpp
 
 CMakeFiles/Game.dir/virtualPlayer.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/Game.dir/virtualPlayer.cpp.s: cmake_force
 
 CMakeFiles/Game.dir/weapon.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/weapon.cpp.o: ../weapon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Game.dir/weapon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Game.dir/weapon.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/weapon.cpp.o -c /home/leonid/CLionProjects/Game/weapon.cpp
 
 CMakeFiles/Game.dir/weapon.cpp.i: cmake_force
@@ -161,16 +148,29 @@ CMakeFiles/Game.dir/weapon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/weapon.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/weapon.cpp -o CMakeFiles/Game.dir/weapon.cpp.s
 
+CMakeFiles/Game.dir/handWeapon.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../handWeapon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Game.dir/handWeapon.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/handWeapon.cpp.o -c /home/leonid/CLionProjects/Game/handWeapon.cpp
+
+CMakeFiles/Game.dir/handWeapon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/handWeapon.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/handWeapon.cpp > CMakeFiles/Game.dir/handWeapon.cpp.i
+
+CMakeFiles/Game.dir/handWeapon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/handWeapon.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/handWeapon.cpp -o CMakeFiles/Game.dir/handWeapon.cpp.s
+
 # Object files for target Game
 Game_OBJECTS = \
 "CMakeFiles/Game.dir/main.cpp.o" \
 "CMakeFiles/Game.dir/entity.cpp.o" \
 "CMakeFiles/Game.dir/player.cpp.o" \
-"CMakeFiles/Game.dir/enemy.cpp.o" \
 "CMakeFiles/Game.dir/object.cpp.o" \
 "CMakeFiles/Game.dir/MyContactListener.cpp.o" \
 "CMakeFiles/Game.dir/virtualPlayer.cpp.o" \
-"CMakeFiles/Game.dir/weapon.cpp.o"
+"CMakeFiles/Game.dir/weapon.cpp.o" \
+"CMakeFiles/Game.dir/handWeapon.cpp.o"
 
 # External object files for target Game
 Game_EXTERNAL_OBJECTS =
@@ -178,11 +178,11 @@ Game_EXTERNAL_OBJECTS =
 Game: CMakeFiles/Game.dir/main.cpp.o
 Game: CMakeFiles/Game.dir/entity.cpp.o
 Game: CMakeFiles/Game.dir/player.cpp.o
-Game: CMakeFiles/Game.dir/enemy.cpp.o
 Game: CMakeFiles/Game.dir/object.cpp.o
 Game: CMakeFiles/Game.dir/MyContactListener.cpp.o
 Game: CMakeFiles/Game.dir/virtualPlayer.cpp.o
 Game: CMakeFiles/Game.dir/weapon.cpp.o
+Game: CMakeFiles/Game.dir/handWeapon.cpp.o
 Game: CMakeFiles/Game.dir/build.make
 Game: /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a
 Game: CMakeFiles/Game.dir/link.txt

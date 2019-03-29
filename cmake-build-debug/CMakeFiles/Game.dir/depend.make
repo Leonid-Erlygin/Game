@@ -4,20 +4,22 @@
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../MyContactListener.cpp
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../MyContactListener.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../entity.h
+CMakeFiles/Game.dir/MyContactListener.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../object.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../player.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../weapon.h
 
-CMakeFiles/Game.dir/enemy.cpp.o: ../enemy.cpp
-CMakeFiles/Game.dir/enemy.cpp.o: ../enemy.h
-CMakeFiles/Game.dir/enemy.cpp.o: ../entity.h
-
 CMakeFiles/Game.dir/entity.cpp.o: ../entity.cpp
 CMakeFiles/Game.dir/entity.cpp.o: ../entity.h
 
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../entity.h
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../handWeapon.cpp
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../handWeapon.h
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../object.h
+
 CMakeFiles/Game.dir/main.cpp.o: ../MyContactListener.h
-CMakeFiles/Game.dir/main.cpp.o: ../enemy.h
 CMakeFiles/Game.dir/main.cpp.o: ../entity.h
+CMakeFiles/Game.dir/main.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Game.dir/main.cpp.o: ../object.h
 CMakeFiles/Game.dir/main.cpp.o: ../player.h
@@ -29,6 +31,7 @@ CMakeFiles/Game.dir/object.cpp.o: ../object.cpp
 CMakeFiles/Game.dir/object.cpp.o: ../object.h
 
 CMakeFiles/Game.dir/player.cpp.o: ../entity.h
+CMakeFiles/Game.dir/player.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/player.cpp.o: ../object.h
 CMakeFiles/Game.dir/player.cpp.o: ../player.cpp
 CMakeFiles/Game.dir/player.cpp.o: ../player.h

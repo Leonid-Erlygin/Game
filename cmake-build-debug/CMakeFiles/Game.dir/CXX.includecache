@@ -13,10 +13,8 @@ object.h
 /home/leonid/CLionProjects/Game/object.h
 player.h
 /home/leonid/CLionProjects/Game/player.h
-
-/home/leonid/CLionProjects/Game/enemy.h
-entity.h
-/home/leonid/CLionProjects/Game/entity.h
+handWeapon.h
+/home/leonid/CLionProjects/Game/handWeapon.h
 
 /home/leonid/CLionProjects/Game/entity.h
 SFML/Graphics/RectangleShape.hpp
@@ -27,6 +25,10 @@ SFML/Graphics/Text.hpp
 -
 SFML/Graphics.hpp
 -
+
+/home/leonid/CLionProjects/Game/handWeapon.h
+object.h
+/home/leonid/CLionProjects/Game/object.h
 
 /home/leonid/CLionProjects/Game/main.cpp
 SFML/Graphics.hpp
@@ -39,8 +41,6 @@ vector
 -
 player.h
 /home/leonid/CLionProjects/Game/player.h
-enemy.h
-/home/leonid/CLionProjects/Game/enemy.h
 stdio.h
 -
 iostream
@@ -55,6 +55,8 @@ virtualPlayer.h
 /home/leonid/CLionProjects/Game/virtualPlayer.h
 weapon.h
 /home/leonid/CLionProjects/Game/weapon.h
+handWeapon.h
+/home/leonid/CLionProjects/Game/handWeapon.h
 
 /home/leonid/CLionProjects/Game/object.h
 entity.h
@@ -77,4 +79,10 @@ player.h
 /home/leonid/CLionProjects/Game/weapon.h
 object.h
 /home/leonid/CLionProjects/Game/object.h
+map
+-
+tuple
+-
+vector
+-
 

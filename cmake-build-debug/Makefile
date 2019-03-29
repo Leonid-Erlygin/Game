@@ -150,33 +150,6 @@ MyContactListener.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.s
 .PHONY : MyContactListener.cpp.s
 
-enemy.o: enemy.cpp.o
-
-.PHONY : enemy.o
-
-# target to build an object file
-enemy.cpp.o:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/enemy.cpp.o
-.PHONY : enemy.cpp.o
-
-enemy.i: enemy.cpp.i
-
-.PHONY : enemy.i
-
-# target to preprocess a source file
-enemy.cpp.i:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/enemy.cpp.i
-.PHONY : enemy.cpp.i
-
-enemy.s: enemy.cpp.s
-
-.PHONY : enemy.s
-
-# target to generate assembly for a file
-enemy.cpp.s:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/enemy.cpp.s
-.PHONY : enemy.cpp.s
-
 entity.o: entity.cpp.o
 
 .PHONY : entity.o
@@ -203,6 +176,33 @@ entity.s: entity.cpp.s
 entity.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/entity.cpp.s
 .PHONY : entity.cpp.s
+
+handWeapon.o: handWeapon.cpp.o
+
+.PHONY : handWeapon.o
+
+# target to build an object file
+handWeapon.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/handWeapon.cpp.o
+.PHONY : handWeapon.cpp.o
+
+handWeapon.i: handWeapon.cpp.i
+
+.PHONY : handWeapon.i
+
+# target to preprocess a source file
+handWeapon.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/handWeapon.cpp.i
+.PHONY : handWeapon.cpp.i
+
+handWeapon.s: handWeapon.cpp.s
+
+.PHONY : handWeapon.s
+
+# target to generate assembly for a file
+handWeapon.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/handWeapon.cpp.s
+.PHONY : handWeapon.cpp.s
 
 main.o: main.cpp.o
 
@@ -351,12 +351,12 @@ help:
 	@echo "... MyContactListener.o"
 	@echo "... MyContactListener.i"
 	@echo "... MyContactListener.s"
-	@echo "... enemy.o"
-	@echo "... enemy.i"
-	@echo "... enemy.s"
 	@echo "... entity.o"
 	@echo "... entity.i"
 	@echo "... entity.s"
+	@echo "... handWeapon.o"
+	@echo "... handWeapon.i"
+	@echo "... handWeapon.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

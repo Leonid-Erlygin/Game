@@ -90,16 +90,16 @@
 		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/enemy.cpp">
-			<Option target="Game"/>
-		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/enemy.h">
-			<Option target="Game"/>
-		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/entity.cpp">
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/entity.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/handWeapon.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/handWeapon.h">
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/main.cpp">

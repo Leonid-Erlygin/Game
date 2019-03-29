@@ -32,7 +32,7 @@ void object::bodyInit(b2World &world) {
         fixture.shape = &shape;
         realBodyDef.type = b2_dynamicBody;
         // Set the box density to be non-zero, so it will be dynamic.
-        fixture.density = 10.0f;
+        fixture.density = 5.0f;
 
         // Override the default friction.
         fixture.friction = 0.3f;

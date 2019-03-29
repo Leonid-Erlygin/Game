@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <vector>
 #include "player.h"
-#include "enemy.h"
 #include <stdio.h>
 #include <iostream>
 #include "Box2D/Box2D.h"
@@ -11,11 +10,10 @@
 #include "MyContactListener.h"
 #include "virtualPlayer.h"
 #include "weapon.h"
+#include "handWeapon.h"
+
 int main() {
 
-
-    int x;
-    std::cin>>x;
 
 
 
@@ -36,7 +34,7 @@ int main() {
 
 
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
     std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
     std::string Path_to_duck = "/home/leonid/CLionProjects/Game/Resourses/Duck Game Sprites/";
     sf::Texture textureCastle;
@@ -70,6 +68,15 @@ int main() {
     if (!textureBox.loadFromFile(Path_to_res + "box1.png")) {
         return EXIT_FAILURE;
     }
+    sf::Texture textureWeapon;
+    if (!textureWeapon.loadFromFile(Path_to_duck + "ak47.png")) {
+        return EXIT_FAILURE;
+    }
+
+    sf::Texture textureBullet;
+    if (!textureBullet.loadFromFile(Path_to_duck + "chainBullet.png")) {
+        return EXIT_FAILURE;
+    }
 
     sf::Texture textureBarrel;
     if (!textureBarrel.loadFromFile(Path_to_res + "barrel.png")) {
@@ -78,9 +85,9 @@ int main() {
     class object barrel;
 
     barrel.sprite.setTexture(textureBox);
-    barrel.sprite.scale(0.07, 0.07);
+    barrel.sprite.scale(0.2, 0.2);
     barrel.bound.setSize(sf::Vector2f(textureBox.getSize().x, textureBox.getSize().y));
-    barrel.bound.setPosition(500, 100);
+    barrel.bound.setPosition(300, 100);
     barrel.moveable = true;
     barrel.bodyInit(world);
 
@@ -89,33 +96,17 @@ int main() {
     if (!textureSans.loadFromFile(Path_to_res + "sans.png")) {
         return EXIT_FAILURE;
     }
-    int a;
-    int b;
-    int c;
-    int d;
-    if(x){
-        a = 400;
-        b = 0;
-    } else{
-        a = 200;
-        b = 0;
+    sf::Texture textureBlade;
+    if (!textureBlade.loadFromFile(Path_to_res + "blade1.png")) {
+        return EXIT_FAILURE;
+    }
+    sf::Texture textureFire;
+    if (!textureFire.loadFromFile(Path_to_res + "fireTexture.png")) {
+        return EXIT_FAILURE;
     }
 
-    if(x){
-        c = 200;
-        d = 0;
-    } else{
-        c = 400;
-        d = 0;
-    }
-
-    class player Player1(world, textureSans, a, b);
-
-    std::vector<player> MultiPlayer;
-
-
-    class virtualPlayer Player2(world, textureSans, c, d);
-
+    class player Player1(world, textureSans, 400, 350);
+    class player Player2(world, textureSans, 200, 350);
 
     float32 timeStep = 1.0f / 60.0f;
     int32 velocityIterations = 6;
@@ -123,28 +114,23 @@ int main() {
 
     floor.update();
 
-    barrel.realBody->SetSleepingAllowed(false);
+  //  barrel.realBody->SetSleepingAllowed(false);
 
 
 
 
-    class weapon weapon(world);
+    class weapon weapon(world,window,textureWeapon,textureBullet);
+
+    class handWeapon bladeFire(world,textureBlade,textureFire);
+
 
 
     std::vector<sf::UdpSocket>sockets(2);
-  if (x){
-      if (sockets[x].bind(54000) != sf::Socket::Done) {
-          printf("Error\n");
-          exit(0);
-      }
-  } else{
-      if (sockets[x].bind(54001) != sf::Socket::Done) {
-          printf("Error\n");
-          exit(0);
-      }
-  }
+
     sockets[0].setBlocking(false);
     sockets[1].setBlocking(false);
+
+
 
 
     while (window.isOpen()) {
@@ -156,13 +142,9 @@ int main() {
 
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.key.code == sf::Keyboard::Space){
-                weapon.strike();
-            }
+            Player2.checkEvents(event,world,2);
+            Player1.checkEvents(event, world,1);//and send to socket;
 
-            Player1.checkEvents(event, world, sockets,x);//and send to socket;
-
-            Player2.update(sockets,world,x);
 
 
         }
@@ -172,23 +154,31 @@ int main() {
 
         world.Step(timeStep, velocityIterations, positionIterations);
 
-
+        Player2.update();
         Player1.update();
         //Player2.update(listener,client,world);
         barrel.update();
 
+        //window.draw(weapon.bound);
 
-
-        window.draw(Player2.sprite);
-
-        window.draw(Player1.sprite);
         window.draw(floor.sprite);
         window.draw(barrel.sprite);
+
         window.setView(view1);
         weapon.weapon_update();
+
         view1.setCenter(Player1.bound.getPosition());
-        window.draw(weapon.sprite);
+
+
+        window.draw(Player1.sprite);
+        window.draw(Player2.sprite);
+        window.draw(bladeFire.sprite);
+        bladeFire.update(window);
         window.display();
+        window.draw(weapon.sprite);
+
+
+
     }
 #endif
     return 0;
