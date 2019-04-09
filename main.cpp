@@ -67,8 +67,8 @@ int main() {
 
 
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
-    std::string Path_to_duck = "/home/leonid/CLionProjects/Game/Resourses/Duck Game Sprites/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+    std::string Path_to_duck = "/home/leonid/CLionProjects/Resourses/Duck Game Sprites/";
     sf::Texture textureCastle;
     if (!textureCastle.loadFromFile(Path_to_duck + "castle.png")) {
         return EXIT_FAILURE;
