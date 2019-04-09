@@ -59,10 +59,12 @@ void grenade::explode()
 			if (obj->isPlayer){
 				player * playerA = static_cast<class player *>(obj);
 				playerA->death(200/40.0,50.0/-40.0);
+				if(isBeingCariedBy!= nullptr){
+					player * playerB =static_cast<player *> (isBeingCariedBy->GetUserData());
+					object * obj2 = dynamic_cast<object *>(this);
+					playerB->reachableObjects.erase(obj2);
+				}
 
-				player * playerB =static_cast<player *> (isBeingCariedBy->GetUserData());
-				object * obj2 = dynamic_cast<object *>(this);
-				playerB->reachableObjects.erase(obj2);
 			}
 
 			damaged_object->SetTransform(b2Vec2(200.0 / 40.0, 50.0 / -40.0), 0);

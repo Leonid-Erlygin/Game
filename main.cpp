@@ -161,6 +161,8 @@ int main() {
 
     class weapon weapon(world, window, textureWeapon, textureBullet, texture_explosion);
     class grenade grenade(world, window, texture_grenade, texture_explosion);
+    class grenade grenade2(world, window, texture_grenade, texture_explosion);
+    class grenade grenade3(world, window, texture_grenade, texture_explosion);
     class handWeapon bladeFire(world, textureBlade, textureFire);
 
 
@@ -216,6 +218,8 @@ int main() {
 
         weapon.weapon_update();
         grenade.grenade_update();
+        grenade2.grenade_update();
+        grenade3.grenade_update();
 
         window.display();
 
