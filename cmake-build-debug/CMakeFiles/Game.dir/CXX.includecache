@@ -7,8 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/leonid/CLionProjects/Game/MyContactListener.h
-Box2D/Box2D/Dynamics/b2WorldCallbacks.h
--
+Box2D/Dynamics/b2WorldCallbacks.h
+/home/leonid/CLionProjects/Game/Box2D/Dynamics/b2WorldCallbacks.h
 object.h
 /home/leonid/CLionProjects/Game/object.h
 player.h
@@ -26,7 +26,21 @@ SFML/Graphics/Text.hpp
 SFML/Graphics.hpp
 -
 
+/home/leonid/CLionProjects/Game/grenade.cpp
+grenade.h
+/home/leonid/CLionProjects/Game/grenade.h
+player.h
+/home/leonid/CLionProjects/Game/player.h
+
+/home/leonid/CLionProjects/Game/grenade.h
+object.h
+/home/leonid/CLionProjects/Game/object.h
+vector
+-
+
 /home/leonid/CLionProjects/Game/handWeapon.h
+set
+-
 object.h
 /home/leonid/CLionProjects/Game/object.h
 
@@ -57,6 +71,8 @@ weapon.h
 /home/leonid/CLionProjects/Game/weapon.h
 handWeapon.h
 /home/leonid/CLionProjects/Game/handWeapon.h
+grenade.h
+/home/leonid/CLionProjects/Game/grenade.h
 
 /home/leonid/CLionProjects/Game/object.h
 entity.h
@@ -71,6 +87,8 @@ weapon.h
 /home/leonid/CLionProjects/Game/weapon.h
 SFML/Network.hpp
 -
+set
+-
 
 /home/leonid/CLionProjects/Game/virtualPlayer.h
 player.h
@@ -84,5 +102,7 @@ map
 tuple
 -
 vector
+-
+cmath
 -
 

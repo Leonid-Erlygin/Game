@@ -12,6 +12,15 @@
 
 enum _entityCategory {
     PLAYER =          4,
+
+};
+
+enum WeaponType
+{
+	FireWeapon = 1,
+	HandWeapon = 2,
+	Grenade = 3,
+	NotWeapon = 4
 };
 
 
@@ -21,10 +30,8 @@ public:
    // b2FixtureDef fixture;//can be many of them, so this member is useless
     //b2BodyDef realBodyDef;//Можно не хранить объявления
     b2Body* realBody;
-
-   bool isThisHandWeapon = false;
-   bool isThisFireWeapon = false;
-   bool isPlayer = false;
+    WeaponType weapon_class = NotWeapon;
+    bool isPlayer = false;
     float ancorPointShiftBodyAX = 0;
     float ancorPointShiftBodyBX = 0;
     float ancorPointShiftBodyAY= 0;

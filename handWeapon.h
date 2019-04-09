@@ -6,6 +6,7 @@
 #define GAME_HANDWEAPON_H
 
 
+#include <set>
 #include "object.h"
 
 class handWeapon : public object {
@@ -15,7 +16,8 @@ public:
     int angle = 0;
     bool goUp = false;
     bool isInHands = false;
-    object *ContactObject = nullptr;
+
+    std::set<object *>reachableObjects;
 
     void strike();
 

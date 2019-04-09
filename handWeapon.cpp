@@ -12,8 +12,8 @@ handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &Textur
     ancorPointShiftBodyAY = 0;
     ancorPointShiftBodyBX = -10;
     ancorPointShiftBodyBY = 0;
-    isThisHandWeapon = true;
-    bound.setPosition(200, 40);
+    weapon_class = HandWeapon;
+    bound.setPosition(600, 40);
     sprite.setTexture(Texture);
     sprite.scale(1, 1);
     moveable = true;
@@ -107,11 +107,16 @@ void handWeapon::update(sf::RenderWindow &window) {
         }
 
 
-           if(ContactObject!= nullptr){
-               std::random_device rd;  //Will be used to obtain a seed for the random number engine
-               std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
-               std::uniform_int_distribution<> dis(-60, -10);
-               makeSparkels(ContactObject->bound.getPosition().x+dis(gen),ContactObject->bound.getPosition().y+dis(gen));
+           if(!reachableObjects.empty()){
+               std::set<object *>::iterator iter3;
+               for (iter3 = reachableObjects.begin();iter3 != reachableObjects.end();iter3++) {
+                   object * ContactObject = *iter3;
+                   std::random_device rd;  //Will be used to obtain a seed for the random number engine
+                   std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+                   std::uniform_int_distribution<> dis(-60, -10);
+                   makeSparkels(ContactObject->bound.getPosition().x + dis(gen),
+                                ContactObject->bound.getPosition().y + dis(gen));
+               }
            }
 
 
@@ -125,9 +130,11 @@ void handWeapon::update(sf::RenderWindow &window) {
 
 
 void handWeapon::strike() {
-    realBody->SetAngularVelocity(-angularVelosity);
+    if (realBody->GetAngle()>0&&realBody->GetAngle() > PI2 / 4) {
+        realBody->SetAngularVelocity(-angularVelosity);
 
-    goDown = true;
+        goDown = true;
+    }
 }
 
 

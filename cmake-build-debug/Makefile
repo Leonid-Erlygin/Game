@@ -177,6 +177,33 @@ entity.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/entity.cpp.s
 .PHONY : entity.cpp.s
 
+grenade.o: grenade.cpp.o
+
+.PHONY : grenade.o
+
+# target to build an object file
+grenade.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/grenade.cpp.o
+.PHONY : grenade.cpp.o
+
+grenade.i: grenade.cpp.i
+
+.PHONY : grenade.i
+
+# target to preprocess a source file
+grenade.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/grenade.cpp.i
+.PHONY : grenade.cpp.i
+
+grenade.s: grenade.cpp.s
+
+.PHONY : grenade.s
+
+# target to generate assembly for a file
+grenade.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/grenade.cpp.s
+.PHONY : grenade.cpp.s
+
 handWeapon.o: handWeapon.cpp.o
 
 .PHONY : handWeapon.o
@@ -354,6 +381,9 @@ help:
 	@echo "... entity.o"
 	@echo "... entity.i"
 	@echo "... entity.s"
+	@echo "... grenade.o"
+	@echo "... grenade.i"
+	@echo "... grenade.s"
 	@echo "... handWeapon.o"
 	@echo "... handWeapon.i"
 	@echo "... handWeapon.s"

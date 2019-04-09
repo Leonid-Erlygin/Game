@@ -10,25 +10,33 @@
 #include "weapon.h"
 
 #include <SFML/Network.hpp>
+#include <set>
+
 class player : public object {
 public:
     void print();
     bool grab = false;
+    int speed = 10;
     int strength = 5;
-    object *cariedObject = nullptr;
-    int remainingJumpSteps = 0;
-    int jumpHieght = 6;
+    std::set<object *>reachableObjects;
+    object *cariedObject;
+    int remainingJumpSteps = 1;
+    int jumpHieght = 50;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
     bool moveRight;
     bool moveLeft;
+    bool moveUp = true;
     int direction;// -1 - left, 1 - right
-    player();
+   // player();
+
+    bool is_on_ground();
+    b2World& world;
 
     void grabe(b2World &);
 
     void update();
-
+    void death(int x, int y);
     void sendEvent(sf::Event &,sf::UdpSocket&);
 
 

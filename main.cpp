@@ -11,18 +11,50 @@
 #include "virtualPlayer.h"
 #include "weapon.h"
 #include "handWeapon.h"
+#include "grenade.h"
+
+
+inline std::pair<float ,float > getMedian(player const &PlayerA, player const &PlayerB){
+    sf::Vector2f m = PlayerA.bound.getPosition()+PlayerB.bound.getPosition();
+
+    std::pair<float ,float > temp(m.x/2,m.y/2);
+    return temp;
+}
+//in process...
+inline sf::Vector2f zoom(player const&PlayerA, player const &PlayerB,sf::RenderWindow &window){
+    sf::Vector2f c = PlayerB.bound.getPosition()-PlayerA.bound.getPosition();//proportions
+    float sizeWin = window.getSize().x*window.getSize().x+window.getSize().y*window.getSize().y;
+    if(c.x<0)c.x = -c.x;
+    float k =(float)window.getSize().y/(float)window.getSize().x;
+    if(c.y<0)c.y = -c.y;
+
+
+    float d = c.x*c.x+c.y*c.y;//think about function
+    int frac = 3;
+    float capacity = 2.0f;
+    if(sqrt(d)<sqrt(sizeWin)/frac){
+        return sf::Vector2f(capacity*sqrt(sizeWin/(1+k*k))/frac,capacity*(sqrt(sizeWin/(1+k*k))/frac)*k);
+    } else{
+
+
+        return sf::Vector2f(capacity*(sqrt(d/(1+k*k))),capacity*(sqrt(d/(1+k*k)))*k);
+
+    }
+}
 
 int main() {
 
 
 
 
-
-
-#if 1
+//#if 1
     MyContactListener myContactListenerInstance;
     // Define the gravity vector.
-    b2Vec2 gravity(0.0f, -9.81f);
+    b2Vec2 gravity(0.0f, -15.81f);
+    class World : public b2World {
+        object *GetObjectList() {
+        }
+    };
 
     // Construct a world object, which will hold and simulate the rigid bodies.
     b2World world(gravity);
@@ -114,25 +146,30 @@ int main() {
 
     floor.update();
 
-  //  barrel.realBody->SetSleepingAllowed(false);
+    //  barrel.realBody->SetSleepingAllowed(false);
+
+    sf::Texture texture_explosion;
+    if (!texture_explosion.loadFromFile(Path_to_duck + "airFire.png")) {
+        printf("FAILURE\n");
+    }
+
+    sf::Texture texture_grenade;
+    if (!texture_grenade.loadFromFile(Path_to_duck + "grenade.png")) {
+        printf("FAILURE\n");
+    }
 
 
+    class weapon weapon(world, window, textureWeapon, textureBullet, texture_explosion);
+    class grenade grenade(world, window, texture_grenade, texture_explosion);
+    class handWeapon bladeFire(world, textureBlade, textureFire);
 
 
-    class weapon weapon(world,window,textureWeapon,textureBullet);
-
-    class handWeapon bladeFire(world,textureBlade,textureFire);
-
-
-
-    std::vector<sf::UdpSocket>sockets(2);
+    std::vector<sf::UdpSocket> sockets(2);
 
     sockets[0].setBlocking(false);
     sockets[1].setBlocking(false);
 
-
-
-
+    std::pair<float ,float >median;
     while (window.isOpen()) {
 
         sf::Event event;
@@ -142,8 +179,9 @@ int main() {
 
             if (event.type == sf::Event::Closed)
                 window.close();
-            Player2.checkEvents(event,world,2);
-            Player1.checkEvents(event, world,1);//and send to socket;
+
+            Player2.checkEvents(event, world, 2);
+            Player1.checkEvents(event, world, 1);//and send to socket;
 
 
 
@@ -152,34 +190,37 @@ int main() {
         window.clear(sf::Color::Black);
 
 
+
         world.Step(timeStep, velocityIterations, positionIterations);
 
         Player2.update();
         Player1.update();
-        //Player2.update(listener,client,world);
         barrel.update();
-
-        //window.draw(weapon.bound);
-
         window.draw(floor.sprite);
         window.draw(barrel.sprite);
-
         window.setView(view1);
-        weapon.weapon_update();
 
-        view1.setCenter(Player1.bound.getPosition());
+
+        median = getMedian(Player1,Player2);
+
+
+        view1.setCenter(sf::Vector2f(median.first,median.second));
+
+        view1.setSize(zoom(Player1,Player2,window));
 
 
         window.draw(Player1.sprite);
         window.draw(Player2.sprite);
         window.draw(bladeFire.sprite);
         bladeFire.update(window);
-        window.display();
-        window.draw(weapon.sprite);
 
+        weapon.weapon_update();
+        grenade.grenade_update();
+
+        window.display();
 
 
     }
-#endif
+//#endif
     return 0;
 }

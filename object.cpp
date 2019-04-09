@@ -25,6 +25,7 @@ void object::bodyInit(b2World &world) {
     realBodyDef.position.Set(bound.getPosition().x/scale_factorX,bound.getPosition().y/scale_factorY);
 
 
+
     shape.SetAsBox((bound.getSize().x/(2*scale_factorX))*bound.getScale().x,(bound.getSize().y/(2*scale_factorX))*bound.getScale().y);
 
     if(moveable){

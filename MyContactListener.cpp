@@ -24,12 +24,16 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
 
     //один из объектов должен быть подвижным
 
-    //Нужно подомать о разделении классов
+    //Нужно подумать о разделении классов
     if (sensorA) {
         auto entityA = static_cast<player *>( fixtureA->GetBody()->GetUserData());
         auto entityB = static_cast<object *>( fixtureB->GetBody()->GetUserData());
         playerEntity = entityA;
         moveableObjectEntity = entityB;
+        if (!entityA->isPlayer||entityB->isPlayer||!entityB->moveable ||
+            (entityB->isBeingCariedBy != entityA->realBody && entityB->isBeingCariedBy != nullptr)) {
+            return false;
+        }
         if (entityA->grab) {
             return false;
         }
@@ -37,7 +41,7 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
 
         auto entityA = static_cast<object *>( fixtureA->GetBody()->GetUserData());
         auto entityB = static_cast<player *>( fixtureB->GetBody()->GetUserData());
-        if (!entityA->moveable ||
+        if (!entityB->isPlayer||entityA->isPlayer||!entityA->moveable ||
             (entityA->isBeingCariedBy != entityB->realBody && entityA->isBeingCariedBy != nullptr)) {
             return false;
         }
@@ -69,20 +73,20 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
     if (sensorA) {
 
         objectA = static_cast<object *>( fixtureA->GetBody()->GetUserData());
-        if (!objectA->isThisHandWeapon)return false;
+        if (objectA->weapon_class != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureA->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureB->GetBody()->GetUserData());
-        if (moveableObjectEntity->isPlayer)return false;
+        //if (moveableObjectEntity->isPlayer)return false;
 
     } else {
 
         objectA = static_cast<object *>( fixtureB->GetBody()->GetUserData());
-        if (!objectA->isThisHandWeapon)return false;
+        if (objectA->weapon_class != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureB->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureA->GetBody()->GetUserData());
-        if (moveableObjectEntity->isPlayer)return false;
+        //if (moveableObjectEntity->isPlayer)return false;
 
 
     }
@@ -102,14 +106,16 @@ void MyContactListener::BeginContact(b2Contact *contact) {
 
         moveableEntity->isBeingCaried = true;
         moveableEntity->isBeingCariedBy = playerEntity->realBody;
-        playerEntity->cariedObject = moveableEntity;
+        printf("InContact\n");
 
+        playerEntity->reachableObjects.insert( moveableEntity);
 
     }
 
     if (getContactInfo2(contact, handWeapon, object1)) {
 
-        handWeapon->ContactObject = object1;
+
+        handWeapon->reachableObjects.insert(object1);
     }
 
 }
@@ -124,14 +130,14 @@ void MyContactListener::EndContact(b2Contact *contact) {
     if (getContactInfo(contact, playerEntity, moveableEntity)) {
         moveableEntity->isBeingCaried = false;
         moveableEntity->isBeingCariedBy = nullptr;
-        playerEntity->cariedObject = nullptr;
-
+        playerEntity->reachableObjects.erase(moveableEntity);
+        printf("EndContact\n");
 
     }
 
     if (getContactInfo2(contact, handWeapon, object1)) {
 
-        handWeapon->ContactObject = nullptr;
+        handWeapon->reachableObjects.erase(object1);
 
     }
 

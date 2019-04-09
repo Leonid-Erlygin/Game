@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/virtualPlayer.cpp.o"
   "CMakeFiles/Game.dir/weapon.cpp.o"
   "CMakeFiles/Game.dir/handWeapon.cpp.o"
+  "CMakeFiles/Game.dir/grenade.cpp.o"
   "Game.pdb"
   "Game"
 )

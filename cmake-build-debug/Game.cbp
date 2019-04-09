@@ -96,6 +96,12 @@
 		<Unit filename="/home/leonid/CLionProjects/Game/entity.h">
 			<Option target="Game"/>
 		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/grenade.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/grenade.h">
+			<Option target="Game"/>
+		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/handWeapon.cpp">
 			<Option target="Game"/>
 		</Unit>

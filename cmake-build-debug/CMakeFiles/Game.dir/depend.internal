@@ -12,6 +12,13 @@ CMakeFiles/Game.dir/MyContactListener.cpp.o
 CMakeFiles/Game.dir/entity.cpp.o
  /home/leonid/CLionProjects/Game/entity.cpp
  /home/leonid/CLionProjects/Game/entity.h
+CMakeFiles/Game.dir/grenade.cpp.o
+ /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/grenade.cpp
+ /home/leonid/CLionProjects/Game/grenade.h
+ /home/leonid/CLionProjects/Game/object.h
+ /home/leonid/CLionProjects/Game/player.h
+ /home/leonid/CLionProjects/Game/weapon.h
 CMakeFiles/Game.dir/handWeapon.cpp.o
  /home/leonid/CLionProjects/Game/entity.h
  /home/leonid/CLionProjects/Game/handWeapon.cpp
@@ -20,6 +27,7 @@ CMakeFiles/Game.dir/handWeapon.cpp.o
 CMakeFiles/Game.dir/main.cpp.o
  /home/leonid/CLionProjects/Game/MyContactListener.h
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/grenade.h
  /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/main.cpp
  /home/leonid/CLionProjects/Game/object.h
@@ -32,6 +40,7 @@ CMakeFiles/Game.dir/object.cpp.o
  /home/leonid/CLionProjects/Game/object.h
 CMakeFiles/Game.dir/player.cpp.o
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/grenade.h
  /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.cpp
@@ -47,5 +56,6 @@ CMakeFiles/Game.dir/virtualPlayer.cpp.o
 CMakeFiles/Game.dir/weapon.cpp.o
  /home/leonid/CLionProjects/Game/entity.h
  /home/leonid/CLionProjects/Game/object.h
+ /home/leonid/CLionProjects/Game/player.h
  /home/leonid/CLionProjects/Game/weapon.cpp
  /home/leonid/CLionProjects/Game/weapon.h

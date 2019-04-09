@@ -7,11 +7,12 @@
 #include "player.h"
 #include "weapon.h"
 #include "handWeapon.h"
+#include "grenade.h"
 
-player::player() {
-}
+/*player::player() {
+}*/
 
-player::player(b2World &world, sf::Texture &Player_texture, int x, int y) {
+player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : world(world) {
 
     moveable = true;
 
@@ -67,6 +68,29 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) {
     realBody->SetUserData(this);
 }
 
+bool player::is_on_ground()
+{
+	float yrange = 1.75;
+	float xrange = 0; //minimal distance could be considered as being on the ground
+	QueryCallback callback;
+	b2AABB aabb;
+	b2Vec2 position = realBody->GetPosition();
+	b2Vec2 lb(position.x - xrange/2, position.y - yrange/2);
+	b2Vec2 ub(position.x + xrange/2, position.y + yrange/2);
+	aabb.lowerBound = lb;
+	aabb.upperBound = ub;
+	world.QueryAABB(&callback, aabb);
+	for(b2Body* b : callback.foundBodies)
+	{
+		if(b != realBody && b->GetPosition().y <= realBody->GetPosition().y &&
+				b->GetPosition().y + 1.75 > realBody->GetPosition().y)
+		//new world iterate within object and check fixture bounds
+		{
+			return true;
+		}
+	}
+	return false;
+}
 
 void player::throwObject(b2Body &body) {
     body.ApplyLinearImpulseToCenter(b2Vec2(10 * direction * strength, 0), true);
@@ -81,14 +105,16 @@ void player::print() {
 
 
 void player::grabe(b2World &world) {
-    if (cariedObject != nullptr) {
-        b2Body *box = cariedObject->realBody;
+
+    if (!reachableObjects.empty()) {
+        //what if object lost in hands
+
 
 
         if (JointToHold == nullptr) {
-
+            cariedObject = *reachableObjects.begin();
             b2RevoluteJointDef jointDef;
-
+            b2Body* box = cariedObject->realBody;
 
 
             b2Vec2 r1(cariedObject->ancorPointShiftBodyAX/scale_factorX,
@@ -115,7 +141,7 @@ void player::grabe(b2World &world) {
             b2RevoluteJoint *joint = (b2RevoluteJoint *) world.CreateJoint(&jointDef);
             grab = true;
 
-            if (cariedObject->isThisHandWeapon) {
+            if (cariedObject->weapon_class == HandWeapon) {
 
                 try {
 
@@ -131,11 +157,14 @@ void player::grabe(b2World &world) {
 
             JointToHold = joint;
         } else {
-
+                b2Body* box = cariedObject->realBody;
                 world.DestroyJoint(JointToHold);
-                box->SetFixedRotation(false);
-                throwObject(*box);
-                if (cariedObject->isThisHandWeapon) {
+                if(box)
+                {
+                	box->SetFixedRotation(false);
+                	throwObject(*box);
+                }
+                if (cariedObject->weapon_class == HandWeapon) {
 
                     try {
 
@@ -157,28 +186,51 @@ void player::grabe(b2World &world) {
         }
     }
 }
+void player::death(int x, int y){
 
+
+    if (grab){
+        b2Body* box = cariedObject->realBody;
+        world.DestroyJoint(JointToHold);
+        if(box)
+        {
+            box->SetFixedRotation(false);
+            throwObject(*box);
+        }
+        grab = false;
+
+        JointToHold = nullptr;
+        cariedObject = nullptr;
+    }
+
+}
 
 void player::update() {
-
     object::update();
-
-    if (remainingJumpSteps > 0) {
-        realBody->ApplyForce(b2Vec2(0, 1500), realBody->GetWorldCenter(), true);
-        remainingJumpSteps--;
-    }
-
     //Move;
+    bool IsOnGround = true;//bug
+    if(IsOnGround)
+    {
+    	remainingJumpSteps = jumpHieght; //landed on the floor!!!
+    }
     if (moveRight) {
         direction = 1;
-        realBody->ApplyLinearImpulseToCenter(b2Vec2(3, 0), true);
+        if(IsOnGround) //not in the air
+        {
+        	realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
+        }
     }
-    if (moveLeft) {
+    else if (moveLeft) {
         direction = -1;
-        realBody->ApplyLinearImpulseToCenter(b2Vec2(-3, 0), true);
+        if(IsOnGround)
+        {
+        	realBody->SetLinearVelocity(b2Vec2(-speed, realBody->GetLinearVelocity().y));
+        }
     }
-
-
+    else if(IsOnGround)
+    {
+    	realBody->SetLinearVelocity(b2Vec2(0, realBody->GetLinearVelocity().y));
+    }
 }
 
 
@@ -191,16 +243,19 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         if (event.key.code == sf::Keyboard::Space&&playerInd==1) {
             if (grab) {
-                if (cariedObject->isThisFireWeapon || cariedObject->isThisHandWeapon) {
+                if (cariedObject->weapon_class != NotWeapon) {
 
                     try {
 
-
-                        if (cariedObject->isThisFireWeapon) {
+                       if (cariedObject->weapon_class == Grenade) {
+                    	    auto weapon = dynamic_cast<class grenade *>(cariedObject);
+                    	    weapon->strike();
+                    	}
+                       else if (cariedObject->weapon_class == FireWeapon) {
                             auto weapon = dynamic_cast<class weapon *>(cariedObject);
                             weapon->strike();
                         }
-                        if (cariedObject->isThisHandWeapon) {
+                       else if (cariedObject->weapon_class == HandWeapon) {
                             auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
                             weapon->strike();
                         }
@@ -217,19 +272,22 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         if (event.key.code == sf::Keyboard::E&&playerInd==2) {
             if (grab) {
-                if (cariedObject->isThisFireWeapon || cariedObject->isThisHandWeapon) {
+                if (cariedObject->weapon_class != NotWeapon) {
 
                     try {
 
-
-                        if (cariedObject->isThisFireWeapon) {
-                            auto weapon = dynamic_cast<class weapon *>(cariedObject);
-                            weapon->strike();
-                        }
-                        if (cariedObject->isThisHandWeapon) {
-                            auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
-                            weapon->strike();
-                        }
+                    	 if (cariedObject->weapon_class == Grenade) {
+                    		 auto weapon = dynamic_cast<class grenade *>(cariedObject);
+                    	     weapon->strike();
+                    	 }
+                    	 else if (cariedObject->weapon_class == FireWeapon) {
+                    		 auto weapon = dynamic_cast<class weapon *>(cariedObject);
+                    	     weapon->strike();
+                    	 }
+                    	 else if (cariedObject->weapon_class == HandWeapon) {
+                    		 auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                    	     weapon->strike();
+                    	 }
 
                     }
                     catch (const std::bad_cast &e) {
@@ -253,16 +311,20 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         if (event.key.code == sf::Keyboard::Up&&playerInd==1) {
             //Прыжки
-
-            remainingJumpSteps = jumpHieght;
-
-
+        	if(remainingJumpSteps > 0 && moveUp)
+            {
+        		moveUp = false;
+        		--remainingJumpSteps;
+        		  if(is_on_ground())
+        		  {
+        			  realBody->ApplyLinearImpulseToCenter(b2Vec2(0, 100), true);
+        		  }
+            }
         }
 
         if (event.key.code == sf::Keyboard::G&&playerInd==1) {
 
             grabe(world);
-
 
         }
 
@@ -293,8 +355,11 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
         }
     }
 
-
+//what the hall???
     if (event.type == sf::Event::KeyReleased) {
+    	if (event.key.code == sf::Keyboard::Up&&playerInd==1) {
+    		moveUp = true;
+    	}
 
         if (event.key.code == sf::Keyboard::Right&&playerInd==1) {
             moveRight = false;
