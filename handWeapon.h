@@ -16,7 +16,8 @@ public:
     int angle = 0;
     bool goUp = false;
     bool isInHands = false;
-
+    void switchToRigth();
+    void switchToLeft();
     std::set<object *>reachableObjects;
 
     void strike();

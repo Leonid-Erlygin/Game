@@ -140,6 +140,8 @@ void player::grabe(b2World &world) {
 
             b2RevoluteJoint *joint = (b2RevoluteJoint *) world.CreateJoint(&jointDef);
             grab = true;
+            cariedObject->isBeingCaried = true;
+            cariedObject->isBeingCariedBy = this->realBody;
 
             if (cariedObject->weapon_class == HandWeapon) {
 
@@ -178,7 +180,8 @@ void player::grabe(b2World &world) {
                     }
                 }
                 grab = false;
-
+                cariedObject->isBeingCaried = false;
+                cariedObject->isBeingCariedBy = nullptr;
                 JointToHold = nullptr;
                 cariedObject = nullptr;
 

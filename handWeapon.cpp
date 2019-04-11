@@ -6,6 +6,16 @@
 #include "handWeapon.h"
 #include <random>
 
+
+void handWeapon::switchToRigth() {
+    ancorPointShiftBodyAX = 20;
+    ancorPointShiftBodyAY = 0;
+    ancorPointShiftBodyBX = -10;
+    ancorPointShiftBodyBY = 0;
+
+}
+
+
 handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &TextureFire) : flameTexture(TextureFire) {
 
     ancorPointShiftBodyAX = 20;

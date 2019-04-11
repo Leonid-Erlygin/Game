@@ -51,10 +51,7 @@ int main() {
     MyContactListener myContactListenerInstance;
     // Define the gravity vector.
     b2Vec2 gravity(0.0f, -15.81f);
-    class World : public b2World {
-        object *GetObjectList() {
-        }
-    };
+
 
     // Construct a world object, which will hold and simulate the rigid bodies.
     b2World world(gravity);

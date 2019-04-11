@@ -103,9 +103,9 @@ void MyContactListener::BeginContact(b2Contact *contact) {
 
 
     if (getContactInfo(contact, playerEntity, moveableEntity)) {
-
+/*
         moveableEntity->isBeingCaried = true;
-        moveableEntity->isBeingCariedBy = playerEntity->realBody;
+        moveableEntity->isBeingCariedBy = playerEntity->realBody;*/
         printf("InContact\n");
 
         playerEntity->reachableObjects.insert( moveableEntity);
@@ -128,8 +128,9 @@ void MyContactListener::EndContact(b2Contact *contact) {
     player *playerEntity;
 
     if (getContactInfo(contact, playerEntity, moveableEntity)) {
+        /*
         moveableEntity->isBeingCaried = false;
-        moveableEntity->isBeingCariedBy = nullptr;
+        moveableEntity->isBeingCariedBy = nullptr;*/
         playerEntity->reachableObjects.erase(moveableEntity);
         printf("EndContact\n");
 
