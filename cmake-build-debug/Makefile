@@ -123,6 +123,141 @@ Game/fast:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/build
 .PHONY : Game/fast
 
+Map/level.o: Map/level.cpp.o
+
+.PHONY : Map/level.o
+
+# target to build an object file
+Map/level.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/level.cpp.o
+.PHONY : Map/level.cpp.o
+
+Map/level.i: Map/level.cpp.i
+
+.PHONY : Map/level.i
+
+# target to preprocess a source file
+Map/level.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/level.cpp.i
+.PHONY : Map/level.cpp.i
+
+Map/level.s: Map/level.cpp.s
+
+.PHONY : Map/level.s
+
+# target to generate assembly for a file
+Map/level.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/level.cpp.s
+.PHONY : Map/level.cpp.s
+
+Map/tinystr.o: Map/tinystr.cpp.o
+
+.PHONY : Map/tinystr.o
+
+# target to build an object file
+Map/tinystr.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinystr.cpp.o
+.PHONY : Map/tinystr.cpp.o
+
+Map/tinystr.i: Map/tinystr.cpp.i
+
+.PHONY : Map/tinystr.i
+
+# target to preprocess a source file
+Map/tinystr.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinystr.cpp.i
+.PHONY : Map/tinystr.cpp.i
+
+Map/tinystr.s: Map/tinystr.cpp.s
+
+.PHONY : Map/tinystr.s
+
+# target to generate assembly for a file
+Map/tinystr.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinystr.cpp.s
+.PHONY : Map/tinystr.cpp.s
+
+Map/tinyxml.o: Map/tinyxml.cpp.o
+
+.PHONY : Map/tinyxml.o
+
+# target to build an object file
+Map/tinyxml.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxml.cpp.o
+.PHONY : Map/tinyxml.cpp.o
+
+Map/tinyxml.i: Map/tinyxml.cpp.i
+
+.PHONY : Map/tinyxml.i
+
+# target to preprocess a source file
+Map/tinyxml.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxml.cpp.i
+.PHONY : Map/tinyxml.cpp.i
+
+Map/tinyxml.s: Map/tinyxml.cpp.s
+
+.PHONY : Map/tinyxml.s
+
+# target to generate assembly for a file
+Map/tinyxml.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxml.cpp.s
+.PHONY : Map/tinyxml.cpp.s
+
+Map/tinyxmlerror.o: Map/tinyxmlerror.cpp.o
+
+.PHONY : Map/tinyxmlerror.o
+
+# target to build an object file
+Map/tinyxmlerror.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o
+.PHONY : Map/tinyxmlerror.cpp.o
+
+Map/tinyxmlerror.i: Map/tinyxmlerror.cpp.i
+
+.PHONY : Map/tinyxmlerror.i
+
+# target to preprocess a source file
+Map/tinyxmlerror.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.i
+.PHONY : Map/tinyxmlerror.cpp.i
+
+Map/tinyxmlerror.s: Map/tinyxmlerror.cpp.s
+
+.PHONY : Map/tinyxmlerror.s
+
+# target to generate assembly for a file
+Map/tinyxmlerror.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.s
+.PHONY : Map/tinyxmlerror.cpp.s
+
+Map/tinyxmlparser.o: Map/tinyxmlparser.cpp.o
+
+.PHONY : Map/tinyxmlparser.o
+
+# target to build an object file
+Map/tinyxmlparser.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o
+.PHONY : Map/tinyxmlparser.cpp.o
+
+Map/tinyxmlparser.i: Map/tinyxmlparser.cpp.i
+
+.PHONY : Map/tinyxmlparser.i
+
+# target to preprocess a source file
+Map/tinyxmlparser.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.i
+.PHONY : Map/tinyxmlparser.cpp.i
+
+Map/tinyxmlparser.s: Map/tinyxmlparser.cpp.s
+
+.PHONY : Map/tinyxmlparser.s
+
+# target to generate assembly for a file
+Map/tinyxmlparser.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.s
+.PHONY : Map/tinyxmlparser.cpp.s
+
 MyContactListener.o: MyContactListener.cpp.o
 
 .PHONY : MyContactListener.o
@@ -149,6 +284,33 @@ MyContactListener.s: MyContactListener.cpp.s
 MyContactListener.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.s
 .PHONY : MyContactListener.cpp.s
+
+StaticObject.o: StaticObject.cpp.o
+
+.PHONY : StaticObject.o
+
+# target to build an object file
+StaticObject.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.o
+.PHONY : StaticObject.cpp.o
+
+StaticObject.i: StaticObject.cpp.i
+
+.PHONY : StaticObject.i
+
+# target to preprocess a source file
+StaticObject.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.i
+.PHONY : StaticObject.cpp.i
+
+StaticObject.s: StaticObject.cpp.s
+
+.PHONY : StaticObject.s
+
+# target to generate assembly for a file
+StaticObject.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.s
+.PHONY : StaticObject.cpp.s
 
 entity.o: entity.cpp.o
 
@@ -375,9 +537,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Game"
 	@echo "... edit_cache"
+	@echo "... Map/level.o"
+	@echo "... Map/level.i"
+	@echo "... Map/level.s"
+	@echo "... Map/tinystr.o"
+	@echo "... Map/tinystr.i"
+	@echo "... Map/tinystr.s"
+	@echo "... Map/tinyxml.o"
+	@echo "... Map/tinyxml.i"
+	@echo "... Map/tinyxml.s"
+	@echo "... Map/tinyxmlerror.o"
+	@echo "... Map/tinyxmlerror.i"
+	@echo "... Map/tinyxmlerror.s"
+	@echo "... Map/tinyxmlparser.o"
+	@echo "... Map/tinyxmlparser.i"
+	@echo "... Map/tinyxmlparser.s"
 	@echo "... MyContactListener.o"
 	@echo "... MyContactListener.i"
 	@echo "... MyContactListener.s"
+	@echo "... StaticObject.o"
+	@echo "... StaticObject.i"
+	@echo "... StaticObject.s"
 	@echo "... entity.o"
 	@echo "... entity.i"
 	@echo "... entity.s"

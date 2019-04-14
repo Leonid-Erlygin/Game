@@ -15,12 +15,15 @@ enum _entityCategory {
 
 };
 
-enum WeaponType
+enum Type
 {
+
 	FireWeapon = 1,
 	HandWeapon = 2,
 	Grenade = 3,
-	NotWeapon = 4
+	NotWeapon = 4,
+	Player = 5,
+	StaticObj = 6
 };
 
 
@@ -30,7 +33,7 @@ public:
    // b2FixtureDef fixture;//can be many of them, so this member is useless
     //b2BodyDef realBodyDef;//Можно не хранить объявления
     b2Body* realBody;
-    WeaponType weapon_class = NotWeapon;
+    Type type = NotWeapon;
     bool isPlayer = false;
     float ancorPointShiftBodyAX = 0;
     float ancorPointShiftBodyBX = 0;
@@ -48,10 +51,10 @@ public:
     void virtual update();
     void bodyInit(b2World &world);
     void print();
-
-private:
     float32 scale_factorX = 40;//1 м = 40 pxl
     float32 scale_factorY = -40;
+private:
+
 };
 
 

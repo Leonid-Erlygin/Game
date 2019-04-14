@@ -84,10 +84,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/level.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/level.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinystr.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinystr.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinyxml.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinyxml.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp">
+			<Option target="Game"/>
+		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.cpp">
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/StaticObject.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/StaticObject.h">
 			<Option target="Game"/>
 		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/entity.cpp">

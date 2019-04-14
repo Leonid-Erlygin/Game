@@ -28,6 +28,7 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : worl
     bound.setFillColor(sf::Color::Blue);
 
 
+
     b2BodyDef realBodyDef;
     b2PolygonShape shape;
     b2FixtureDef fixture;
@@ -143,7 +144,7 @@ void player::grabe(b2World &world) {
             cariedObject->isBeingCaried = true;
             cariedObject->isBeingCariedBy = this->realBody;
 
-            if (cariedObject->weapon_class == HandWeapon) {
+            if (cariedObject->type == HandWeapon) {
 
                 try {
 
@@ -166,7 +167,7 @@ void player::grabe(b2World &world) {
                 	box->SetFixedRotation(false);
                 	throwObject(*box);
                 }
-                if (cariedObject->weapon_class == HandWeapon) {
+                if (cariedObject->type == HandWeapon) {
 
                     try {
 
@@ -246,19 +247,19 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         if (event.key.code == sf::Keyboard::Space&&playerInd==1) {
             if (grab) {
-                if (cariedObject->weapon_class != NotWeapon) {
+                if (cariedObject->type != NotWeapon) {
 
                     try {
 
-                       if (cariedObject->weapon_class == Grenade) {
+                       if (cariedObject->type == Grenade) {
                     	    auto weapon = dynamic_cast<class grenade *>(cariedObject);
                     	    weapon->strike();
                     	}
-                       else if (cariedObject->weapon_class == FireWeapon) {
+                       else if (cariedObject->type == FireWeapon) {
                             auto weapon = dynamic_cast<class weapon *>(cariedObject);
                             weapon->strike();
                         }
-                       else if (cariedObject->weapon_class == HandWeapon) {
+                       else if (cariedObject->type == HandWeapon) {
                             auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
                             weapon->strike();
                         }
@@ -275,19 +276,19 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         if (event.key.code == sf::Keyboard::E&&playerInd==2) {
             if (grab) {
-                if (cariedObject->weapon_class != NotWeapon) {
+                if (cariedObject->type != NotWeapon) {
 
                     try {
 
-                    	 if (cariedObject->weapon_class == Grenade) {
+                    	 if (cariedObject->type == Grenade) {
                     		 auto weapon = dynamic_cast<class grenade *>(cariedObject);
                     	     weapon->strike();
                     	 }
-                    	 else if (cariedObject->weapon_class == FireWeapon) {
+                    	 else if (cariedObject->type == FireWeapon) {
                     		 auto weapon = dynamic_cast<class weapon *>(cariedObject);
                     	     weapon->strike();
                     	 }
-                    	 else if (cariedObject->weapon_class == HandWeapon) {
+                    	 else if (cariedObject->type == HandWeapon) {
                     		 auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
                     	     weapon->strike();
                     	 }
@@ -320,7 +321,7 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
         		--remainingJumpSteps;
         		  if(is_on_ground())
         		  {
-        			  realBody->ApplyLinearImpulseToCenter(b2Vec2(0, 100), true);
+        			  realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHieght), true);
         		  }
             }
         }

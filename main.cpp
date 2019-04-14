@@ -5,6 +5,7 @@
 #include "player.h"
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 #include "Box2D/Box2D.h"
 #include "object.h"
 #include "MyContactListener.h"
@@ -12,6 +13,29 @@
 #include "weapon.h"
 #include "handWeapon.h"
 #include "grenade.h"
+#include "Map/level.h"
+#include "StaticObject.h"
+
+void addGid(){
+
+    std::ifstream inFile;
+    std::ofstream outFile;
+    std::string s;
+    outFile.open("/home/leonid/CLionProjects/TestMap/TestEdited.tmx");
+    inFile.open("/home/leonid/CLionProjects/TestMap/Test2.tmx");
+    while (getline(inFile,s)){
+        if (s.find("<tile")!=-1){
+            if(s.find("gid")==-1){
+                s =  "<tile gid=\"0\"/>";
+            }
+        }
+        s +="\n";
+        outFile<<s;
+
+    }
+    inFile.close();
+    outFile.close();
+}
 
 
 inline std::pair<float ,float > getMedian(player const &PlayerA, player const &PlayerB){
@@ -42,12 +66,134 @@ inline sf::Vector2f zoom(player const&PlayerA, player const &PlayerB,sf::RenderW
     }
 }
 
+
 int main() {
 
+#if 0
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
+    MyContactListener myContactListenerInstance;
+    // Define the gravity vector.
+    b2Vec2 gravity(0.0f, -15.81f);
+
+    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+    std::string Path_to_duck = "/home/leonid/CLionProjects/Resourses/Duck Game Sprites/";
+    // Construct a world object, which will hold and simulate the rigid bodies.
+    b2World world(gravity);
+    sf::Texture textureSans;
+    if (!textureSans.loadFromFile(Path_to_res + "sans.png")) {
+        return EXIT_FAILURE;
+    }
+    sf::View view1;
+    view1.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
+    view1.setCenter(sf::Vector2f(view1.getSize().x / 2, view1.getSize().y / 2));
+    window.setView(view1);
+    world.SetContactListener(&myContactListenerInstance);//Нужно для детектирования столкновений
+    /* ContactFilter filter;
+     world.SetContactFilter(&filter);*/
+    float32 timeStep = 1.0f / 60.0f;
+    int32 velocityIterations = 6;
+    int32 positionIterations = 2;
+
+    sf::Texture textureCastle;
+    if (!textureCastle.loadFromFile(Path_to_duck + "castle.png")) {
+        return EXIT_FAILURE;
+    }
+    window.setFramerateLimit(60);
+
+
+    object floor;
+
+    floor.sprite.setTexture(textureCastle);
+    floor.bound.setPosition(2, 700);
+    floor.sprite.setTextureRect(sf::IntRect(0, 65, 96, 79 - 65));
+
+    floor.moveable = false;
+
+
+    floor.sprite.scale(20, 3);//Не изменяет значения границ, нужно домножать на этот коэфицент при переводе в метры
 
 
 
-//#if 1
+    floor.bodyInit(world);
+
+
+    Level lvl;
+    lvl.LoadFromFile("/home/leonid/CLionProjects/TestMap/TestEdited.tmx");
+
+    std::vector<Object> block = lvl.GetObjects("Platform");
+    lvl.objInit(world,block);
+
+    /*
+    std::vector<StaticObject> StatObj;
+
+    for (int i = 0; i <1; ++i) {
+        StaticObject t(world,block[i]);
+        StatObj.push_back(t);
+    }
+*/
+
+    floor.update();
+    class player Player1(world, textureSans, 50, 100);
+    while (window.isOpen()) {
+
+        sf::Event event;
+
+        while (window.pollEvent(event)) {
+
+
+            if (event.type == sf::Event::Closed)
+                window.close();
+
+
+            Player1.checkEvents(event, world, 1);//and send to socket;
+
+
+
+        }
+
+        window.clear(sf::Color::Black);
+
+
+
+        world.Step(timeStep, velocityIterations, positionIterations);
+
+        window.setView(view1);
+        Player1.update();
+
+        //floor.update();
+
+
+
+        view1.setCenter(Player1.bound.getPosition());
+
+/*
+        for (int i = 0; i <StatObj.size(); ++i) {
+            //StatObj[i].update();
+            window.draw(StatObj[i].sprite);
+
+        }
+        */
+        window.draw(floor.sprite);
+        lvl.Draw(window);
+        window.draw(Player1.sprite);
+
+        window.display();
+
+
+    }
+
+
+
+
+#endif
+
+
+
+
+
+
+
+#if 1
     MyContactListener myContactListenerInstance;
     // Define the gravity vector.
     b2Vec2 gravity(0.0f, -15.81f);
@@ -60,7 +206,11 @@ int main() {
     world.SetContactListener(&myContactListenerInstance);//Нужно для детектирования столкновений
     /* ContactFilter filter;
      world.SetContactFilter(&filter);*/
+    Level lvl;
+    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map            /TestEdited.tmx");
 
+    std::vector<Object> block = lvl.GetObjects("Platform");
+    lvl.objInit(world,block);
 
 
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
@@ -75,7 +225,7 @@ int main() {
     object floor;
 
     floor.sprite.setTexture(textureCastle);
-    floor.bound.setPosition(400, 500);
+    floor.bound.setPosition(400, 700);
     floor.sprite.setTextureRect(sf::IntRect(0, 65, 96, 79 - 65));
 
     floor.moveable = false;
@@ -195,6 +345,7 @@ int main() {
         Player2.update();
         Player1.update();
         barrel.update();
+        lvl.Draw(window);
         window.draw(floor.sprite);
         window.draw(barrel.sprite);
         window.setView(view1);
@@ -218,10 +369,11 @@ int main() {
         grenade2.grenade_update();
         grenade3.grenade_update();
 
+
         window.display();
 
 
     }
-//#endif
+#endif
     return 0;
 }

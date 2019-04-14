@@ -4,7 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/leonid/CLionProjects/Game/Map/level.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o"
+  "/home/leonid/CLionProjects/Game/Map/tinystr.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o"
+  "/home/leonid/CLionProjects/Game/Map/tinyxml.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o"
+  "/home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o"
+  "/home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o"
   "/home/leonid/CLionProjects/Game/MyContactListener.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o"
+  "/home/leonid/CLionProjects/Game/StaticObject.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/StaticObject.cpp.o"
   "/home/leonid/CLionProjects/Game/entity.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o"
   "/home/leonid/CLionProjects/Game/grenade.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o"
   "/home/leonid/CLionProjects/Game/handWeapon.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o"

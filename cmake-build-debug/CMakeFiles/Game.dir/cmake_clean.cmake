@@ -8,6 +8,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/weapon.cpp.o"
   "CMakeFiles/Game.dir/handWeapon.cpp.o"
   "CMakeFiles/Game.dir/grenade.cpp.o"
+  "CMakeFiles/Game.dir/Map/level.cpp.o"
+  "CMakeFiles/Game.dir/Map/tinystr.cpp.o"
+  "CMakeFiles/Game.dir/Map/tinyxml.cpp.o"
+  "CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o"
+  "CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o"
+  "CMakeFiles/Game.dir/StaticObject.cpp.o"
   "Game.pdb"
   "Game"
 )

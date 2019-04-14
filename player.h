@@ -21,7 +21,7 @@ public:
     std::set<object *>reachableObjects;
     object *cariedObject;
     int remainingJumpSteps = 1;
-    int jumpHieght = 50;
+    int jumpHieght = 250;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
     bool moveRight;

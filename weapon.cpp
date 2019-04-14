@@ -23,7 +23,7 @@ weapon::weapon(b2World& world, sf::RenderWindow& window, sf::Texture& texture_we
 							texture_weapon.getSize().y));
 	bound.setPosition(0, 60);
 	moveable = true;
-	weapon_class = FireWeapon;
+	type = FireWeapon;
 	bodyInit(world);
 }
 

@@ -27,7 +27,7 @@ grenade::grenade(b2World& world, sf::RenderWindow& window,
 								grenade_texture.getSize().y));
 	bound.setPosition(200, 50);
 	moveable = true;
-	weapon_class = Grenade;
+	type = Grenade;
 	bodyInit(world);
 
 }

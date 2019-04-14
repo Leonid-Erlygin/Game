@@ -22,7 +22,7 @@ handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &Textur
     ancorPointShiftBodyAY = 0;
     ancorPointShiftBodyBX = -10;
     ancorPointShiftBodyBY = 0;
-    weapon_class = HandWeapon;
+    type = HandWeapon;
     bound.setPosition(600, 40);
     sprite.setTexture(Texture);
     sprite.scale(1, 1);

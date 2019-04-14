@@ -174,6 +174,84 @@ CMakeFiles/Game.dir/grenade.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/grenade.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/grenade.cpp -o CMakeFiles/Game.dir/grenade.cpp.s
 
+CMakeFiles/Game.dir/Map/level.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/Map/level.cpp.o: ../Map/level.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Game.dir/Map/level.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Map/level.cpp.o -c /home/leonid/CLionProjects/Game/Map/level.cpp
+
+CMakeFiles/Game.dir/Map/level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Map/level.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/Map/level.cpp > CMakeFiles/Game.dir/Map/level.cpp.i
+
+CMakeFiles/Game.dir/Map/level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Map/level.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/Map/level.cpp -o CMakeFiles/Game.dir/Map/level.cpp.s
+
+CMakeFiles/Game.dir/Map/tinystr.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/Map/tinystr.cpp.o: ../Map/tinystr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Game.dir/Map/tinystr.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Map/tinystr.cpp.o -c /home/leonid/CLionProjects/Game/Map/tinystr.cpp
+
+CMakeFiles/Game.dir/Map/tinystr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Map/tinystr.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/Map/tinystr.cpp > CMakeFiles/Game.dir/Map/tinystr.cpp.i
+
+CMakeFiles/Game.dir/Map/tinystr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Map/tinystr.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/Map/tinystr.cpp -o CMakeFiles/Game.dir/Map/tinystr.cpp.s
+
+CMakeFiles/Game.dir/Map/tinyxml.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/Map/tinyxml.cpp.o: ../Map/tinyxml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Game.dir/Map/tinyxml.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Map/tinyxml.cpp.o -c /home/leonid/CLionProjects/Game/Map/tinyxml.cpp
+
+CMakeFiles/Game.dir/Map/tinyxml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Map/tinyxml.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/Map/tinyxml.cpp > CMakeFiles/Game.dir/Map/tinyxml.cpp.i
+
+CMakeFiles/Game.dir/Map/tinyxml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Map/tinyxml.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/Map/tinyxml.cpp -o CMakeFiles/Game.dir/Map/tinyxml.cpp.s
+
+CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o: ../Map/tinyxmlerror.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o -c /home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp
+
+CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp > CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.i
+
+CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp -o CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.s
+
+CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o: ../Map/tinyxmlparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o -c /home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp
+
+CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp > CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.i
+
+CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp -o CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.s
+
+CMakeFiles/Game.dir/StaticObject.cpp.o: CMakeFiles/Game.dir/flags.make
+CMakeFiles/Game.dir/StaticObject.cpp.o: ../StaticObject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Game.dir/StaticObject.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/StaticObject.cpp.o -c /home/leonid/CLionProjects/Game/StaticObject.cpp
+
+CMakeFiles/Game.dir/StaticObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/StaticObject.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leonid/CLionProjects/Game/StaticObject.cpp > CMakeFiles/Game.dir/StaticObject.cpp.i
+
+CMakeFiles/Game.dir/StaticObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/StaticObject.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leonid/CLionProjects/Game/StaticObject.cpp -o CMakeFiles/Game.dir/StaticObject.cpp.s
+
 # Object files for target Game
 Game_OBJECTS = \
 "CMakeFiles/Game.dir/main.cpp.o" \
@@ -184,7 +262,13 @@ Game_OBJECTS = \
 "CMakeFiles/Game.dir/virtualPlayer.cpp.o" \
 "CMakeFiles/Game.dir/weapon.cpp.o" \
 "CMakeFiles/Game.dir/handWeapon.cpp.o" \
-"CMakeFiles/Game.dir/grenade.cpp.o"
+"CMakeFiles/Game.dir/grenade.cpp.o" \
+"CMakeFiles/Game.dir/Map/level.cpp.o" \
+"CMakeFiles/Game.dir/Map/tinystr.cpp.o" \
+"CMakeFiles/Game.dir/Map/tinyxml.cpp.o" \
+"CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o" \
+"CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o" \
+"CMakeFiles/Game.dir/StaticObject.cpp.o"
 
 # External object files for target Game
 Game_EXTERNAL_OBJECTS =
@@ -198,10 +282,16 @@ Game: CMakeFiles/Game.dir/virtualPlayer.cpp.o
 Game: CMakeFiles/Game.dir/weapon.cpp.o
 Game: CMakeFiles/Game.dir/handWeapon.cpp.o
 Game: CMakeFiles/Game.dir/grenade.cpp.o
+Game: CMakeFiles/Game.dir/Map/level.cpp.o
+Game: CMakeFiles/Game.dir/Map/tinystr.cpp.o
+Game: CMakeFiles/Game.dir/Map/tinyxml.cpp.o
+Game: CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o
+Game: CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o
+Game: CMakeFiles/Game.dir/StaticObject.cpp.o
 Game: CMakeFiles/Game.dir/build.make
 Game: /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a
 Game: CMakeFiles/Game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

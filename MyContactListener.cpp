@@ -15,7 +15,10 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
 
     bool sensorA = fixtureA->IsSensor();
     bool sensorB = fixtureB->IsSensor();
-
+    if(fixtureA->GetBody()->GetUserData()== nullptr)
+        return false;
+    if(fixtureB->GetBody()->GetUserData()== nullptr)
+        return false;
 
     if (!(sensorA ^ sensorB))
         return false;
@@ -63,7 +66,10 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
 
     bool sensorA = fixtureA->IsSensor();
     bool sensorB = fixtureB->IsSensor();
-
+    if(fixtureA->GetBody()->GetUserData()== nullptr)
+        return false;
+    if(fixtureB->GetBody()->GetUserData()== nullptr)
+        return false;
 
 
     if (!(sensorA ^ sensorB))
@@ -73,7 +79,7 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
     if (sensorA) {
 
         objectA = static_cast<object *>( fixtureA->GetBody()->GetUserData());
-        if (objectA->weapon_class != HandWeapon)return false;
+        if (objectA->type != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureA->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureB->GetBody()->GetUserData());
@@ -82,7 +88,7 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
     } else {
 
         objectA = static_cast<object *>( fixtureB->GetBody()->GetUserData());
-        if (objectA->weapon_class != HandWeapon)return false;
+        if (objectA->type != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureB->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureA->GetBody()->GetUserData());
