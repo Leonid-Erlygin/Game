@@ -207,7 +207,7 @@ int main() {
     /* ContactFilter filter;
      world.SetContactFilter(&filter);*/
     Level lvl;
-    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map            /TestEdited.tmx");
+    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/TestEdited.tmx");
 
     std::vector<Object> block = lvl.GetObjects("Platform");
     lvl.objInit(world,block);
