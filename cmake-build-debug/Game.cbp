@@ -114,12 +114,6 @@
 		<Unit filename="/home/leonid/CLionProjects/Game/MyContactListener.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/StaticObject.cpp">
-			<Option target="Game"/>
-		</Unit>
-		<Unit filename="/home/leonid/CLionProjects/Game/StaticObject.h">
-			<Option target="Game"/>
-		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/entity.cpp">
 			<Option target="Game"/>
 		</Unit>

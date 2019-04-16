@@ -12,13 +12,13 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
     b2Fixture *fixtureB = contact->GetFixtureB();
 
     //make sure only one of the fixtures was a sensor
-
-    bool sensorA = fixtureA->IsSensor();
-    bool sensorB = fixtureB->IsSensor();
     if(fixtureA->GetBody()->GetUserData()== nullptr)
         return false;
     if(fixtureB->GetBody()->GetUserData()== nullptr)
         return false;
+    bool sensorA = fixtureA->IsSensor();
+    bool sensorB = fixtureB->IsSensor();
+
 
     if (!(sensorA ^ sensorB))
         return false;
@@ -33,7 +33,7 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
         auto entityB = static_cast<object *>( fixtureB->GetBody()->GetUserData());
         playerEntity = entityA;
         moveableObjectEntity = entityB;
-        if (!entityA->isPlayer||entityB->isPlayer||!entityB->moveable ||
+        if (!entityA->isPlayer||entityB->isPlayer||!entityB->movable ||
             (entityB->isBeingCariedBy != entityA->realBody && entityB->isBeingCariedBy != nullptr)) {
             return false;
         }
@@ -44,7 +44,7 @@ bool MyContactListener::getContactInfo(b2Contact *contact, player *&playerEntity
 
         auto entityA = static_cast<object *>( fixtureA->GetBody()->GetUserData());
         auto entityB = static_cast<player *>( fixtureB->GetBody()->GetUserData());
-        if (!entityB->isPlayer||entityA->isPlayer||!entityA->moveable ||
+        if (!entityB->isPlayer||entityA->isPlayer||!entityA->movable ||
             (entityA->isBeingCariedBy != entityB->realBody && entityA->isBeingCariedBy != nullptr)) {
             return false;
         }
@@ -79,7 +79,7 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
     if (sensorA) {
 
         objectA = static_cast<object *>( fixtureA->GetBody()->GetUserData());
-        if (objectA->type != HandWeapon)return false;
+        if (objectA->weapon_class != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureA->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureB->GetBody()->GetUserData());
@@ -88,7 +88,7 @@ bool MyContactListener::getContactInfo2(b2Contact *contact, handWeapon *&handWea
     } else {
 
         objectA = static_cast<object *>( fixtureB->GetBody()->GetUserData());
-        if (objectA->type != HandWeapon)return false;
+        if (objectA->weapon_class != HandWeapon)return false;
 
         handWeapon = static_cast<class handWeapon *>( fixtureB->GetBody()->GetUserData());
         moveableObjectEntity = static_cast<class object *>( fixtureA->GetBody()->GetUserData());

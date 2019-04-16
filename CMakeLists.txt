@@ -9,7 +9,7 @@ add_executable(Game main.cpp entity.cpp entity.h player.cpp player.h object.cpp 
         virtualPlayer.cpp virtualPlayer.h weapon.h
         weapon.cpp handWeapon.cpp handWeapon.h grenade.cpp grenade.h
         Map/level.cpp Map/level.h Map/tinystr.cpp Map/tinystr.h Map/tinyxml.cpp Map/tinyxml.h Map/tinyxmlerror.cpp Map/tinyxmlparser.cpp
-        StaticObject.cpp StaticObject.h)
+       )
 
 
 

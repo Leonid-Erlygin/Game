@@ -12,7 +12,97 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="1 men 2 boxes">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyContactListener.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MyContactListener.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/cloud5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forest4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forestNight.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/forestNight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/industrial.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/industrial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/office.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/office.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding01Porch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding01Porch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding02.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/officeBuilding02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/planet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/planet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/rocksUnderground.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/rocksUnderground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/scanbeam.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/scanbeam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/space.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/space.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/underground.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/underground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/virtual.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/background/virtual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/barrel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/box1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/girl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/sans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/shotgun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resourses/shotgunLoader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StaticObject.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StaticObject.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/StaticObject.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/enemy.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enemy.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/enemy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grenade.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/grenade.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handWeapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handWeapon.h" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/object.h" beforeDir="false" afterPath="$PROJECT_DIR$/object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/virtualPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/weapon.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapon.h" beforeDir="false" afterPath="$PROJECT_DIR$/weapon.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +128,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+            <state relative-caret-position="139">
+              <caret line="208" column="5" lean-forward="true" selection-start-line="208" selection-start-column="5" selection-end-line="208" selection-end-column="5" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#1899#4695#0" expanded="true" />
@@ -52,10 +142,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/virtualPlayer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/object.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="960">
+              <caret line="79" column="83" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -63,10 +171,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="327" selection-start-line="327" selection-end-line="327" />
+            <state relative-caret-position="3315">
+              <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
               <folding>
                 <element signature="e#41#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MyContactListener.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+              <folding>
+                <element signature="e#41#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grenade.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+              <folding>
+                <element signature="e#81#101#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="405">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
               <folding>
                 <element signature="e#99#118#0" expanded="true" />
               </folding>
@@ -87,8 +219,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/object.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="54" column="32" selection-start-line="53" selection-start-column="4" selection-end-line="54" selection-end-column="32" />
+            <state relative-caret-position="840">
+              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
               <folding>
                 <element signature="e#41#60#0" expanded="true" />
               </folding>
@@ -118,6 +250,7 @@
       <find>get</find>
       <find>up</find>
       <find>setTextureRect</find>
+      <find>g</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,33 +273,33 @@
         <option value="$PROJECT_DIR$/ContactFilter.cpp" />
         <option value="$PROJECT_DIR$/ContactFilter.h" />
         <option value="$PROJECT_DIR$/virtualPlayer.h" />
-        <option value="$PROJECT_DIR$/virtualPlayer.cpp" />
         <option value="$PROJECT_DIR$/weapon.h" />
         <option value="$PROJECT_DIR$/MyContactListener.h" />
         <option value="$PROJECT_DIR$/weapon.cpp" />
-        <option value="$PROJECT_DIR$/grenade.cpp" />
         <option value="$PROJECT_DIR$/handWeapon.cpp" />
         <option value="$PROJECT_DIR$/handWeapon.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/StaticObject.h" />
         <option value="$PROJECT_DIR$/object.h" />
-        <option value="$PROJECT_DIR$/object.cpp" />
         <option value="$PROJECT_DIR$/StaticObject.cpp" />
-        <option value="$PROJECT_DIR$/player.cpp" />
         <option value="$PROJECT_DIR$/Map/level.h" />
-        <option value="$PROJECT_DIR$/MyContactListener.cpp" />
-        <option value="$PROJECT_DIR$/player.h" />
         <option value="$PROJECT_DIR$/Map/level.cpp" />
+        <option value="$PROJECT_DIR$/object.cpp" />
+        <option value="$PROJECT_DIR$/player.h" />
+        <option value="$PROJECT_DIR$/player.cpp" />
+        <option value="$PROJECT_DIR$/grenade.cpp" />
+        <option value="$PROJECT_DIR$/virtualPlayer.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/MyContactListener.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="871" />
-    <option name="y" value="296" />
+    <option name="x" value="171" />
+    <option name="y" value="129" />
     <option name="width" value="1657" />
-    <option name="height" value="1037" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -176,7 +309,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,6 +325,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,6 +429,9 @@
       <workItem from="1555170552561" duration="4104000" />
       <workItem from="1555187339504" duration="295000" />
       <workItem from="1555241960010" duration="6145000" />
+      <workItem from="1555253113233" duration="4690000" />
+      <workItem from="1555423979874" duration="31000" />
+      <workItem from="1555441513930" duration="493000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -308,7 +444,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253801000" />
+    <option name="totallyTimeSpent" value="259015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,12 +459,12 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15938018" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14665191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18034557" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14578834" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39848813" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -459,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/virtualPlayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resourses/blades.png" />
     <entry file="file://$PROJECT_DIR$/Resourses/blade1.png" />
     <entry file="file://$PROJECT_DIR$/Resourses/sans.png" />
@@ -587,27 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grenade.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#81#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/SFML/System/Vector2.inl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="119" selection-start-line="10" selection-start-column="119" selection-end-line="10" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -646,50 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/object.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="54" column="32" selection-start-line="53" selection-start-column="4" selection-end-line="54" selection-end-column="32" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticObject.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="38" selection-start-line="18" selection-start-column="8" selection-end-line="27" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="e#99#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="327" selection-start-line="327" selection-end-line="327" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/object.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Map/level.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -697,23 +765,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyContactListener.cpp">
+    <entry file="file://$PROJECT_DIR$/object.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="960">
+          <caret line="79" column="83" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3315">
+          <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
+          <folding>
+            <element signature="e#41#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
           <folding>
             <element signature="e#41#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grenade.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding>
+            <element signature="e#81#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StaticObject.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/virtualPlayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+        <state relative-caret-position="139">
+          <caret line="208" column="5" lean-forward="true" selection-start-line="208" selection-start-column="5" selection-end-line="208" selection-end-column="5" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#1899#4695#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyContactListener.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
           </folding>
         </state>
       </provider>

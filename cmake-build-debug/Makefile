@@ -285,33 +285,6 @@ MyContactListener.cpp.s:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/MyContactListener.cpp.s
 .PHONY : MyContactListener.cpp.s
 
-StaticObject.o: StaticObject.cpp.o
-
-.PHONY : StaticObject.o
-
-# target to build an object file
-StaticObject.cpp.o:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.o
-.PHONY : StaticObject.cpp.o
-
-StaticObject.i: StaticObject.cpp.i
-
-.PHONY : StaticObject.i
-
-# target to preprocess a source file
-StaticObject.cpp.i:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.i
-.PHONY : StaticObject.cpp.i
-
-StaticObject.s: StaticObject.cpp.s
-
-.PHONY : StaticObject.s
-
-# target to generate assembly for a file
-StaticObject.cpp.s:
-	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/StaticObject.cpp.s
-.PHONY : StaticObject.cpp.s
-
 entity.o: entity.cpp.o
 
 .PHONY : entity.o
@@ -555,9 +528,6 @@ help:
 	@echo "... MyContactListener.o"
 	@echo "... MyContactListener.i"
 	@echo "... MyContactListener.s"
-	@echo "... StaticObject.o"
-	@echo "... StaticObject.i"
-	@echo "... StaticObject.s"
 	@echo "... entity.o"
 	@echo "... entity.i"
 	@echo "... entity.s"

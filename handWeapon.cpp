@@ -22,11 +22,11 @@ handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &Textur
     ancorPointShiftBodyAY = 0;
     ancorPointShiftBodyBX = -10;
     ancorPointShiftBodyBY = 0;
-    type = HandWeapon;
+    weapon_class = HandWeapon;
     bound.setPosition(600, 40);
     sprite.setTexture(Texture);
     sprite.scale(1, 1);
-    moveable = true;
+    movable = true;
     bodyInit(world);
 
     b2Fixture *fix =  realBody->GetFixtureList();
@@ -72,6 +72,24 @@ void handWeapon::makeSparkels(float x, float y) {
 
 void handWeapon::update(sf::RenderWindow &window) {
 
+	window.draw(sprite);
+
+	if(isBeingCaried && flag)
+	{
+		realBody->SetTransform(realBody->GetPosition(), PI2 / 4);
+		flag = false;
+	}
+	else if(!isBeingCaried)
+	{
+		flag = true;
+	}
+
+	if((direction == 1 && realBody->GetAngle() > PI2/2) ||
+			(direction == -1 && realBody->GetAngle() < PI2/2))
+	{
+		realBody->SetTransform(realBody->GetPosition(), PI2 - realBody->GetAngle());
+	}
+
     std::vector<std::vector<sf::Sprite>>::iterator iter;
     std::vector<int>::iterator iter2;
     iter2 = FLameState.begin();
@@ -94,27 +112,39 @@ void handWeapon::update(sf::RenderWindow &window) {
     }
 
 
-    if (isInHands && realBody->GetAngle() <= 0) {
+    if ((isBeingCaried && realBody->GetAngle() <= 0 && direction == 1) ||
+    		(isBeingCaried && realBody->GetAngle() >= PI2 && direction == -1)) {
         //Go up
         goUp = true;
-        realBody->SetAngularVelocity(angularVelosity);
+        goDown = false;
+        realBody->SetAngularVelocity(direction * angularVelocity);
     }
     if (goUp) {
 
-        if (realBody->GetAngle() > PI2 / 4) {
+        if ((realBody->GetAngle() > PI2 / 4 && direction == 1)
+        		|| (realBody->GetAngle() < PI2 - PI2 / 4 && direction == -1)) {
             goUp = false;
             realBody->SetAngularVelocity(0);
+            if(direction == 1)
+            {
+            	realBody->SetTransform(realBody->GetPosition(), PI2 / 4);
+            }
+            else if(direction == -1)
+            {
+            	realBody->SetTransform(realBody->GetPosition(), PI2 - PI2 / 4);
+            }
         }
 
     }
-    if (goDown) {
+    if (goDown && isBeingCaried) {
         //realBody->SetTransform(realBody->GetPosition(), realBody->GetAngle() - delta);
-        if (realBody->GetAngle() < 0) {
+       /* if ((realBody->GetAngle() < 0 && direction == 1)
+        	|| (realBody->GetAngle() > PI2 && direction == -1)) {
 
             goUp = true;
             goDown = false;
             realBody->SetAngularVelocity(0);
-        }
+        }*/
 
 
            if(!reachableObjects.empty()){
@@ -136,15 +166,24 @@ void handWeapon::update(sf::RenderWindow &window) {
 
     object::update();
 
+    time_delay += 1 / 60.0;
+    if(time_delay > delay)
+    {
+    	time_delay = delay;
+    }
+
 }
 
 
 void handWeapon::strike() {
-    if (realBody->GetAngle()>0&&realBody->GetAngle() > PI2 / 4) {
-        realBody->SetAngularVelocity(-angularVelosity);
-
+    	if(time_delay < delay)
+    	{
+    		return;
+    	}
+        realBody->SetAngularVelocity(-1 * direction * angularVelocity);
         goDown = true;
-    }
+        time_delay = 0;
 }
-
+/*  if ((realBody->GetAngle() >= PI2 / 4 && direction == 1) ||
+    		(realBody->GetAngle() >= PI2 - PI2 / 4 && direction == -1)) { */
 

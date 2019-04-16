@@ -39,7 +39,7 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
         if (event.key.code == sf::Keyboard::Up) {
             //Прыжки
 
-            remainingJumpSteps = jumpHieght;
+            remainingJumpSteps = jumpHeight;
 
 
         }

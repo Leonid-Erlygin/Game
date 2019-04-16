@@ -26,8 +26,8 @@ grenade::grenade(b2World& world, sf::RenderWindow& window,
 	bound.setSize(sf::Vector2f(grenade_texture.getSize().x,
 								grenade_texture.getSize().y));
 	bound.setPosition(200, 50);
-	moveable = true;
-	type = Grenade;
+	movable = true;
+	weapon_class = Grenade;
 	bodyInit(world);
 
 }
@@ -51,11 +51,9 @@ void grenade::explode()
 		//40 is sqale ratio
 		strike_sprite.scale(2, 2);
 		explosion_sprites.push_back(std::pair<sf::Sprite, int>(strike_sprite, 0));
-		if(damaged_object != realBody && damaged_object->GetPosition() != b2Vec2(400 / 40.0, 500 / -40.0))
+		object* obj = static_cast<object *>(damaged_object->GetUserData());
+		if(obj->movable)
 		{
-
-
-			object * obj = static_cast<object *>( damaged_object->GetUserData());
 			if (obj->isPlayer){
 				player * playerA = static_cast<class player *>(obj);
 				playerA->death(200/40.0,50.0/-40.0);
@@ -82,7 +80,7 @@ void grenade::explode()
 	explosion_sprites.push_back(std::pair<sf::Sprite, int>(strike_sprite, 0));
 	time = 0;
 	is_thrown = 0;
-	//probably person Careing the object could switch
+	//probably person Carying the object could switch
 
 
 
@@ -99,7 +97,7 @@ void grenade::explode()
 
 
 	world.DestroyBody(realBody);
-	realBody = NULL; //but this shit still can be taken!!!
+	realBody = nullptr; //but this shit still can be taken!!!
 }
 
 void grenade::strike()
@@ -143,7 +141,7 @@ void grenade::grenade_update()
 			++iter;
 		}
 	}
-	if(realBody != NULL)
+	if(realBody != nullptr)
 	{
 		update();
 		window.draw(sprite);

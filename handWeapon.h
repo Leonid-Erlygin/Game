@@ -15,7 +15,7 @@ public:
 
     int angle = 0;
     bool goUp = false;
-    bool isInHands = false;
+    bool flag = true;
     void switchToRigth();
     void switchToLeft();
     std::set<object *>reachableObjects;
@@ -28,6 +28,8 @@ public:
 
     void update(sf::RenderWindow&);
 
+    float time_delay = delay;
+
 private:
     sf::Texture &flameTexture;
     std::vector<std::vector<sf::Sprite>> FLameOrigin;
@@ -38,11 +40,12 @@ private:
     int ancorPointShiftY = -20;
     bool goDown = false;
     int anglePartition = 20;
-    int angularVelosity = 20;
-    float PI2 = 3.141f;
-    float delta = 3.141f / (4 * anglePartition);
+    int angularVelocity = 20;
+    float PI2 = 3.14159265f;
+    float delta = 3.14159265f / (4 * anglePartition);
     float32 scale_factorX = 40;//1 м = 40 pxl
     float32 scale_factorY = -40;
+    float delay = 0.25;
 
 };
 

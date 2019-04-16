@@ -29,12 +29,6 @@ CMakeFiles/Game.dir/MyContactListener.cpp.o: ../object.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../player.h
 CMakeFiles/Game.dir/MyContactListener.cpp.o: ../weapon.h
 
-CMakeFiles/Game.dir/StaticObject.cpp.o: ../Map/level.h
-CMakeFiles/Game.dir/StaticObject.cpp.o: ../StaticObject.cpp
-CMakeFiles/Game.dir/StaticObject.cpp.o: ../StaticObject.h
-CMakeFiles/Game.dir/StaticObject.cpp.o: ../entity.h
-CMakeFiles/Game.dir/StaticObject.cpp.o: ../object.h
-
 CMakeFiles/Game.dir/entity.cpp.o: ../entity.cpp
 CMakeFiles/Game.dir/entity.cpp.o: ../entity.h
 
@@ -52,7 +46,6 @@ CMakeFiles/Game.dir/handWeapon.cpp.o: ../object.h
 
 CMakeFiles/Game.dir/main.cpp.o: ../Map/level.h
 CMakeFiles/Game.dir/main.cpp.o: ../MyContactListener.h
-CMakeFiles/Game.dir/main.cpp.o: ../StaticObject.h
 CMakeFiles/Game.dir/main.cpp.o: ../entity.h
 CMakeFiles/Game.dir/main.cpp.o: ../grenade.h
 CMakeFiles/Game.dir/main.cpp.o: ../handWeapon.h

@@ -14,7 +14,7 @@
 #include "handWeapon.h"
 #include "grenade.h"
 #include "Map/level.h"
-#include "StaticObject.h"
+
 
 void addGid(){
 
@@ -206,12 +206,13 @@ int main() {
     world.SetContactListener(&myContactListenerInstance);//Нужно для детектирования столкновений
     /* ContactFilter filter;
      world.SetContactFilter(&filter);*/
+#if 1
     Level lvl;
     lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/TestEdited.tmx");
 
     std::vector<Object> block = lvl.GetObjects("Platform");
     lvl.objInit(world,block);
-
+#endif
 
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
     std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
@@ -228,7 +229,7 @@ int main() {
     floor.bound.setPosition(400, 700);
     floor.sprite.setTextureRect(sf::IntRect(0, 65, 96, 79 - 65));
 
-    floor.moveable = false;
+    floor.movable = false;
 
 
     floor.sprite.scale(20, 3);//Не изменяет значения границ, нужно домножать на этот коэфицент при переводе в метры
@@ -267,7 +268,7 @@ int main() {
     barrel.sprite.scale(0.2, 0.2);
     barrel.bound.setSize(sf::Vector2f(textureBox.getSize().x, textureBox.getSize().y));
     barrel.bound.setPosition(300, 100);
-    barrel.moveable = true;
+    barrel.movable = true;
     barrel.bodyInit(world);
 
 

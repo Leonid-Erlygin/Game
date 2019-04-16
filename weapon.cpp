@@ -7,6 +7,7 @@
 
 #include "weapon.h"
 #include "player.h"
+
 bullet::bullet() {
 }
 
@@ -22,8 +23,8 @@ weapon::weapon(b2World& world, sf::RenderWindow& window, sf::Texture& texture_we
 	bound.setSize(sf::Vector2f(texture_weapon.getSize().x,
 							texture_weapon.getSize().y));
 	bound.setPosition(0, 60);
-	moveable = true;
-	type = FireWeapon;
+	movable = true;
+	weapon_class = FireWeapon;
 	bodyInit(world);
 }
 
@@ -36,12 +37,34 @@ void weapon::strike() {
 }
 
 void weapon::weapon_update() {
+	if(abs(RayAngle) > PI/2 && direction == 1)
+	{
+		RayAngle = -PI + RayAngle;
+	}
+	else if(abs(RayAngle) < PI/2 && direction == -1)
+	{
+		RayAngle = PI - RayAngle;
+	}
 
 	if (is_strike) {
-		b2Vec2 position(realBody->GetPosition().x +
-				(bound.getSize().x * cosf(RayAngle) - bound.getSize().y * sinf(RayAngle)) / (2 * 40),
-		realBody->GetPosition().y +
-		(bound.getSize().x * sinf(RayAngle) + bound.getSize().y * cosf(RayAngle)) / (2 * 40));
+
+		b2Vec2 position;
+		if(direction == 1)
+		{
+			position.x = realBody->GetPosition().x +
+						(-bound.getSize().y * sinf(RayAngle) + bound.getSize().x * cosf(RayAngle)) / (2 * 40);
+			position.y = realBody->GetPosition().y +
+						(bound.getSize().y * cosf(RayAngle) + bound.getSize().x * sinf(RayAngle)) / (2 * 40);
+
+		}
+		else if(direction == -1)
+		{
+			position.x = realBody->GetPosition().x +
+					(bound.getSize().y * sinf(PI - RayAngle) - bound.getSize().x * cosf(PI - RayAngle)) / (2 * 40);
+
+			position.y = realBody->GetPosition().y +
+					(bound.getSize().y * cosf(PI - RayAngle) + bound.getSize().x * sinf(PI - RayAngle)) / (2 * 40);
+		}
 		bullets[free_bullet] = bullet(position, RayAngle);
 		sf::Sprite explosion_sprite;
 		explosion_sprite.setTexture(texture_explosion, true);
@@ -54,25 +77,44 @@ void weapon::weapon_update() {
 		window.draw(explosion_sprite);
 
 		realBody->ApplyLinearImpulseToCenter(b2Vec2(-line_recoil*cosf(RayAngle),-line_recoil*sinf(RayAngle)),true);
-		if(abs(RayAngle) < PI/6)
+		if(abs(RayAngle) < PI/6 && direction == 1)
 		{
 			RayAngle += angle_recoil * pow((int)-1, int(bullets_count) % 2); //power of recoil
+		}
+		else if(PI - PI/6 < abs(RayAngle) &&
+				abs(RayAngle) < PI + PI/6 && direction == -1)
+		{
+			RayAngle += angle_recoil * pow((int)-1, int(bullets_count) % 2);
 		}
 		realBody->SetTransform(realBody->GetPosition(), RayAngle);
 
 	} else {
-		if (RayAngle > 0) {
+		if (RayAngle > 0 && direction == 1) {
 			RayAngle -= angle_recoil / 10;
 			if(RayAngle < 0)
 			{
 				RayAngle = 0;
 			}
 		}
-		else if (RayAngle < 0) {
+		else if (RayAngle < 0 && direction == 1) {
 			RayAngle += angle_recoil / 10;
 			if(RayAngle > 0)
 			{
 				RayAngle = 0;
+			}
+		}
+		else if (RayAngle > PI && direction == -1) {
+			RayAngle -= angle_recoil / 10;
+			if(RayAngle < PI)
+			{
+				RayAngle = PI;
+			}
+		}
+		else if (RayAngle < PI && direction == -1) {
+			RayAngle += angle_recoil / 10;
+			if(RayAngle > PI)
+			{
+				RayAngle = PI;
 			}
 		}
 		realBody->SetTransform(realBody->GetPosition(), RayAngle); //power of recoil
@@ -95,7 +137,7 @@ void weapon::weapon_update() {
 					b2Vec2 target = bullet.second.r + output.fraction * (range * b2Vec2(cosf(bullet.second.angle),
 							sinf(bullet.second.angle)));
 
-					if (std::abs(bullet.second.r.x - target.x) <= 0.5
+					if (std::abs(bullet.second.r.x - target.x) <= 0.5//0.5 is distance could be considered as a strike
 							&& std::abs(bullet.second.r.y - target.y) <= 0.5) {
 					    b->ApplyLinearImpulseToCenter(b2Vec2
 					    		(line_recoil * cosf(bullet.second.angle), line_recoil * sinf(bullet.second.angle)), true);
@@ -108,9 +150,10 @@ void weapon::weapon_update() {
 						//printf("STRIKE\n");
 						used_bullets.push_back(bullet.first);
 						explosion_sprites.push_back(std::pair<sf::Sprite, int>(explosion_sprite, 0));
-						if(b != realBody && b->GetPosition() != b2Vec2(400 / 40.0, 500 / -40.0))
+						object* obj = static_cast<object *>(b->GetUserData());
+						if(b != realBody && obj->movable)
 						{
-							object * obj = static_cast<object *>( b->GetUserData());
+							object * obj = static_cast<object *>(b->GetUserData());
 							if (obj->isPlayer){
 								player * playerA = static_cast<class player *>(obj);
 								playerA->death(200/40.0,50.0/-40.0);
@@ -137,8 +180,9 @@ void weapon::weapon_update() {
 		bullet_sprite.setTexture(texture_bullet);
 		bullet_sprite.setPosition(sf::Vector2f(bullet.second.r.x * (40), bullet.second.r.y * (-40)));
 		//40 is sqale ratio
+
 		bullet_sprite.rotate(-bullet.second.angle * (180 / PI));
-		bullet_sprite.scale(2, 2);
+		bullet_sprite.scale(1.25, 1.25);
 
 		window.draw(bullet_sprite);
 

@@ -21,14 +21,13 @@ public:
     std::set<object *>reachableObjects;
     object *cariedObject;
     int remainingJumpSteps = 1;
-    int jumpHieght = 250;
+    int jumpHeight = 125;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
     bool moveRight;
     bool moveLeft;
     bool moveUp = true;
     int direction;// -1 - left, 1 - right
-   // player();
 
     bool is_on_ground();
     b2World& world;

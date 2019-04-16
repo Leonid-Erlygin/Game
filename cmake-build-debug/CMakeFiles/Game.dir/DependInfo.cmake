@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/leonid/CLionProjects/Game/Map/tinyxmlerror.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o"
   "/home/leonid/CLionProjects/Game/Map/tinyxmlparser.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o"
   "/home/leonid/CLionProjects/Game/MyContactListener.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o"
-  "/home/leonid/CLionProjects/Game/StaticObject.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/StaticObject.cpp.o"
   "/home/leonid/CLionProjects/Game/entity.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o"
   "/home/leonid/CLionProjects/Game/grenade.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o"
   "/home/leonid/CLionProjects/Game/handWeapon.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o"

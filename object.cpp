@@ -28,8 +28,7 @@ void object::bodyInit(b2World &world) {
 
     shape.SetAsBox((bound.getSize().x/(2*scale_factorX))*bound.getScale().x,(bound.getSize().y/(2*scale_factorX))*bound.getScale().y);
 
-
-    if(moveable){
+    if(movable){
 
         fixture.shape = &shape;
         realBodyDef.type = b2_dynamicBody;
@@ -55,6 +54,23 @@ void object::bodyInit(b2World &world) {
 
 
 }
+
+void object::flip(int dir)
+{
+	sf::IntRect rect = sprite.getTextureRect();
+
+	if(dir == -1 && direction == 1)
+	{
+		sprite.setTextureRect(sf::IntRect(0, rect.height, rect.width, -rect.height));
+	}
+	else if(dir == 1 && direction == -1)
+	{
+		sprite.setTextureRect(sf::IntRect(0, 0, rect.width, -rect.height));
+	}
+
+	direction = dir;
+}
+
 void object:: update() {
 
     bound.setOrigin(bound.getSize().x/2,bound.getSize().y/2);

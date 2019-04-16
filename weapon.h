@@ -10,7 +10,7 @@
 #include <tuple>
 #include <vector>
 #include <cmath>
-#define PI 3.141593
+#define PI 3.14159265
 
 #ifndef WEAPON_H_
 #define WEAPON_H_
