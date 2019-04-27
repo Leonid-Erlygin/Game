@@ -54,6 +54,8 @@ public:
 private:
     int width, height, tileWidth, tileHeight;
     int firstTileID;
+    float mapScaleX = 5.0f;
+    float mapScaleY = 1.5f;
     sf::Rect<float> drawingBounds;
     sf::Texture tilesetImage;
     std::vector<Object> objects;

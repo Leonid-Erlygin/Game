@@ -22,7 +22,7 @@ weapon::weapon(b2World& world, sf::RenderWindow& window, sf::Texture& texture_we
 	sprite.scale(2.5, 2.5);
 	bound.setSize(sf::Vector2f(texture_weapon.getSize().x,
 							texture_weapon.getSize().y));
-	bound.setPosition(0, 60);
+	bound.setPosition(100, 60);
 	movable = true;
 	weapon_class = FireWeapon;
 	bodyInit(world);
@@ -151,7 +151,7 @@ void weapon::weapon_update() {
 						used_bullets.push_back(bullet.first);
 						explosion_sprites.push_back(std::pair<sf::Sprite, int>(explosion_sprite, 0));
 						object* obj = static_cast<object *>(b->GetUserData());
-						if(b != realBody && obj->movable)
+						if(obj!= nullptr&&b != realBody && obj->movable)
 						{
 							object * obj = static_cast<object *>(b->GetUserData());
 							if (obj->isPlayer){

@@ -123,6 +123,33 @@ Game/fast:
 	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/build
 .PHONY : Game/fast
 
+GameCore.o: GameCore.cpp.o
+
+.PHONY : GameCore.o
+
+# target to build an object file
+GameCore.cpp.o:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/GameCore.cpp.o
+.PHONY : GameCore.cpp.o
+
+GameCore.i: GameCore.cpp.i
+
+.PHONY : GameCore.i
+
+# target to preprocess a source file
+GameCore.cpp.i:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/GameCore.cpp.i
+.PHONY : GameCore.cpp.i
+
+GameCore.s: GameCore.cpp.s
+
+.PHONY : GameCore.s
+
+# target to generate assembly for a file
+GameCore.cpp.s:
+	$(MAKE) -f CMakeFiles/Game.dir/build.make CMakeFiles/Game.dir/GameCore.cpp.s
+.PHONY : GameCore.cpp.s
+
 Map/level.o: Map/level.cpp.o
 
 .PHONY : Map/level.o
@@ -510,6 +537,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Game"
 	@echo "... edit_cache"
+	@echo "... GameCore.o"
+	@echo "... GameCore.i"
+	@echo "... GameCore.s"
 	@echo "... Map/level.o"
 	@echo "... Map/level.i"
 	@echo "... Map/level.s"

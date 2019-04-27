@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/leonid/CLionProjects/Game/GameCore.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o"
   "/home/leonid/CLionProjects/Game/Map/level.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o"
   "/home/leonid/CLionProjects/Game/Map/tinystr.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o"
   "/home/leonid/CLionProjects/Game/Map/tinyxml.cpp" "/home/leonid/CLionProjects/Game/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o"

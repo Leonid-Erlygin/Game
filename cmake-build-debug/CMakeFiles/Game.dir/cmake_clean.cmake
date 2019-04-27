@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game.dir/Map/tinyxml.cpp.o"
   "CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o"
   "CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o"
+  "CMakeFiles/Game.dir/GameCore.cpp.o"
   "Game.pdb"
   "Game"
 )

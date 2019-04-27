@@ -52,7 +52,8 @@ void grenade::explode()
 		strike_sprite.scale(2, 2);
 		explosion_sprites.push_back(std::pair<sf::Sprite, int>(strike_sprite, 0));
 		object* obj = static_cast<object *>(damaged_object->GetUserData());
-		if(obj->movable)
+
+		if(obj!= nullptr&&obj->movable)
 		{
 			if (obj->isPlayer){
 				player * playerA = static_cast<class player *>(obj);

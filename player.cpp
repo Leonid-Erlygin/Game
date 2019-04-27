@@ -62,7 +62,7 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : worl
     realBody->CreateFixture(&fixture);
     realBody->CreateFixture(&fixture2);//sensor
     realBody->SetFixedRotation(true);
-    realBody->SetUserData(this);
+
 }
 
 bool player::is_on_ground()
@@ -82,8 +82,8 @@ bool player::is_on_ground()
 		object* obj = static_cast<object *>(b->GetUserData());
 		if(obj == nullptr)
             return true;
-		printf("%f\n", obj->bound.getPosition().y - obj->bound.getSize().y / 2);
-		printf("body: %f\n", bound.getPosition().y + bound.getSize().y / 2);
+		//printf("%f\n", obj->bound.getPosition().y - obj->bound.getSize().y / 2);
+		//printf("body: %f\n", bound.getPosition().y + bound.getSize().y / 2);
 		if(b != realBody && !obj->movable && abs((obj->bound.getPosition().y - obj->bound.getSize().y / 2)
 				- (bound.getPosition().y + bound.getSize().y / 2)) <= 2.55 * 40)
 		{
@@ -116,9 +116,9 @@ void player::grabe(b2World &world) {
         //what if object lost in hands
 
 
-
         if (JointToHold == nullptr) {
             cariedObject = *reachableObjects.begin();
+
             b2RevoluteJointDef jointDef;
             b2Body* box = cariedObject->realBody;
 
@@ -196,7 +196,7 @@ void player::death(int x, int y){
 void player::update() {
     object::update();
     //Move;
-    bool IsOnGround = is_on_ground();//bug
+    bool IsOnGround = true;//is_on_ground();//bug
     if(IsOnGround)
     {
     	remainingJumpSteps = 1; //landed on the floor!!!
@@ -325,6 +325,7 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
         if (event.key.code == sf::Keyboard::G&&playerInd==1) {
 
             grabe(world);
+
 
         }
 

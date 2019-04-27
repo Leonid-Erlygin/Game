@@ -39,6 +39,7 @@ public:
     //b2PolygonShape shape;//Это тоже можно удалить
     ~object();
     object();
+	int magicnumber = 0;
     bool movable;
     bool isBeingCaried = false;
     b2Body* isBeingCariedBy = nullptr;

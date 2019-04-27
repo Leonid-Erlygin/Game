@@ -143,7 +143,8 @@ bool Level::LoadFromFile(std::string filename)
                 sf::Sprite sprite;
                 sprite.setTexture(tilesetImage);
                 sprite.setTextureRect(subRects[subRectToUse]);
-                sprite.setPosition(x * tileWidth, y * tileHeight);
+                sprite.setScale(sf::Vector2f(mapScaleX,mapScaleY));
+                sprite.setPosition(x * tileWidth * mapScaleX, y * tileHeight*mapScaleY);
                 sprite.setColor(sf::Color(255, 255, 255, layer.opacity));
 
                 layer.tiles.push_back(sprite);
@@ -299,6 +300,8 @@ void Level::Draw(sf::RenderWindow &window)
         //printf("%d\n",layers[layer].tiles.size());
         for(int tile = 0; tile < layers[layer].tiles.size(); tile++)
             window.draw(layers[layer].tiles[tile]);
+
+
     }
 }
 
@@ -308,12 +311,12 @@ void Level::objInit(b2World&world, std::vector<Object>&block){
 
         b2BodyDef realBodyDef;
         b2PolygonShape shape;
-        float m = (block[i].rect.left+block[i].rect.width/2.f)/scale_factorX;
-        float n = (block[i].rect.top+block[i].rect.height/2.f)/scale_factorY;
+        float m = mapScaleX*(block[i].rect.left+block[i].rect.width/2.f)/scale_factorX;
+        float n = mapScaleY*(block[i].rect.top+block[i].rect.height/2.f)/scale_factorY;
         realBodyDef.position.Set(m,n);
         realBodyDef.type = b2_staticBody;
-        float x = block[i].rect.width / (2.f*scale_factorX);
-        float y = block[i].rect.height / (2.f*scale_factorX);
+        float x = mapScaleX*block[i].rect.width / (2.f*scale_factorX);
+        float y = mapScaleY*block[i].rect.height / (2.f*scale_factorX);
         shape.SetAsBox(x, y);
         b2Body* body = world.CreateBody(&realBodyDef);
         body->CreateFixture(&shape, 0.f);

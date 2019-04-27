@@ -21,11 +21,11 @@ public:
     std::set<object *>reachableObjects;
     object *cariedObject;
     int remainingJumpSteps = 1;
-    int jumpHeight = 125;
+    int jumpHeight = 200;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
-    bool moveRight;
-    bool moveLeft;
+    bool moveRight= false;
+    bool moveLeft= false;
     bool moveUp = true;
     int direction;// -1 - left, 1 - right
 

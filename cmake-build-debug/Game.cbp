@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/leonid/CLionProjects/Game/GameCore.cpp">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/leonid/CLionProjects/Game/GameCore.h">
+			<Option target="Game"/>
+		</Unit>
 		<Unit filename="/home/leonid/CLionProjects/Game/Map/level.cpp">
 			<Option target="Game"/>
 		</Unit>
