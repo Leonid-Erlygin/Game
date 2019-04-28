@@ -40,7 +40,7 @@ public:
 
 
 
-    void checkEvents(sf::Event &, b2World &,int player);
+    void checkEvents(std::vector<sf::UdpSocket>&,sf::Event &, b2World &,int player,int x);
 
     player(b2World &world, sf::Texture &,int x,int y);
 

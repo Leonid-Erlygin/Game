@@ -11,6 +11,7 @@
 #include "player.h"
 #include "grenade.h"
 #include "handWeapon.h"
+#include "virtualPlayer.h"
 #include <stdio.h>
 #pragma once
 class GameCore {
@@ -20,7 +21,7 @@ public:
     std::vector<grenade>grenades;
     std::vector<weapon>weapons;
     std::vector<handWeapon>handWeapons;
-
+    std::vector<virtualPlayer>virtualPlayers;
 
     std::map<std::string,sf::Texture>Textures;
     void loadTextures();
@@ -29,7 +30,7 @@ public:
     void createEntity(sf::RenderWindow&,b2World &world,std::string,int x,int y,std::string playerTexture);
 
     void createMovableObjects(sf::RenderWindow&window,b2World &world);
-    void updateMap(sf::RenderWindow &window);
+    void updateMap(sf::RenderWindow &window,std::vector<sf::UdpSocket> &socket,b2World &world,int x);
 };
 
 

@@ -10,6 +10,7 @@ CMakeFiles/Game.dir/GameCore.cpp.o
  /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.h
+ /home/leonid/CLionProjects/Game/virtualPlayer.h
  /home/leonid/CLionProjects/Game/weapon.h
 CMakeFiles/Game.dir/Map/level.cpp.o
  /home/leonid/CLionProjects/Game/Map/level.cpp

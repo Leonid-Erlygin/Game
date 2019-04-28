@@ -15,12 +15,18 @@ void GameCore::addStaticObject(Level &lvl, b2World &world) {
 void GameCore::createEntity(sf::RenderWindow &window, b2World &world, std::string object, int x, int y,
                             std::string playerTexture) {//Возможны проблемы
     if (object == "player") {
+
         class player Player1(world, Textures[playerTexture], x, y);
-        Player1.magicnumber = 47+(int)players.size();
+        Player1.magicnumber = 47 + (int) players.size();
         players.push_back(Player1);
 
+    }
+    if (object == "virtualPlayer") {
 
-        //printf("Stored: %p, Real %p\n",players[players.size()-1].realBody->GetUserData(),&players[players.size()-1]);
+        class virtualPlayer Player1(world, Textures[playerTexture], x, y);
+        Player1.magicnumber = 47 + (int) players.size();
+        virtualPlayers.push_back(Player1);
+
     }
     if (object == "grenade") {
         class grenade grenade(world, window, Textures["texture_grenade"], Textures["texture_explosion"]);
@@ -46,6 +52,12 @@ void GameCore::createMovableObjects(sf::RenderWindow &window, b2World &world) {
         players[j].realBody->SetUserData(&players[j]);
     }
 
+   //  createEntity(window, world, "virtualPlayer", 500, 350, "textureSans");
+
+    for (int j = 0; j < virtualPlayers.size(); ++j) {
+        virtualPlayers[j].realBody->SetUserData(&virtualPlayers[j]);
+    }
+
     for (int i = 0; i < 3; ++i) {
         createEntity(window, world, "grenade", 1, 1, "");
     }
@@ -63,23 +75,27 @@ void GameCore::createMovableObjects(sf::RenderWindow &window, b2World &world) {
     }
 
 }
-void GameCore::initLvl(b2World &world){
+
+void GameCore::initLvl(b2World &world) {
 
     lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/TestEdited.tmx");
 
     std::vector<Object> block = lvl.GetObjects("Platform");
-    lvl.objInit(world,block);
+    lvl.objInit(world, block);
 }
-void GameCore::updateMap(sf::RenderWindow &window) {
+
+void GameCore::updateMap(sf::RenderWindow &window,std::vector<sf::UdpSocket> &socket,b2World &world,int x) {
     lvl.Draw(window);
     for (int i = 0; i < players.size(); ++i) {
         players[i].update();
         window.draw(players[i].sprite);
     }
+    for (int k = 0; k <virtualPlayers.size(); ++k) {
+        virtualPlayers[k].update(socket,world,x);
+    }
 
-
-    for (auto iter = grenades.begin(); iter!=grenades.end(); iter++) {
-        if(iter->realBody!= nullptr) {
+    for (auto iter = grenades.begin(); iter != grenades.end(); iter++) {
+        if (iter->realBody != nullptr) {
             window.draw(iter->sprite);
             iter->grenade_update();
         }

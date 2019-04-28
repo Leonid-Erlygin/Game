@@ -9,6 +9,7 @@ CMakeFiles/Game.dir/GameCore.cpp.o: ../grenade.h
 CMakeFiles/Game.dir/GameCore.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/GameCore.cpp.o: ../object.h
 CMakeFiles/Game.dir/GameCore.cpp.o: ../player.h
+CMakeFiles/Game.dir/GameCore.cpp.o: ../virtualPlayer.h
 CMakeFiles/Game.dir/GameCore.cpp.o: ../weapon.h
 
 CMakeFiles/Game.dir/Map/level.cpp.o: ../Map/level.cpp

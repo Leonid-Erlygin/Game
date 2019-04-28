@@ -71,7 +71,27 @@ inline sf::Vector2f zoom(player const&PlayerA, player const &PlayerB,sf::RenderW
 
 
 int main() {
-    
+
+#if 0
+
+    int x;
+    std::cin>>x;
+    if(x==1){
+
+        if (socket[0].bind(54000) != sf::Socket::Done)
+        {
+            exit(0);
+        }
+
+    } else{
+
+        if (socket[0].bind(54001) != sf::Socket::Done)
+        {
+            exit(0);
+        }
+    }
+
+#endif
     MyContactListener myContactListenerInstance;
     b2Vec2 gravity(0.0f, -15.81f);
     b2World world(gravity);
@@ -99,7 +119,16 @@ int main() {
     float32 timeStep = 1.0f / 60.0f;
     int32 velocityIterations = 6;
     int32 positionIterations = 2;
-    std::pair<float ,float >median;
+    std::pair<float ,float>median;
+
+
+    std::vector<sf::UdpSocket> socket(2);
+    socket[0].setBlocking(false);
+    socket[1].setBlocking(false);
+    int x = 1;
+
+
+
 
     while (window.isOpen()) {
 
@@ -111,10 +140,8 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
             for (int i = 0; i <game.players.size(); ++i) {
-                game.players[i].checkEvents(event,world,(i+1));
+                game.players[i].checkEvents(socket,event,world,i+1,x);
             }
-
-
 
         }
 
@@ -125,7 +152,7 @@ int main() {
 
 
 
-        game.updateMap(window);
+        game.updateMap(window,socket,world,x);
 
 
         window.setView(view1);
@@ -134,7 +161,7 @@ int main() {
         view1.setSize(zoom(game.players[0],game.players[1],window));
 
         window.display();
-        if(game.players[1].realBody->GetUserData()!=&game.players[1])exit(0);
+
 
     }
 

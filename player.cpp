@@ -13,7 +13,7 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : worl
 
     movable = true;
 
-    isPlayer  = true;
+    isPlayer = true;
     sprite.setTexture(Player_texture);
     sprite.setTextureRect(sf::IntRect(30, 0, 235, 310));
     bound.setPosition(x, y);
@@ -65,37 +65,32 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : worl
 
 }
 
-bool player::is_on_ground()
-{
-	float yrange = 2; //bound.getSize().y / 40;
-	float xrange = 1; //bound.getSize().x / 40; //minimal distance could be considered as being on the ground
-	QueryCallback callback;
-	b2AABB aabb;
-	b2Vec2 position = realBody->GetPosition();
-	b2Vec2 lb(position.x - xrange/2, position.y - yrange/2);
-	b2Vec2 ub(position.x + xrange/2, position.y + yrange/2);
-	aabb.lowerBound = lb;
-	aabb.upperBound = ub;
-	world.QueryAABB(&callback, aabb);
-	for(b2Body* b : callback.foundBodies)
-	{
-		object* obj = static_cast<object *>(b->GetUserData());
-		if(obj == nullptr)
+bool player::is_on_ground() {
+    float yrange = 2; //bound.getSize().y / 40;
+    float xrange = 1; //bound.getSize().x / 40; //minimal distance could be considered as being on the ground
+    QueryCallback callback;
+    b2AABB aabb;
+    b2Vec2 position = realBody->GetPosition();
+    b2Vec2 lb(position.x - xrange / 2, position.y - yrange / 2);
+    b2Vec2 ub(position.x + xrange / 2, position.y + yrange / 2);
+    aabb.lowerBound = lb;
+    aabb.upperBound = ub;
+    world.QueryAABB(&callback, aabb);
+    for (b2Body *b : callback.foundBodies) {
+        object *obj = static_cast<object *>(b->GetUserData());
+        if (obj == nullptr)
             return true;
-		//printf("%f\n", obj->bound.getPosition().y - obj->bound.getSize().y / 2);
-		//printf("body: %f\n", bound.getPosition().y + bound.getSize().y / 2);
-		if(b != realBody && !obj->movable && abs((obj->bound.getPosition().y - obj->bound.getSize().y / 2)
-				- (bound.getPosition().y + bound.getSize().y / 2)) <= 2.55 * 40)
-		{
-			if(cariedObject != nullptr && cariedObject->realBody != nullptr && cariedObject->realBody == b)
-			{
-				continue;
-			}
-		//new world iterate within object and check fixture bounds
-			return true;
-		}
-	}
-	return false;
+
+        if (b != realBody && !obj->movable && abs((obj->bound.getPosition().y - obj->bound.getSize().y / 2)
+                                                  - (bound.getPosition().y + bound.getSize().y / 2)) <= 2.55 * 40) {
+            if (cariedObject != nullptr && cariedObject->realBody != nullptr && cariedObject->realBody == b) {
+                continue;
+            }
+            //new world iterate within object and check fixture bounds
+            return true;
+        }
+    }
+    return false;
 }
 
 void player::throwObject(b2Body &body) {
@@ -120,23 +115,22 @@ void player::grabe(b2World &world) {
             cariedObject = *reachableObjects.begin();
 
             b2RevoluteJointDef jointDef;
-            b2Body* box = cariedObject->realBody;
+            b2Body *box = cariedObject->realBody;
 
-            if(cariedObject->direction != direction)
-            {
-            	cariedObject->flip(direction);
+            if (cariedObject->direction != direction) {
+                cariedObject->flip(direction);
             }
 
-            b2Vec2 r1(direction * cariedObject->ancorPointShiftBodyAX/scale_factorX,
-                      cariedObject->ancorPointShiftBodyAY/scale_factorX);
+            b2Vec2 r1(direction * cariedObject->ancorPointShiftBodyAX / scale_factorX,
+                      cariedObject->ancorPointShiftBodyAY / scale_factorX);
 
-            b2Vec2 r2(cariedObject->ancorPointShiftBodyBX/scale_factorX,
-                      cariedObject->ancorPointShiftBodyBY/scale_factorX );
+            b2Vec2 r2(cariedObject->ancorPointShiftBodyBX / scale_factorX,
+                      cariedObject->ancorPointShiftBodyBY / scale_factorX);
 
             b2Vec2 shift(r1.x - r2.x, r1.y - r2.y);
 
             b2Vec2 pos(realBody->GetWorldCenter().x + shift.x,
-                    realBody->GetWorldCenter().y + shift.y);
+                       realBody->GetWorldCenter().y + shift.y);
 
             box->SetTransform(pos, 0);
             box->SetFixedRotation(true);
@@ -154,34 +148,32 @@ void player::grabe(b2World &world) {
             cariedObject->isBeingCariedBy = this->realBody;
 
 
-
             JointToHold = joint;
         } else {
-                b2Body* box = cariedObject->realBody;
-                world.DestroyJoint(JointToHold);
-                if(box)
-                {
-                	box->SetFixedRotation(false);
-                	throwObject(*box);
-                }
-                grab = false;
-                cariedObject->isBeingCaried = false;
-                cariedObject->isBeingCariedBy = nullptr;
-                JointToHold = nullptr;
-                cariedObject = nullptr;
+            b2Body *box = cariedObject->realBody;
+            world.DestroyJoint(JointToHold);
+            if (box) {
+                box->SetFixedRotation(false);
+                throwObject(*box);
+            }
+            grab = false;
+            cariedObject->isBeingCaried = false;
+            cariedObject->isBeingCariedBy = nullptr;
+            JointToHold = nullptr;
+            cariedObject = nullptr;
 
 
         }
     }
 }
-void player::death(int x, int y){
+
+void player::death(int x, int y) {
 
 
-    if (grab){
-        b2Body* box = cariedObject->realBody;
+    if (grab) {
+        b2Body *box = cariedObject->realBody;
         world.DestroyJoint(JointToHold);
-        if(box)
-        {
+        if (box) {
             box->SetFixedRotation(false);
             throwObject(*box);
         }
@@ -197,65 +189,67 @@ void player::update() {
     object::update();
     //Move;
     bool IsOnGround = true;//is_on_ground();//bug
-    if(IsOnGround)
-    {
-    	remainingJumpSteps = 1; //landed on the floor!!!
+    if (IsOnGround) {
+        remainingJumpSteps = 1;
     }
     if (moveRight) {
-    	direction = 1;
-    	if(JointToHold != nullptr && cariedObject->direction == -1)
-    	{
-    		//cariedObject->flip(direction);
-    		grabe(world); //throw
-    		grabe(world); //grab again with different position
-    	}
-        if(IsOnGround) //not in the air
+        direction = 1;
+        if (JointToHold != nullptr && cariedObject->direction == -1) {
+            //cariedObject->flip(direction);
+            grabe(world); //throw
+            grabe(world); //grab again with different position
+        }
+        if (IsOnGround) //not in the air
         {
-        	realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
+            realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
         }
     }
+        //Здесь написана фигня, нужно переделать!
     else if (moveLeft) {
-    	direction = -1;
-    	if(JointToHold != nullptr && cariedObject->direction == 1)
-    	{
-    		//cariedObject->flip(direction);
-    		grabe(world); //throw
-    		grabe(world); //grab again with different position
-    	}
-        if(IsOnGround)
-        {
-        	realBody->SetLinearVelocity(b2Vec2(-speed, realBody->GetLinearVelocity().y));
+        direction = -1;
+        if (JointToHold != nullptr && cariedObject->direction == 1) {
+            //cariedObject->flip(direction);
+            grabe(world); //throw
+            grabe(world); //grab again with different position
         }
+        if (IsOnGround) {
+            realBody->SetLinearVelocity(b2Vec2(-speed, realBody->GetLinearVelocity().y));
+        }
+    } else if (IsOnGround) {
+        realBody->SetLinearVelocity(b2Vec2(0, realBody->GetLinearVelocity().y));
     }
-    else if(IsOnGround)
-    {
-    	realBody->SetLinearVelocity(b2Vec2(0, realBody->GetLinearVelocity().y));
-    }
+
+
 }
 
 
-void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
+void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b2World &world, int playerInd, int x) {
 
-
-
+    sf::IpAddress recipient = sf::IpAddress::LocalHost;
+    unsigned short port;
+    if (x == 1) {
+        port = 54001;
+    } else{
+        port = 54000;
+    }
+    sf::Packet packet;
     if (event.type == sf::Event::KeyPressed) {
 
-
-        if (event.key.code == sf::Keyboard::Space&&playerInd==1) {
+        packet<<event.type;
+        packet<<event.key.code;
+        if (event.key.code == sf::Keyboard::Space && playerInd == 1) {
             if (grab) {
                 if (cariedObject->weapon_class != NotWeapon) {
 
                     try {
 
-                       if (cariedObject->weapon_class == Grenade) {
-                    	    auto weapon = dynamic_cast<class grenade *>(cariedObject);
-                    	    weapon->strike();
-                    	}
-                       else if (cariedObject->weapon_class == FireWeapon) {
+                        if (cariedObject->weapon_class == Grenade) {
+                            auto weapon = dynamic_cast<class grenade *>(cariedObject);
+                            weapon->strike();
+                        } else if (cariedObject->weapon_class == FireWeapon) {
                             auto weapon = dynamic_cast<class weapon *>(cariedObject);
                             weapon->strike();
-                        }
-                       else if (cariedObject->weapon_class == HandWeapon) {
+                        } else if (cariedObject->weapon_class == HandWeapon) {
                             auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
                             weapon->strike();
                         }
@@ -270,24 +264,22 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
             }
         }
 
-        if (event.key.code == sf::Keyboard::E&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::E && playerInd == 2) {
             if (grab) {
                 if (cariedObject->weapon_class != NotWeapon) {
 
                     try {
 
-                    	 if (cariedObject->weapon_class == Grenade) {
-                    		 auto weapon = dynamic_cast<class grenade *>(cariedObject);
-                    	     weapon->strike();
-                    	 }
-                    	 else if (cariedObject->weapon_class == FireWeapon) {
-                    		 auto weapon = dynamic_cast<class weapon *>(cariedObject);
-                    	     weapon->strike();
-                    	 }
-                    	 else if (cariedObject->weapon_class == HandWeapon) {
-                    		 auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
-                    	     weapon->strike();
-                    	 }
+                        if (cariedObject->weapon_class == Grenade) {
+                            auto weapon = dynamic_cast<class grenade *>(cariedObject);
+                            weapon->strike();
+                        } else if (cariedObject->weapon_class == FireWeapon) {
+                            auto weapon = dynamic_cast<class weapon *>(cariedObject);
+                            weapon->strike();
+                        } else if (cariedObject->weapon_class == HandWeapon) {
+                            auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                            weapon->strike();
+                        }
 
                     }
                     catch (const std::bad_cast &e) {
@@ -299,30 +291,28 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
             }
         }
 
-        if (event.key.code == sf::Keyboard::Right&&playerInd==1) {
+        if (event.key.code == sf::Keyboard::Right && playerInd == 1) {
             moveRight = true;
 
         }
 
 
-        if (event.key.code == sf::Keyboard::Left&&playerInd==1) {
+        if (event.key.code == sf::Keyboard::Left && playerInd == 1) {
             moveLeft = true;
         }
 
-        if (event.key.code == sf::Keyboard::Up&&playerInd==1) {
+        if (event.key.code == sf::Keyboard::Up && playerInd == 1) {
             //Прыжки
-        	if(remainingJumpSteps > 0 && moveUp)
-            {
-        		moveUp = false;
-        		--remainingJumpSteps;
-        		  if(is_on_ground())
-        		  {
-        			  realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
-        		  }
+            if (remainingJumpSteps > 0 && moveUp) {
+                moveUp = false;
+                --remainingJumpSteps;
+                if (is_on_ground()) {
+                    realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
+                }
             }
         }
 
-        if (event.key.code == sf::Keyboard::G&&playerInd==1) {
+        if (event.key.code == sf::Keyboard::G && playerInd == 1) {
 
             grabe(world);
 
@@ -330,17 +320,17 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
         }
 
 
-        if (event.key.code == sf::Keyboard::D&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::D && playerInd == 2) {
             moveRight = true;
 
         }
 
 
-        if (event.key.code == sf::Keyboard::A&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::A && playerInd == 2) {
             moveLeft = true;
         }
 
-        if (event.key.code == sf::Keyboard::W&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::W && playerInd == 2) {
             //Прыжки
 
             remainingJumpSteps = jumpHeight;
@@ -348,34 +338,38 @@ void player::checkEvents(sf::Event &event, b2World &world, int playerInd) {
 
         }
 
-        if (event.key.code == sf::Keyboard::F&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::F && playerInd == 2) {
 
             grabe(world);
 
 
         }
+        socket[1].send(packet, recipient, port);
     }
 
-//what the hall???
-    if (event.type == sf::Event::KeyReleased) {
-    	if (event.key.code == sf::Keyboard::Up&&playerInd==1) {
-    		moveUp = true;
-    	}
 
-        if (event.key.code == sf::Keyboard::Right&&playerInd==1) {
+    if (event.type == sf::Event::KeyReleased) {
+        packet<<event.type;
+        packet<<event.key.code;
+        if (event.key.code == sf::Keyboard::Up && playerInd == 1) {
+            moveUp = true;
+        }
+
+        if (event.key.code == sf::Keyboard::Right && playerInd == 1) {
             moveRight = false;
             //Send Message to virtualPlayers
         }
-        if (event.key.code == sf::Keyboard::Left&&playerInd==1) {
+        if (event.key.code == sf::Keyboard::Left && playerInd == 1) {
             moveLeft = false;
         }
-        if (event.key.code == sf::Keyboard::D&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::D && playerInd == 2) {
             moveRight = false;
             //Send Message to virtualPlayers
         }
-        if (event.key.code == sf::Keyboard::A&&playerInd==2) {
+        if (event.key.code == sf::Keyboard::A && playerInd == 2) {
             moveLeft = false;
         }
+        socket[1].send(packet, recipient, port);
     }
 
 

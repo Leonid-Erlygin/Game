@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/leonid/CLionProjects/Game/GameCore.cpp
+GameCore.h
+/home/leonid/CLionProjects/Game/GameCore.h
+player.h
+/home/leonid/CLionProjects/Game/player.h
+grenade.h
+/home/leonid/CLionProjects/Game/grenade.h
+handWeapon.h
+/home/leonid/CLionProjects/Game/handWeapon.h
+
 /home/leonid/CLionProjects/Game/GameCore.h
 object.h
 /home/leonid/CLionProjects/Game/object.h
@@ -17,6 +27,8 @@ grenade.h
 /home/leonid/CLionProjects/Game/grenade.h
 handWeapon.h
 /home/leonid/CLionProjects/Game/handWeapon.h
+virtualPlayer.h
+/home/leonid/CLionProjects/Game/virtualPlayer.h
 stdio.h
 -
 
@@ -117,12 +129,6 @@ set
 -
 
 /home/leonid/CLionProjects/Game/virtualPlayer.h
-player.h
-/home/leonid/CLionProjects/Game/player.h
-
-/home/leonid/CLionProjects/Game/weapon.cpp
-weapon.h
-/home/leonid/CLionProjects/Game/weapon.h
 player.h
 /home/leonid/CLionProjects/Game/player.h
 

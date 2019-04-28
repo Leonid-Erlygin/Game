@@ -9,7 +9,7 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
     sf::Packet packet;
     sf::IpAddress sender;
     unsigned short port;
-    socket[x].receive(packet,sender,port);
+    socket[0].receive(packet,sender,port);
 
     sf::Event event;
     int c;
