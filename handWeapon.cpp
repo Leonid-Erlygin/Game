@@ -16,14 +16,19 @@ void handWeapon::switchToRigth() {
 }
 
 
-handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &TextureFire) : flameTexture(TextureFire) {
+handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &TextureFire, sf::SoundBuffer& fire_buffer,int x, int y):
+		flameTexture(TextureFire)
+{
+	fire_sound.setBuffer(fire_buffer);
+	fire_sound.setVolume(100.f);
+	fire_sound.setLoop(true);
 
     ancorPointShiftBodyAX = 20;
     ancorPointShiftBodyAY = 0;
     ancorPointShiftBodyBX = -10;
     ancorPointShiftBodyBY = 0;
     weapon_class = HandWeapon;
-    bound.setPosition(600, 40);
+    bound.setPosition(x, y);
     sprite.setTexture(Texture);
     sprite.scale(1, 1);
     movable = true;
@@ -70,9 +75,8 @@ void handWeapon::makeSparkels(float x, float y) {
     FLameState.push_back(0);
 }
 
-void handWeapon::update(sf::RenderWindow &window) {
-
-	window.draw(sprite);
+void handWeapon::update(sf::RenderWindow &window)
+{
 
 	if(isBeingCaried && flag)
 	{
@@ -136,7 +140,8 @@ void handWeapon::update(sf::RenderWindow &window) {
         }
 
     }
-    if (goDown && isBeingCaried) {
+    if (goDown && isBeingCaried)
+    {
         //realBody->SetTransform(realBody->GetPosition(), realBody->GetAngle() - delta);
        /* if ((realBody->GetAngle() < 0 && direction == 1)
         	|| (realBody->GetAngle() > PI2 && direction == -1)) {
@@ -158,13 +163,19 @@ void handWeapon::update(sf::RenderWindow &window) {
                                 ContactObject->bound.getPosition().y + dis(gen));
                }
            }
-
-
-
-
     }
 
+  	if(fire_sound.getStatus() != sf::Sound::Playing && !FLameOrigin.empty())
+    {
+    	fire_sound.play();
+    }
+  	else if(FLameOrigin.empty())
+  	{
+  		fire_sound.stop();
+  	}
+
     object::update();
+    window.draw(sprite);
 
     time_delay += 1 / 60.0;
     if(time_delay > delay)

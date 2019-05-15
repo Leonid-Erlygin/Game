@@ -19,4 +19,4 @@ add_executable(Game main.cpp entity.cpp entity.h player.cpp player.h object.cpp 
 
 
 target_link_libraries(Game -lsfml-graphics -lsfml-window
-        -lsfml-system -lGL -lsfml-network /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a)
+        -lsfml-system -lGL -lsfml-network -lsfml-audio /home/leonid/Fun/Box2D/Build/bin/x86_64/Debug/libBox2D.a)

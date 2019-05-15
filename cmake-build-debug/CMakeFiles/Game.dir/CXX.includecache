@@ -7,6 +7,10 @@
 #IncludeRegexTransform: 
 
 /home/leonid/CLionProjects/Game/GameCore.cpp
+iostream
+-
+fstream
+-
 GameCore.h
 /home/leonid/CLionProjects/Game/GameCore.h
 player.h
@@ -62,6 +66,8 @@ SFML/Graphics/Sprite.hpp
 SFML/Graphics/Text.hpp
 -
 SFML/Graphics.hpp
+-
+SFML/Audio.hpp
 -
 
 /home/leonid/CLionProjects/Game/grenade.h

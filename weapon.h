@@ -1,8 +1,8 @@
 /*
  * weapon.h
  *
- *  Created on: 3 мар. 2019 г.
- *      Author: Никита
+ *  Created on: 3 пїЅпїЅпїЅ. 2019 пїЅ.
+ *      Author: пїЅпїЅпїЅпїЅпїЅпїЅ
  */
 #pragma once
 #include "object.h"
@@ -30,7 +30,7 @@ public:
 	sf::RenderWindow& window;
 	b2World& world;
 
-	weapon(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::Texture&);
+	weapon(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::Texture&, sf::SoundBuffer&,int, int);
 	void strike();
 	void weapon_update();
 
@@ -48,6 +48,8 @@ public:
 	bool is_strike = 0;
 
 private:
+
+	sf::Sound shot_sound;
 
 	sf::Texture& texture_explosion;
 	sf::Texture& texture_bullet;

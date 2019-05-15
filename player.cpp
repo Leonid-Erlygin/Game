@@ -97,22 +97,18 @@ void player::throwObject(b2Body &body) {
     body.ApplyLinearImpulseToCenter(b2Vec2(10 * direction * strength, 0), true);
 }
 
-void player::print() {
-    printf("Bound height:%f Bound width:%f\nBox height:%f Box width:%f\n", bound.getSize().y * bound.getScale().y,
-           bound.getSize().x * bound.getScale().x,
-           (bound.getSize().y / (float32) (2 * scale_factorX)) * bound.getScale().y,
-           (bound.getSize().x / (float32) (2 * scale_factorX)) * bound.getScale().x);
-}
 
 
-void player::grabe(b2World &world) {
+void player::grabe(b2World &world,object*flipObject) {
 
     if (!reachableObjects.empty()) {
         //what if object lost in hands
 
 
         if (JointToHold == nullptr) {
+            if(flipObject == nullptr)
             cariedObject = *reachableObjects.begin();
+            else cariedObject = flipObject;
 
             b2RevoluteJointDef jointDef;
             b2Body *box = cariedObject->realBody;
@@ -196,15 +192,15 @@ void player::update() {
         direction = 1;
         if (JointToHold != nullptr && cariedObject->direction == -1) {
             //cariedObject->flip(direction);
-            grabe(world); //throw
-            grabe(world); //grab again with different position
+            object * obj = cariedObject;
+            grabe(world, nullptr); //throw
+            grabe(world,obj); //grab again with different position
         }
         if (IsOnGround) //not in the air
         {
             realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
         }
     }
-        //Здесь написана фигня, нужно переделать!
     else if (moveLeft) {
         direction = -1;
         if (JointToHold != nullptr && cariedObject->direction == 1) {
@@ -233,10 +229,21 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
         port = 54000;
     }
     sf::Packet packet;
+    packet<<event.type;
+    if(event.type == sf::Event::KeyPressed||event.type  == sf::Event::KeyReleased) {
+        packet << event.key.code;
+    }
+    float32 x1 = realBody->GetPosition().x;
+    float32 y1 = realBody->GetPosition().y;
+    packet<<x1;
+    packet<<y1;
+    socket[1].send(packet, recipient, port);
+
+
+
     if (event.type == sf::Event::KeyPressed) {
 
-        packet<<event.type;
-        packet<<event.key.code;
+
         if (event.key.code == sf::Keyboard::Space && playerInd == 1) {
             if (grab) {
                 if (cariedObject->weapon_class != NotWeapon) {
@@ -344,13 +351,11 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
 
 
         }
-        socket[1].send(packet, recipient, port);
+
     }
 
 
     if (event.type == sf::Event::KeyReleased) {
-        packet<<event.type;
-        packet<<event.key.code;
         if (event.key.code == sf::Keyboard::Up && playerInd == 1) {
             moveUp = true;
         }
@@ -369,7 +374,7 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
         if (event.key.code == sf::Keyboard::A && playerInd == 2) {
             moveLeft = false;
         }
-        socket[1].send(packet, recipient, port);
+
     }
 
 

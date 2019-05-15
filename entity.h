@@ -10,6 +10,8 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 class entity {
 public:
     sf::RectangleShape bound;

@@ -11,7 +11,7 @@
 
 class handWeapon : public object {
 public:
-    handWeapon(b2World &, sf::Texture &, sf::Texture &);
+    handWeapon(b2World &, sf::Texture &, sf::Texture &, sf::SoundBuffer&,int, int );
 
     int angle = 0;
     bool goUp = false;
@@ -31,6 +31,9 @@ public:
     float time_delay = delay;
 
 private:
+
+    sf::Sound fire_sound;
+
     sf::Texture &flameTexture;
     std::vector<std::vector<sf::Sprite>> FLameOrigin;
     std::vector<int> FLameState;
@@ -46,6 +49,9 @@ private:
     float32 scale_factorX = 40;//1 м = 40 pxl
     float32 scale_factorY = -40;
     float delay = 0.25;
+
+
+    bool help = true;
 
 };
 

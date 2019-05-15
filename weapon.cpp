@@ -1,9 +1,5 @@
-/*
- * weapon.cpp
- *
- *  Created on: 3 ���. 2019 �.
- *      Author: ������
- */
+
+
 
 #include "weapon.h"
 #include "player.h"
@@ -16,13 +12,17 @@ bullet::bullet(b2Vec2 r, float angle) :
 }
 
 weapon::weapon(b2World& world, sf::RenderWindow& window, sf::Texture& texture_weapon,
-		sf::Texture& texture_bullet, sf::Texture& texture_explosion) :
-		world(world), window(window), texture_bullet(texture_bullet), texture_explosion(texture_explosion) {
+		sf::Texture& texture_bullet, sf::Texture& texture_explosion, sf::SoundBuffer& shot_buffer,int x, int y) :
+		world(world), window(window), texture_bullet(texture_bullet), texture_explosion(texture_explosion)
+{
+	shot_sound.setBuffer(shot_buffer);
+	shot_sound.setVolume(100.f);
+
 	sprite.setTexture(texture_weapon);
 	sprite.scale(2.5, 2.5);
 	bound.setSize(sf::Vector2f(texture_weapon.getSize().x,
 							texture_weapon.getSize().y));
-	bound.setPosition(100, 60);
+	bound.setPosition(x, y);
 	movable = true;
 	weapon_class = FireWeapon;
 	bodyInit(world);
@@ -33,6 +33,7 @@ void weapon::strike() {
 		is_strike = true;
 		++bullets_count;
 		time = 0;
+		shot_sound.play();
 	}
 }
 
@@ -151,7 +152,8 @@ void weapon::weapon_update() {
 						used_bullets.push_back(bullet.first);
 						explosion_sprites.push_back(std::pair<sf::Sprite, int>(explosion_sprite, 0));
 						object* obj = static_cast<object *>(b->GetUserData());
-						if(obj!= nullptr&&b != realBody && obj->movable)
+
+						if(b != realBody &&(obj!= nullptr) && obj->movable)
 						{
 							object * obj = static_cast<object *>(b->GetUserData());
 							if (obj->isPlayer){

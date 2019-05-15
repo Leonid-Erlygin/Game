@@ -32,11 +32,11 @@ public:
     bool is_on_ground();
     b2World& world;
 
-    void grabe(b2World &);
+    void grabe(b2World &, object*flipObject = nullptr);
 
     void update();
     void death(int x, int y);
-    void sendEvent(sf::Event &,sf::UdpSocket&);
+
 
 
 

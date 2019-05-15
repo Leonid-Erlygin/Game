@@ -16,16 +16,20 @@ bool QueryCallback::ReportFixture(b2Fixture* fixture)
 };
 
 grenade::grenade(b2World& world, sf::RenderWindow& window,
-		sf::Texture& grenade_texture, sf::Texture& explosion_texture) : world(world), window(window),
-		grenade_texture(grenade_texture), explosion_texture(explosion_texture)
+		sf::Texture& grenade_texture, sf::Texture& explosion_texture, sf::SoundBuffer& explosion_buffer,int x, int y)
+: world(world), window(window), grenade_texture(grenade_texture), explosion_texture(explosion_texture)
 {
+
+	explosion_sound.setBuffer(explosion_buffer);
+	explosion_sound.setVolume(100.f);
+
 	sprite.setTexture(grenade_texture);
 	sf::IntRect rect = sprite.getTextureRect();
 	sprite.setTextureRect(sf::IntRect(rect.left, rect.top, rect.width/2, rect.height));
 	sprite.scale(2.5, 2.5);
 	bound.setSize(sf::Vector2f(grenade_texture.getSize().x,
 								grenade_texture.getSize().y));
-	bound.setPosition(200, 50);
+	bound.setPosition(x, y);
 	movable = true;
 	weapon_class = Grenade;
 	bodyInit(world);
@@ -72,6 +76,9 @@ void grenade::explode()
 
 		}
 	}
+
+	explosion_sound.play();
+
 	sf::Sprite strike_sprite;
 	strike_sprite.setTexture(explosion_texture);
 	strike_sprite.setPosition(sf::Vector2f(realBody->GetPosition().x * (40),

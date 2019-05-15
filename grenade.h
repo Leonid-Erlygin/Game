@@ -1,8 +1,8 @@
 /*
  * grenade.h
  *
- *  Created on: 8 мар. 2019 г.
- *      Author: Никита
+ *  Created on: 8 пїЅпїЅпїЅ. 2019 пїЅ.
+ *      Author: пїЅпїЅпїЅпїЅпїЅпїЅ
  */
 
 #pragma once
@@ -24,7 +24,7 @@ public:
 
 	b2World& world;
 	sf::RenderWindow& window;
-	grenade(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&);
+	grenade(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::SoundBuffer&,int,int );
 	void explode();
 	void strike();
 	void grenade_update();
@@ -33,6 +33,7 @@ public:
 	std::vector<std::pair<sf::Sprite, int>> explosion_sprites;
 
 private:
+	sf::Sound explosion_sound;
 
 	sf::Texture& grenade_texture;
 	sf::Texture& explosion_texture;
