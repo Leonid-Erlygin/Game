@@ -2,8 +2,10 @@
 // Created by leonid on 03.03.19.
 //
 
+#include <iostream>
 #include "virtualPlayer.h"
-
+#include "grenade.h"
+#include "handWeapon.h"
 
 void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int x) {
     sf::Packet packet;
@@ -37,6 +39,32 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
 
     if (c!=-1&&event.type == sf::Event::KeyPressed) {
 
+        if(event.key.code == sf::Keyboard::Space){
+            if (grab) {
+                if (cariedObject->weapon_class != NotWeapon) {
+
+                    try {
+
+                        if (cariedObject->weapon_class == Grenade) {
+                            auto weapon = dynamic_cast<class grenade *>(cariedObject);
+                            weapon->strike();
+                        } else if (cariedObject->weapon_class == FireWeapon) {
+                            auto weapon = dynamic_cast<class weapon *>(cariedObject);
+                            weapon->strike();
+                        } else if (cariedObject->weapon_class == HandWeapon) {
+                            auto weapon = dynamic_cast<class handWeapon *>(cariedObject);
+                            weapon->strike();
+                        }
+
+                    }
+                    catch (const std::bad_cast &e) {
+                        std::cout << e.what() << std::endl;
+                        std::cout << "Этот объект не является объектом типа Weapon\n" << std::endl;
+                    }
+
+                }
+            }
+        }
 
         if (event.key.code == sf::Keyboard::Right) {
             moveRight = true;
@@ -86,6 +114,6 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
     }
 }
 
-virtualPlayer::virtualPlayer(b2World &world, sf::Texture &Player_texture, int x, int y) : player(world, Player_texture,
-                                                                                                 x, y) {
+virtualPlayer::virtualPlayer(b2World &world, sf::Texture &Player_texture,sf::SoundBuffer&s, int x, int y) : player(world, Player_texture,
+                                                                                                 s,x, y) {
 }

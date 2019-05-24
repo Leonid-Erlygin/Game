@@ -281,7 +281,7 @@ std::vector<Object> Level::GetObjects(std::string name)
     // Все объекты с заданным типом
     std::vector<Object> vec;
     for(int i = 0; i < objects.size(); i++)
-        if(objects[i].type == name)
+        if(objects[i].name == name)
             vec.push_back(objects[i]);
 
     return vec;

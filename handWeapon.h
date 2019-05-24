@@ -16,8 +16,6 @@ public:
     int angle = 0;
     bool goUp = false;
     bool flag = true;
-    void switchToRigth();
-    void switchToLeft();
     std::set<object *>reachableObjects;
 
     void strike();
@@ -39,8 +37,8 @@ private:
     std::vector<int> FLameState;
     int flameDilay = 5;
     int flameDilayCount = 0;
-    int ancorPointShiftX = 40;
-    int ancorPointShiftY = -20;
+   // int ancorPointShiftX = 40;
+   // int ancorPointShiftY = -20;
     bool goDown = false;
     int anglePartition = 20;
     int angularVelocity = 20;

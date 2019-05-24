@@ -14,25 +14,28 @@
 
 class player : public object {
 public:
+
+	int counter = 0;
+
     void print();
     bool grab = false;
-    int speed = 10;
-    int strength = 5;
+    float speed = 10;
+    float strength = 3;
     std::set<object *>reachableObjects;
-    object *cariedObject;
+    object* cariedObject;
     int remainingJumpSteps = 1;
     int jumpHeight = 200;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
     bool moveRight= false;
     bool moveLeft= false;
-    bool moveUp = true;
-    int direction;// -1 - left, 1 - right
+   // int direction = 0;// -1 = left, 1 = right
 
     bool is_on_ground();
+    int is_on_wall();
     b2World& world;
 
-    void grabe(b2World &, object*flipObject = nullptr);
+    void grabe(b2World &, object*flipObject = nullptr, bool is_flip = false);
 
     void update();
     void death(int x, int y);
@@ -42,11 +45,13 @@ public:
 
     void checkEvents(std::vector<sf::UdpSocket>&,sf::Event &, b2World &,int player,int x);
 
-    player(b2World &world, sf::Texture &,int x,int y);
+    player(b2World &world, sf::Texture &, sf::SoundBuffer& jump_buffer, int x, int y);
 
     void throwObject(b2Body &);
 
 private:
+
+    sf::Sound jump_sound;
 
     int scale_factorX = 40;
     int scale_factorY = -40;

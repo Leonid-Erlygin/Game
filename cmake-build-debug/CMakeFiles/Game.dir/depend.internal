@@ -55,6 +55,8 @@ CMakeFiles/Game.dir/handWeapon.cpp.o
  /home/leonid/CLionProjects/Game/handWeapon.cpp
  /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
+ /home/leonid/CLionProjects/Game/player.h
+ /home/leonid/CLionProjects/Game/weapon.h
 CMakeFiles/Game.dir/main.cpp.o
  /home/leonid/CLionProjects/Game/GameCore.h
  /home/leonid/CLionProjects/Game/Map/level.h
@@ -81,6 +83,8 @@ CMakeFiles/Game.dir/player.cpp.o
  /home/leonid/CLionProjects/Game/weapon.h
 CMakeFiles/Game.dir/virtualPlayer.cpp.o
  /home/leonid/CLionProjects/Game/entity.h
+ /home/leonid/CLionProjects/Game/grenade.h
+ /home/leonid/CLionProjects/Game/handWeapon.h
  /home/leonid/CLionProjects/Game/object.h
  /home/leonid/CLionProjects/Game/player.h
  /home/leonid/CLionProjects/Game/virtualPlayer.cpp

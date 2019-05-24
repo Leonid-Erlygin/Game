@@ -50,12 +50,12 @@ public:
     sf::Vector2i GetTileSize();
     float32 scale_factorX = 40;//1 м = 40 pxl
     float32 scale_factorY = -40;
-
+    float mapScaleX = 2;
+    float mapScaleY = 2;
 private:
     int width, height, tileWidth, tileHeight;
     int firstTileID;
-    float mapScaleX = 5.0f;
-    float mapScaleY = 1.5f;
+
     sf::Rect<float> drawingBounds;
     sf::Texture tilesetImage;
     std::vector<Object> objects;

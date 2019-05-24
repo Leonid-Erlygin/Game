@@ -9,7 +9,10 @@
 #include "handWeapon.h"
 #include "grenade.h"
 
-player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : world(world) {
+player::player(b2World &world, sf::Texture &Player_texture, sf::SoundBuffer& jump_buffer, int x, int y) : world(world) {
+
+	jump_sound.setBuffer(jump_buffer);
+	jump_sound.setVolume(30.f);
 
     movable = true;
 
@@ -66,40 +69,68 @@ player::player(b2World &world, sf::Texture &Player_texture, int x, int y) : worl
 }
 
 bool player::is_on_ground() {
-    float yrange = 2; //bound.getSize().y / 40;
-    float xrange = 1; //bound.getSize().x / 40; //minimal distance could be considered as being on the ground
-    QueryCallback callback;
-    b2AABB aabb;
-    b2Vec2 position = realBody->GetPosition();
-    b2Vec2 lb(position.x - xrange / 2, position.y - yrange / 2);
-    b2Vec2 ub(position.x + xrange / 2, position.y + yrange / 2);
-    aabb.lowerBound = lb;
-    aabb.upperBound = ub;
-    world.QueryAABB(&callback, aabb);
-    for (b2Body *b : callback.foundBodies) {
-        object *obj = static_cast<object *>(b->GetUserData());
-        if (obj == nullptr)
-            return true;
 
-        if (b != realBody && !obj->movable && abs((obj->bound.getPosition().y - obj->bound.getSize().y / 2)
-                                                  - (bound.getPosition().y + bound.getSize().y / 2)) <= 2.55 * 40) {
-            if (cariedObject != nullptr && cariedObject->realBody != nullptr && cariedObject->realBody == b) {
-                continue;
-            }
-            //new world iterate within object and check fixture bounds
-            return true;
-        }
-    }
-    return false;
+	for(b2ContactEdge* ce = realBody->GetContactList(); ce != nullptr; ce = ce->next)
+	{
+		b2Fixture* fixture = ce->contact->GetFixtureA();
+		b2Body* body = fixture->GetBody();
+		object* obj = static_cast<object *>(body->GetUserData());
+		if(obj != nullptr)
+		{
+			if(obj->movable)
+			{
+				continue;
+			}
+		}
+		b2WorldManifold mf;
+		ce->contact->GetWorldManifold(&mf);
+		b2Vec2 norm = mf.normal;
+		if(abs(norm.x) <= 0.01 && norm.y > 0)
+		{
+			return true;
+		}
+	}
+	return false;
 }
+
+int player::is_on_wall()
+{
+	for(b2ContactEdge* ce = realBody->GetContactList(); ce != nullptr; ce = ce->next)
+	{
+		b2Fixture* fixture = ce->contact->GetFixtureA();
+		b2Body* body = fixture->GetBody();
+		object* obj = static_cast<object *>(body->GetUserData());
+		if(obj != nullptr)
+		{
+			if(obj->movable)
+			{
+				continue;
+			}
+		}
+		b2WorldManifold mf;
+		ce->contact->GetWorldManifold(&mf);
+		b2Vec2 norm = mf.normal;
+		if(norm.x > 0.1 && abs(norm.y) <= 0.01)
+		{
+			return 1;
+		}
+		else if(norm.x < -0.1 && abs(norm.y) <= 0.01)
+		{
+			return -1;
+		}
+	}
+	return 0;
+}
+
+
 
 void player::throwObject(b2Body &body) {
-    body.ApplyLinearImpulseToCenter(b2Vec2(10 * direction * strength, 0), true);
+    body.ApplyLinearImpulseToCenter(b2Vec2(10 * direction * strength*dencity, 0), true);
 }
 
 
 
-void player::grabe(b2World &world,object*flipObject) {
+void player::grabe(b2World &world,object*flipObject, bool is_flip) {
 
     if (!reachableObjects.empty()) {
         //what if object lost in hands
@@ -143,10 +174,44 @@ void player::grabe(b2World &world,object*flipObject) {
             cariedObject->isBeingCaried = true;
             cariedObject->isBeingCariedBy = this->realBody;
 
+            if(!is_flip)
+            {
+            	b2Fixture* fix = cariedObject->realBody->GetFixtureList();
+
+				if(cariedObject->weapon_class == HandWeapon)
+				{
+					fix = fix->GetNext();
+				}
+
+            	b2Filter fil;
+            	fil.categoryBits = 0;
+            	fil.maskBits = 0;
+            	fix->SetFilterData(fil);
+            }
+
+
+
 
             JointToHold = joint;
         } else {
             b2Body *box = cariedObject->realBody;
+
+            if(!is_flip)
+            {
+				b2Fixture* fix = cariedObject->realBody->GetFixtureList();
+				if(cariedObject->weapon_class == HandWeapon)
+				{
+					fix = fix->GetNext();
+				}
+
+            	b2Filter fil;
+                fil.categoryBits = 6;
+                fil.maskBits = 1;
+                fix->SetFilterData(fil);
+            }
+
+
+
             world.DestroyJoint(JointToHold);
             if (box) {
                 box->SetFixedRotation(false);
@@ -164,8 +229,17 @@ void player::grabe(b2World &world,object*flipObject) {
 }
 
 void player::death(int x, int y) {
+    if(cariedObject!= nullptr) {
+        b2Fixture *fix = cariedObject->realBody->GetFixtureList();
+        if (cariedObject->weapon_class == HandWeapon) {
+            fix = fix->GetNext();
+        }
 
-
+        b2Filter fil;
+        fil.categoryBits = 6;
+        fil.maskBits = 1;
+        fix->SetFilterData(fil);
+    }
     if (grab) {
         b2Body *box = cariedObject->realBody;
         world.DestroyJoint(JointToHold);
@@ -179,43 +253,70 @@ void player::death(int x, int y) {
         cariedObject = nullptr;
     }
 
+
+    realBody->SetTransform(b2Vec2(10,0),0);
 }
 
-void player::update() {
-    object::update();
-    //Move;
-    bool IsOnGround = true;//is_on_ground();//bug
-    if (IsOnGround) {
+void player::update()
+{
+    int IsOnWall = is_on_wall();
+    if (is_on_ground())
+    {
         remainingJumpSteps = 1;
     }
-    if (moveRight) {
+    if (moveRight)
+    {
+    	if(direction == -1)
+    	{
+    		counter = 0;
+    	}
+    	sprite.setTextureRect(sf::IntRect(30 + 177 * (counter / 5), 1 * 310, 177, 310));
+    	counter += 1;
+    	counter %= 16;
         direction = 1;
-        if (JointToHold != nullptr && cariedObject->direction == -1) {
-            //cariedObject->flip(direction);
-            object * obj = cariedObject;
-            grabe(world, nullptr); //throw
-            grabe(world,obj); //grab again with different position
+        if (JointToHold != nullptr && cariedObject->direction == -1)
+        {
+        	object* obj = cariedObject;
+        	grabe(world, nullptr, true); //throw
+        	grabe(world, obj, true); //grab again with different position
         }
-        if (IsOnGround) //not in the air
+        if (1/*IsOnWall >= 0*/) //not push a wall
         {
             realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
         }
     }
-    else if (moveLeft) {
+    else if (moveLeft)
+    {
+    	if(direction == 1)
+    	{
+    		counter = 0;
+    	}
+    	sprite.setTextureRect(sf::IntRect(40 + 177 * (counter / 5), 2 * 310, 177, 310));
+    	counter += 1;
+    	counter %= 16;
+
         direction = -1;
-        if (JointToHold != nullptr && cariedObject->direction == 1) {
-            //cariedObject->flip(direction);
-            grabe(world); //throw
-            grabe(world); //grab again with different position
+        if (JointToHold != nullptr && cariedObject->direction == 1 && cariedObject->weapon_class != Grenade)
+        {
+        	object* obj = cariedObject;
+        	grabe(world, nullptr, true); //throw
+        	grabe(world, obj, true); //grab again with different position
+
         }
-        if (IsOnGround) {
+        if (1/*IsOnWall <= 0*/) // not push a wall
+        {
+
             realBody->SetLinearVelocity(b2Vec2(-speed, realBody->GetLinearVelocity().y));
         }
-    } else if (IsOnGround) {
+    }
+    else if (1)
+    {
+    	sprite.setTextureRect(sf::IntRect(30, 0, 235, 310));
+    	counter = 0;
+
         realBody->SetLinearVelocity(b2Vec2(0, realBody->GetLinearVelocity().y));
     }
-
-
+    object::update();
 }
 
 
@@ -310,11 +411,11 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
 
         if (event.key.code == sf::Keyboard::Up && playerInd == 1) {
             //Прыжки
-            if (remainingJumpSteps > 0 && moveUp) {
-                moveUp = false;
+            if (remainingJumpSteps > 0) {
                 --remainingJumpSteps;
                 if (is_on_ground()) {
                     realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
+                    jump_sound.play();
                 }
             }
         }
@@ -339,8 +440,13 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
 
         if (event.key.code == sf::Keyboard::W && playerInd == 2) {
             //Прыжки
-
-            remainingJumpSteps = jumpHeight;
+            if (remainingJumpSteps > 0) {
+                --remainingJumpSteps;
+                if (is_on_ground()) {
+                    realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
+                    jump_sound.play();
+                }
+            }
 
 
         }
@@ -357,7 +463,7 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
 
     if (event.type == sf::Event::KeyReleased) {
         if (event.key.code == sf::Keyboard::Up && playerInd == 1) {
-            moveUp = true;
+
         }
 
         if (event.key.code == sf::Keyboard::Right && playerInd == 1) {

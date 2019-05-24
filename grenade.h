@@ -22,6 +22,7 @@ public:
 class grenade : public object {
 public:
 
+
 	b2World& world;
 	sf::RenderWindow& window;
 	grenade(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::SoundBuffer&,int,int );
@@ -37,7 +38,8 @@ private:
 
 	sf::Texture& grenade_texture;
 	sf::Texture& explosion_texture;
-	int range = 2;
+
+	int range = 8;
 	float explosion_delay = 1.0;
 
 };

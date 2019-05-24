@@ -39,6 +39,7 @@ public:
     //b2PolygonShape shape;//Это тоже можно удалить
     ~object();
     object();
+    float dencity;
 	int magicnumber = 0;
     bool movable;
     bool isBeingCaried = false;
@@ -47,7 +48,7 @@ public:
     void startContact() { m_contacting = true; }
     void endContact() { m_contacting = false; }
     void virtual update();
-    void bodyInit(b2World &world);
+    void bodyInit(b2World &world, float density = 5.0, int categoryBits = 2, int maskBits = 6);
     void print();
 
     int direction = 1;

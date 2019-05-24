@@ -54,6 +54,8 @@ CMakeFiles/Game.dir/handWeapon.cpp.o: ../entity.h
 CMakeFiles/Game.dir/handWeapon.cpp.o: ../handWeapon.cpp
 CMakeFiles/Game.dir/handWeapon.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/handWeapon.cpp.o: ../object.h
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../player.h
+CMakeFiles/Game.dir/handWeapon.cpp.o: ../weapon.h
 
 CMakeFiles/Game.dir/main.cpp.o: ../GameCore.h
 CMakeFiles/Game.dir/main.cpp.o: ../Map/level.h
@@ -80,6 +82,8 @@ CMakeFiles/Game.dir/player.cpp.o: ../player.h
 CMakeFiles/Game.dir/player.cpp.o: ../weapon.h
 
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../entity.h
+CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../grenade.h
+CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../handWeapon.h
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../object.h
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../player.h
 CMakeFiles/Game.dir/virtualPlayer.cpp.o: ../virtualPlayer.cpp

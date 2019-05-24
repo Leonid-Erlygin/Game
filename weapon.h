@@ -30,7 +30,8 @@ public:
 	sf::RenderWindow& window;
 	b2World& world;
 
-	weapon(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::Texture&, sf::SoundBuffer&,int, int);
+	weapon(b2World& world, sf::RenderWindow&, sf::Texture&, sf::Texture&, sf::Texture&, sf::SoundBuffer&, int, int,
+			float rap_of_fire = 0.07, float vel = 25, float ang_rec = 10 * (PI / 180), float lin_rec = 5);
 	void strike();
 	void weapon_update();
 
@@ -53,11 +54,12 @@ private:
 
 	sf::Texture& texture_explosion;
 	sf::Texture& texture_bullet;
+
 	unsigned max_num_of_bullets = 100;
 	int damage = 10;
 	int range = 50; //max distance for a bullet to fly
-	int xlim = 50; //bounds a bullet can't go through
-	int ylim = 50;
+	int xlim = 333; //bounds a bullet can't go through
+	int ylim = 333;
 	float rapidity_of_fire = 0.07; //time between shots
 	float velocity = 25;
 	float angle_recoil = 10 * (PI / 180); //the angle to be diflected at after strike

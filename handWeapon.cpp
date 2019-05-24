@@ -4,16 +4,8 @@
 
 #include <iostream>
 #include "handWeapon.h"
+#include "player.h"
 #include <random>
-
-
-void handWeapon::switchToRigth() {
-    ancorPointShiftBodyAX = 20;
-    ancorPointShiftBodyAY = 0;
-    ancorPointShiftBodyBX = -10;
-    ancorPointShiftBodyBY = 0;
-
-}
 
 
 handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &TextureFire, sf::SoundBuffer& fire_buffer,int x, int y):
@@ -27,19 +19,21 @@ handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &Textur
     ancorPointShiftBodyAY = 0;
     ancorPointShiftBodyBX = -10;
     ancorPointShiftBodyBY = 0;
+
     weapon_class = HandWeapon;
     bound.setPosition(x, y);
     sprite.setTexture(Texture);
     sprite.scale(1, 1);
     movable = true;
-    bodyInit(world);
+    dencity = 0.3;
+    bodyInit(world,dencity);
 
     b2Fixture *fix =  realBody->GetFixtureList();
     b2Filter fil;
     fil.categoryBits = 6;
     fil.maskBits = 1;
     fix->SetFilterData(fil);
-    fix->SetDensity(10);
+    fix->SetDensity(dencity);
     b2FixtureDef fixture2;
     b2PolygonShape shape;
 
@@ -156,6 +150,11 @@ void handWeapon::update(sf::RenderWindow &window)
                std::set<object *>::iterator iter3;
                for (iter3 = reachableObjects.begin();iter3 != reachableObjects.end();iter3++) {
                    object * ContactObject = *iter3;
+                   if(ContactObject->isPlayer){
+                       player* pl = dynamic_cast<player*>(ContactObject);
+                       pl->death(0,0);
+                   }
+
                    std::random_device rd;  //Will be used to obtain a seed for the random number engine
                    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
                    std::uniform_int_distribution<> dis(-60, -10);

@@ -42,36 +42,8 @@ void addGid(){
 int main() {
 #if 0
     int x;
-    std::cin>>x;
-    std::vector<sf::UdpSocket> socket(2);
-    //socket[0].setBlocking(false);
-   // socket[1].setBlocking(false);
+    printf("%d", x);
 
-    if(x==1){
-        sf::IpAddress recipient = ;
-        unsigned short port;
-        port = 54001;
-        sf::Packet packet;
-        packet<<1;
-        socket[1].send(packet, recipient, port);
-
-    } else{
-
-        if (socket[0].bind(54001) != sf::Socket::Done)
-        {
-            exit(0);
-        }
-        sf::Packet packet;
-        sf::IpAddress sender;
-        unsigned short port;
-        int c = -1;
-
-            if (socket[0].receive(packet, sender, port) == sf::Socket::Done) {
-                packet >> c;
-                printf("%d\n",c);
-            }
-
-    }
 #endif
 
 #if 1
@@ -112,20 +84,24 @@ int main() {
    // music.play();
 
     world.SetContactListener(&myContactListenerInstance);
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
     window.setFramerateLimit(60);
 
 
-
     GameCore game(window,world,x);
-    //game.runMenu();
-    game.initLvl();
+    game.runMenu();
+    if(game.isLocal){
+        game.initLvl("GrassLand");
+
+    }
+
     game.loadTextures();
     game.loadSoundBuffers();
-    game.createMovableObjects();
+
 
     game.runLevel(socket);
 
-#endif
+
     return 0;
 }
+#endif

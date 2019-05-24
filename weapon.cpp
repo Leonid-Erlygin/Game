@@ -12,20 +12,33 @@ bullet::bullet(b2Vec2 r, float angle) :
 }
 
 weapon::weapon(b2World& world, sf::RenderWindow& window, sf::Texture& texture_weapon,
-		sf::Texture& texture_bullet, sf::Texture& texture_explosion, sf::SoundBuffer& shot_buffer,int x, int y) :
-		world(world), window(window), texture_bullet(texture_bullet), texture_explosion(texture_explosion)
+		sf::Texture& texture_bullet, sf::Texture& texture_explosion, sf::SoundBuffer& shot_buffer, int x, int y,
+		float rap_of_fire, float vel, float ang_rec, float lin_rec) :
+		world(world), window(window), texture_bullet(texture_bullet), texture_explosion(texture_explosion),
+		rapidity_of_fire(rap_of_fire), velocity(vel), angle_recoil(ang_rec), line_recoil(lin_rec)
 {
+
+	ancorPointShiftBodyAX = 7;
+	ancorPointShiftBodyAY = 0;
+	ancorPointShiftBodyBX = 0;
+	ancorPointShiftBodyBY = 0;
+
 	shot_sound.setBuffer(shot_buffer);
-	shot_sound.setVolume(100.f);
+	shot_sound.setVolume(22.f);
 
 	sprite.setTexture(texture_weapon);
-	sprite.scale(2.5, 2.5);
-	bound.setSize(sf::Vector2f(texture_weapon.getSize().x,
-							texture_weapon.getSize().y));
+	sprite.scale(2.2, 2.2);
 	bound.setPosition(x, y);
+
+	sf::IntRect rect = sprite.getTextureRect();
+	if(rect.height == 32)
+	{
+		sprite.setTextureRect(sf::IntRect(rect.left, rect.top, rect.width, rect.height - 10));
+	}
+
 	movable = true;
 	weapon_class = FireWeapon;
-	bodyInit(world);
+	bodyInit(world, 0.3, 6, 1);
 }
 
 void weapon::strike() {
@@ -64,7 +77,7 @@ void weapon::weapon_update() {
 					(bound.getSize().y * sinf(PI - RayAngle) - bound.getSize().x * cosf(PI - RayAngle)) / (2 * 40);
 
 			position.y = realBody->GetPosition().y +
-					(bound.getSize().y * cosf(PI - RayAngle) + bound.getSize().x * sinf(PI - RayAngle)) / (2 * 40);
+					(0 * bound.getSize().y * cosf(PI - RayAngle) + bound.getSize().x * sinf(PI - RayAngle)) / (2 * 40); // !!! 0 works
 		}
 		bullets[free_bullet] = bullet(position, RayAngle);
 		sf::Sprite explosion_sprite;
@@ -75,7 +88,7 @@ void weapon::weapon_update() {
 		explosion_sprite.setRotation(-RayAngle * (180 / PI));
 		//40 is sqale ratio
 		explosion_sprite.scale(1.8, 1.8);
-		window.draw(explosion_sprite);
+		explosion_sprites.push_back(std::pair<sf::Sprite, int>(explosion_sprite, 0));
 
 		realBody->ApplyLinearImpulseToCenter(b2Vec2(-line_recoil*cosf(RayAngle),-line_recoil*sinf(RayAngle)),true);
 		if(abs(RayAngle) < PI/6 && direction == 1)
@@ -137,6 +150,12 @@ void weapon::weapon_update() {
 				} else {
 					b2Vec2 target = bullet.second.r + output.fraction * (range * b2Vec2(cosf(bullet.second.angle),
 							sinf(bullet.second.angle)));
+					object* obj = static_cast<object *>(b->GetUserData());
+					if(obj != nullptr) {
+						if (obj->weapon_class != NotWeapon) {
+							continue;
+						}
+					}
 
 					if (std::abs(bullet.second.r.x - target.x) <= 0.5//0.5 is distance could be considered as a strike
 							&& std::abs(bullet.second.r.y - target.y) <= 0.5) {
@@ -147,22 +166,24 @@ void weapon::weapon_update() {
 					    explosion_sprite.setPosition(sf::Vector2f(bullet.second.r.x * (40), bullet.second.r.y * (-40)));
 					    explosion_sprite.setRotation(-bullet.second.angle * (180 / PI)); //???!!!
 					    explosion_sprite.scale(1.8, 1.8);
+					    sf::IntRect rect = explosion_sprite.getTextureRect();`
+					    explosion_sprite.setTextureRect(sf::IntRect(rect.left, rect.top, rect.width/3, rect.height));
 					    //40 is sqale ratio
 						//printf("STRIKE\n");
 						used_bullets.push_back(bullet.first);
 						explosion_sprites.push_back(std::pair<sf::Sprite, int>(explosion_sprite, 0));
-						object* obj = static_cast<object *>(b->GetUserData());
+						//object* obj = static_cast<object *>(b->GetUserData());
 
-						if(b != realBody &&(obj!= nullptr) && obj->movable)
+						if(b != realBody && (obj!= nullptr) && obj->movable && obj->weapon_class == NotWeapon)
 						{
-							object * obj = static_cast<object *>(b->GetUserData());
+							object* obj = static_cast<object *>(b->GetUserData());
 							if (obj->isPlayer){
 								player * playerA = static_cast<class player *>(obj);
-								playerA->death(200/40.0,50.0/-40.0);
+								playerA->death(200/40.0, 50.0/-40.0);
+								b->SetTransform(b2Vec2(200.0 / 40.0, 50.0 / -40.0), 0);
 							}
-							b->SetTransform(b2Vec2(200.0 / 40.0, 50.0 / -40.0), 0);
 
-
+							//b->SetTransform(b2Vec2(200.0 / 40.0, 50.0 / -40.0), 0);
 							//default location and check whether object is ourself or map
 						}
 						shot = true;
@@ -224,19 +245,22 @@ void weapon::weapon_update() {
 	auto iter = explosion_sprites.begin();
 	while(iter != explosion_sprites.end())
 	{
-		sf::IntRect rect = (*iter).first.getTextureRect();
-		(*iter).first.setTextureRect(sf::IntRect(rect.left + (*iter).second * rect.width/3,
-				rect.top, rect.width/3, rect.height));
-		(*iter).second += 1;
 		if((*iter).second >= 3)
 		{
 			explosion_sprites.erase(iter);
+			continue;
 		}
 		else
 		{
 			window.draw((*iter).first);
-			++iter;
 		}
+
+		(*iter).second += 1;
+		sf::IntRect rect = (*iter).first.getTextureRect();
+		(*iter).first.setTextureRect(sf::IntRect(rect.left + rect.width * (*iter).second,
+			rect.top, rect.width, rect.height));
+
+		++iter;
 	}
 	update();
 	window.draw(sprite);

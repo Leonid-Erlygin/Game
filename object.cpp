@@ -12,7 +12,7 @@ object::object()=default;
 object::~object()=default;
 
 
-void object::bodyInit(b2World &world) {
+void object::bodyInit(b2World &world, float density, int categoryBits, int maskBits) {
     bound.setSize(sf::Vector2f(sprite.getTextureRect().width,sprite.getTextureRect().height));
     bound.setScale(sprite.getScale());
     bound.setRotation(sprite.getRotation());
@@ -33,13 +33,13 @@ void object::bodyInit(b2World &world) {
         fixture.shape = &shape;
         realBodyDef.type = b2_dynamicBody;
         // Set the box density to be non-zero, so it will be dynamic.
-        fixture.density = 5.0f;
+        fixture.density = density; //5.0f
 
         // Override the default friction.
         fixture.friction = 0.3f;
 
-        fixture.filter.categoryBits = 2;//
-        fixture.filter.maskBits = 6|1|4;
+        fixture.filter.categoryBits = categoryBits; //2
+        fixture.filter.maskBits = maskBits; //6|1|4;
         fixture.userData = (void *)2;
         realBody = world.CreateBody(&realBodyDef);
         realBody->CreateFixture(&fixture);
