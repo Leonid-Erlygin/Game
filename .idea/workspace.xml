@@ -11,324 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="1 men 2 boxes">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map/level.h" beforeDir="false" afterPath="$PROJECT_DIR$/Map/level.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyContactListener.h" beforeDir="false" afterPath="$PROJECT_DIR$/MyContactListener.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/Megalovania.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/barrelThud.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/basketball.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/basketballWhistle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/bigLaser.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/breakTV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/bulletHitWater.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/bulletPop.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/cameraBeep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/cameraFlash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShake01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShake02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShake03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chaingunSpinDown.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chaingunSpinUp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoop.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopLow.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopLowMulti.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopMulti.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeRevDown.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeRevUp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawClash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawFlooded.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawIdle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawIdleMulti.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chainsawPull.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chalk.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/challengeLose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/challengeWin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/challengeYay.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/chatmessage.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ching.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/click.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/consoleCancel.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/consoleError.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/consoleOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/consoleSelect.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/consoleTick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/convert.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/crash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/crateDestroy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/crateHit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/crowd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/cutOffQuack.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/cutOffQuack2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/dacBang.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/dartGunFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/dartStick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/deadTVLand.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/death.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/deedleBeep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/deepMachineGun.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/deepMachineGun2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/demo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/demoBlaster.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/developerWin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ding.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/disarm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/doorBreak.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/doorClose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/doorJam.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/doorOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/doubleBeep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/dukget.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/empty" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/equip.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/explode.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/fart0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/fart1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/fart2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/fart3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/flameExplode.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/flameThrowing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/flipPage.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/fuseBurn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/gachaBounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/gachaCoin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/gachaOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/gachaSound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/gachaget.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ghost.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/glassBreak.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/glassBump.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/glassHit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/goody.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/grappleHook.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/grenadeBounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/grenadeFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/happyQuack01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/harp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/hatClosed.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/hatOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/healthyEat.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/heartfart.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/hiTom.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/highClick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/highDialogue.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/highDing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/hitBox.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/hollowMetalHit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ignite.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/jump.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/kick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/land.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/landTV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/largeSplash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserBlast.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserCharge.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserChargeShort.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserRifle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserUncharge.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/laserUnchargeShort.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/levelUp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/lightMatch.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/lightTurnOn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/littleGun.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/littleSplash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/little_punch.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/loadSniper.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/lowClick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/lowDialogeOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/lowTom.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/magPop.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/magShot.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/magnaBeam.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/magnetBeam.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/magnum.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/medTom.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/menuBlip01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/menu_back.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/menu_select.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/metalBounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/metalRebound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/metronome.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/mindBeam.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/missile.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/missile2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/netGunFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/netsound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/newLevelBing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/noise.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/openClick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pause.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserLarge.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserMedium.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/phaserSmall.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pierce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pistol.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pistolFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/plasmaFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/plasticBounce.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preStartDing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preach5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preachBad1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preachBad2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preachBad3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preachBad4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/preachBad5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/presentLand.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pullPin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pyramidClose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/pyramidOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/quack.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/quackBleep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/quackYell01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/quackYell02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/quackYell03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/radioNoise.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rcConnect.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rcDisconnect.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rcDrive.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/recordStop.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/resume.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rev.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/roboQuack.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rockHitGround.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/rockHitGround2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax12.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sax9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/saxShort.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/scanBeep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/scanFail.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/scoreDing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/selectItem.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/shotgun.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/shotgunFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/shotgunFire2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/shotgunLoad.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/singleBeep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sizzle.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/slideDoorClose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/slideDoorOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/slip.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/smallDoorShut.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/smallMetalCollide.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/smallSplat.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/smallSplatLouder.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/smg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/snare.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/sniper.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/snubbyFire.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/snubbyLoad.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/spring.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/stepInBeam.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/swallow.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/swipe.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/switchchannel.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/swordClash.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/targetDing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/targetRebound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/textLetter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/thud.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ting.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/ting2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyMotion.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tinyTick.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone12.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trombone9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/tromboneShort.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trumpet01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trumpet02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trumpet03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/trumpet04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/wallLeave.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/wallTouch.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/woodHit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SFX/zekeQuack.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handWeapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handWeapon.h" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object.h" beforeDir="false" afterPath="$PROJECT_DIR$/object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/weapon.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="Network" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -396,6 +79,11 @@
     <configuration name="Game" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Game" TARGET_NAME="Game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Game" RUN_TARGET_NAME="Game">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -493,7 +181,7 @@
       <workItem from="1606069452880" duration="6513000" />
       <workItem from="1606138648565" duration="7582000" />
       <workItem from="1606213302467" duration="1465000" />
-      <workItem from="1606220577774" duration="1178000" />
+      <workItem from="1606220577774" duration="1361000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -502,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550525122633</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Network">
+      <created>1606222397596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606222397596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -517,13 +212,25 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/Box2D" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="2 boxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 boxes" />
+    <MESSAGE value="Network" />
+    <option name="LAST_COMMIT_MESSAGE" value="Network" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1802" height="154" key="GridCell.Tab.0.bottom" timestamp="1606161477776">
