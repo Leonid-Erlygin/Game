@@ -37,8 +37,8 @@ handWeapon::handWeapon(b2World &world, sf::Texture &Texture, sf::Texture &Textur
     b2FixtureDef fixture2;
     b2PolygonShape shape;
 
-    shape.SetAsBox((bound.getSize().x / (float32) (2 * scale_factorX)) * bound.getScale().x,
-                   (bound.getSize().y / (float32) (2 * scale_factorX)) * bound.getScale().y);
+    shape.SetAsBox((bound.getSize().x / (float) (2 * scale_factorX)) * bound.getScale().x,
+                   (bound.getSize().y / (float) (2 * scale_factorX)) * bound.getScale().y);
 
     fixture2.shape = &shape;
     fixture2.density = 0;

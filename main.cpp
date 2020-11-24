@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
-#include "Box2D/Box2D.h"
+#include "include/box2d/box2d.h"
 #include "object.h"
 #include "MyContactListener.h"
 #include "virtualPlayer.h"
@@ -16,27 +16,26 @@
 #include "Map/level.h"
 #include "GameCore.h"
 
-void addGid(){
+void addGid() {
 
     std::ifstream inFile;
     std::ofstream outFile;
     std::string s;
     outFile.open("/home/leonid/CLionProjects/TestMap/TestEdited.tmx");
     inFile.open("/home/leonid/CLionProjects/TestMap/Test2.tmx");
-    while (getline(inFile,s)){
-        if (s.find("<tile")!=-1){
-            if(s.find("gid")==-1){
-                s =  "<tile gid=\"0\"/>";
+    while (getline(inFile, s)) {
+        if (s.find("<tile") != -1) {
+            if (s.find("gid") == -1) {
+                s = "<tile gid=\"0\"/>";
             }
         }
-        s +="\n";
-        outFile<<s;
+        s += "\n";
+        outFile << s;
 
     }
     inFile.close();
     outFile.close();
 }
-
 
 
 int main() {
@@ -53,46 +52,45 @@ int main() {
 
 #if 1
     int x;
-    //std::cin>>x;
-    x = 1;
-    if(x==1){
+    std::cin >> x;
+    if (x == 1) {
 
-        if (socket[0].bind(54000) != sf::Socket::Done)
-        {
+        if (socket[0].bind(54000) != sf::Socket::Done) {
             exit(0);
         }
 
-    } else{
+    } else {
 
-        if (socket[0].bind(54001) != sf::Socket::Done)
-        {
+        if (socket[0].bind(54001) != sf::Socket::Done) {
             exit(0);
         }
     }
+    //now sockets are ready to receive data on that port
 #endif
     MyContactListener myContactListenerInstance;
     b2Vec2 gravity(0.0f, -15.81f);
     b2World world(gravity);
     sf::Music music;
 
-    if (!music.openFromFile("/home/leonid/CLionProjects/Game/SFX/Megalovania.ogg"))
-    {
+    if (!music.openFromFile("/home/leonid/CLionProjects/Resourses/Sounds/Megalovania.ogg")) {
         printf("failure when loading music\n");
         return 1;
     }
     music.setVolume(22.f);
-   // music.play();
+    //music.play();
 
     world.SetContactListener(&myContactListenerInstance);
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
     window.setFramerateLimit(60);
 
 
-    GameCore game(window,world,x);
+    GameCore game(window, world, x, 10);
     game.runMenu();
-    if(game.isLocal){
+    if (game.isLocal) {
         game.initLvl("GrassLand");
 
+    } else{
+        game.initLvl("GrassLand");
     }
 
     game.loadTextures();
@@ -104,4 +102,5 @@ int main() {
 
     return 0;
 }
+
 #endif

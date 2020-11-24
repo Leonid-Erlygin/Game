@@ -12,46 +12,330 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="1 men 2 boxes">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameCore.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Map/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Map/level.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Map/level.h" beforeDir="false" afterPath="$PROJECT_DIR$/Map/level.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyContactListener.h" beforeDir="false" afterPath="$PROJECT_DIR$/MyContactListener.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/Megalovania.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/barrelThud.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/basketball.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/basketballWhistle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/bigLaser.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/breakTV.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/bulletHitWater.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/bulletPop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/cameraBeep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/cameraFlash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShake01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShake02.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShake03.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall02.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainShakeSmall03.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chaingunSpinDown.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chaingunSpinUp.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopLow.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopLowMulti.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeLoopMulti.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeRevDown.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawBladeRevUp.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawClash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawFlooded.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawIdle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawIdleMulti.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chainsawPull.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chalk.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/challengeLose.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/challengeWin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/challengeYay.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/chatmessage.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ching.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/click.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/consoleCancel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/consoleError.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/consoleOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/consoleSelect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/consoleTick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/convert.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/crash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/crateDestroy.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/crateHit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/crowd.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/cutOffQuack.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/cutOffQuack2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/dacBang.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/dartGunFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/dartStick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/deadTVLand.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/death.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/deedleBeep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/deepMachineGun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/deepMachineGun2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/demo.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/demoBlaster.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/developerWin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ding.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/disarm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/doorBreak.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/doorClose.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/doorJam.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/doorOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/doubleBeep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/dukget.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/equip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/explode.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/fart0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/fart1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/fart2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/fart3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/flameExplode.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/flameThrowing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/flipPage.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/fuseBurn.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/gachaBounce.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/gachaCoin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/gachaOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/gachaSound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/gachaget.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ghost.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/glassBreak.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/glassBump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/glassHit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/goody.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/grappleHook.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/grenadeBounce.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/grenadeFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/happyQuack01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/harp.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/hatClosed.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/hatOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/healthyEat.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/heartfart.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/hiTom.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/highClick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/highDialogue.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/highDing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/hitBox.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/hollowMetalHit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ignite.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/jump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/kick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/land.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/landTV.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/largeSplash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserBlast.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserCharge.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserChargeShort.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserRifle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserUncharge.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/laserUnchargeShort.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/levelUp.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/lightMatch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/lightTurnOn.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/littleGun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/littleSplash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/little_punch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/loadSniper.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/lowClick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/lowDialogeOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/lowTom.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/magPop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/magShot.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/magnaBeam.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/magnetBeam.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/magnum.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/medTom.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/menuBlip01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/menu_back.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/menu_select.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/metalBounce.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/metalRebound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/metronome.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/mindBeam.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/missile.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/missile2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/netGunFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/netsound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/newLevelBing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/noise.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/openClick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pause.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge02.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserCharge03.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserLarge.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserMedium.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/phaserSmall.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pierce.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pistol.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pistolFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/plasmaFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/plasticBounce.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preStartDing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preach5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preachBad1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preachBad2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preachBad3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preachBad4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/preachBad5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/presentLand.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pullPin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pyramidClose.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/pyramidOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/quack.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/quackBleep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/quackYell01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/quackYell02.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/quackYell03.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/radioNoise.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rcConnect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rcDisconnect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rcDrive.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/recordStop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/resume.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rev.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/roboQuack.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rockHitGround.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/rockHitGround2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax10.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax11.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax12.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax6.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax7.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax8.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sax9.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/saxShort.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/scanBeep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/scanFail.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/scoreDing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/selectItem.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/shotgun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/shotgunFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/shotgunFire2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/shotgunLoad.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/singleBeep.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sizzle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/slideDoorClose.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/slideDoorOpen.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/slip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/smallDoorShut.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/smallMetalCollide.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/smallSplat.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/smallSplatLouder.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/smg.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/snare.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/sniper.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/snubbyFire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/snubbyLoad.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/spring.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/stepInBeam.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/swallow.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/swipe.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/switchchannel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/swordClash.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/targetDing.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/targetRebound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/textLetter.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/thud.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ting.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/ting2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyMotion.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyNoise6.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tinyTick.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone10.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone11.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone12.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone6.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone7.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone8.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trombone9.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/tromboneShort.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trumpet01.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trumpet02.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trumpet03.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/trumpet04.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/wallLeave.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/wallTouch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/woodHit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFX/zekeQuack.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/level.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinystr.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxml.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlerror.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/Map/tinyxmlparser.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/MyContactListener.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/entity.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/grenade.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/handWeapon.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/object.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/weapon.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grenade.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/grenade.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grenade.h" beforeDir="false" afterPath="$PROJECT_DIR$/grenade.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handWeapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handWeapon.h" beforeDir="false" afterPath="$PROJECT_DIR$/handWeapon.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/object.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/object.h" beforeDir="false" afterPath="$PROJECT_DIR$/object.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/virtualPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/virtualPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/weapon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapon.h" beforeDir="false" afterPath="$PROJECT_DIR$/weapon.h" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -68,97 +352,6 @@
     <select />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#387#864#0" />
-                <element signature="e#891#918#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GameCore.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10590">
-              <caret line="712" column="26" selection-start-line="712" selection-start-column="26" selection-end-line="712" selection-end-column="26" />
-              <folding>
-                <element signature="e#41#60#0" expanded="true" />
-                <marker date="1558701600312" expanded="true" signature="5457:6322" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3570">
-              <caret line="243" column="45" selection-start-line="243" selection-start-column="45" selection-end-line="243" selection-end-column="45" />
-              <folding>
-                <element signature="e#41#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/weapon.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="164" column="47" lean-forward="true" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Map/level.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>dest</find>
-      <find>getAn</find>
-      <find>setO</find>
-      <find>shape1</find>
-      <find>b2World</find>
-      <find>Errr</find>
-      <find>error</find>
-      <find>erro</find>
-      <find>barrel</find>
-      <find>set</find>
-      <find>moveUp</find>
-      <find>rema</find>
-      <find>sans</find>
-      <find>view1</find>
-      <find>get</find>
-      <find>up</find>
-      <find>setTextureRect</find>
-      <find>g</find>
-      <find>IsOnGround</find>
-      <find>gre</find>
-      <find>isPla</find>
-      <find>pr</find>
-      <find>map</find>
-      <find>tiles</find>
-      <find>load</find>
-      <find>initlvl</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -167,92 +360,30 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/enemy.h" />
-        <option value="$PROJECT_DIR$/enemy.cpp" />
-        <option value="$PROJECT_DIR$/cmake/FindBox2D.cmake" />
-        <option value="$PROJECT_DIR$/myTest.h" />
-        <option value="$PROJECT_DIR$/entity.h" />
-        <option value="$PROJECT_DIR$/moveableObject.h" />
-        <option value="$PROJECT_DIR$/ContactFilter.cpp" />
-        <option value="$PROJECT_DIR$/ContactFilter.h" />
-        <option value="$PROJECT_DIR$/MyContactListener.h" />
-        <option value="$PROJECT_DIR$/StaticObject.h" />
-        <option value="$PROJECT_DIR$/StaticObject.cpp" />
-        <option value="$PROJECT_DIR$/object.cpp" />
-        <option value="$PROJECT_DIR$/MyContactListener.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/grenade.h" />
-        <option value="$PROJECT_DIR$/weapon.h" />
-        <option value="$PROJECT_DIR$/handWeapon.h" />
-        <option value="$PROJECT_DIR$/Map/level.cpp" />
-        <option value="$PROJECT_DIR$/Map/GrassLand/level1.tmx" />
-        <option value="$PROJECT_DIR$/Map/GrassLand/level2.tmx" />
-        <option value="$PROJECT_DIR$/object.h" />
-        <option value="$PROJECT_DIR$/handWeapon.cpp" />
-        <option value="$PROJECT_DIR$/Map/level.h" />
-        <option value="$PROJECT_DIR$/GameCore.h" />
-        <option value="$PROJECT_DIR$/virtualPlayer.cpp" />
-        <option value="$PROJECT_DIR$/virtualPlayer.h" />
-        <option value="$PROJECT_DIR$/grenade.cpp" />
-        <option value="$PROJECT_DIR$/player.h" />
-        <option value="$PROJECT_DIR$/GameCore.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/player.cpp" />
-        <option value="$PROJECT_DIR$/weapon.cpp" />
-      </list>
-    </option>
-  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="520" />
-    <option name="y" value="154" />
-    <option name="width" value="1597" />
-    <option name="height" value="789" />
-  </component>
+  <component name="ProjectId" id="1kYym8ZxjfZxlHWTTTDZAwW4d6Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-              <item name="GrassLand" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -261,25 +392,14 @@
       <recent name="$PROJECT_DIR$/Dependencies/Box2D/lib" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="Game" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Game" TARGET_NAME="Game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Game" RUN_TARGET_NAME="Game">
+    <configuration name="Game" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Game" TARGET_NAME="Game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Game" RUN_TARGET_NAME="Game">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -367,6 +487,13 @@
       <workItem from="1558096541278" duration="1298000" />
       <workItem from="1558623855464" duration="604000" />
       <workItem from="1558624478771" duration="33303000" />
+      <workItem from="1605891981012" duration="1340000" />
+      <workItem from="1605893333372" duration="948000" />
+      <workItem from="1605895232079" duration="1333000" />
+      <workItem from="1606069452880" duration="6513000" />
+      <workItem from="1606138648565" duration="7582000" />
+      <workItem from="1606213302467" duration="1465000" />
+      <workItem from="1606220577774" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -378,9 +505,6 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378128000" />
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -390,424 +514,53 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12617598" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" weight="0.32937366" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.22678186" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30777538" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.300216" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.26025918" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.032397408" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32946485" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12617598" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.32937366" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.22678186" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.30777538" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.300216" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32890365" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.26025918" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="CMake" order="13" weight="0.032397408" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32946485" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/Box2D" />
+      <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="2 boxes" />
     <option name="LAST_COMMIT_MESSAGE" value="2 boxes" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file:///usr/include/SFML/Network/Socket.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resourses/blades.png" />
-    <entry file="file://$PROJECT_DIR$/Resourses/blade1.png" />
-    <entry file="file://$PROJECT_DIR$/Resourses/sans.png" />
-    <entry file="file://$PROJECT_DIR$/Resourses/fireTexture.png" />
-    <entry file="file://$PROJECT_DIR$/MyContactListener.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
-          <folding>
-            <element signature="e#121#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/Box2D/Box2D/Dynamics/b2Fixture.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="274" selection-start-line="274" selection-end-line="274" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/Box2D/Box2D/Dynamics/Contacts/b2Contact.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3495">
-          <caret line="233" selection-start-line="233" selection-end-line="233" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/enemy.cpp" />
-    <entry file="file:///usr/include/c++/7/bits/stl_set.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="500" selection-start-line="500" selection-end-line="500" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Fun/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/bits/stl_tree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="301" selection-start-line="301" selection-end-line="301" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Fun/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Fun/Box2D/Box2D/Dynamics/b2World.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="343" selection-start-line="343" selection-end-line="343" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/Box2D/Box2D/Dynamics/b2World.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StaticObject.h" />
-    <entry file="file://$PROJECT_DIR$/StaticObject.cpp" />
-    <entry file="file://$PROJECT_DIR$/entity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#87#130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/SFML/System/Vector2.inl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/bits/stl_algobase.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="342" column="20" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyContactListener.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1678">
-          <caret line="182" selection-start-line="182" selection-end-line="182" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-            <element signature="e#143#1753#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="135" column="6" selection-start-line="135" selection-start-column="6" selection-end-line="135" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/Box2D/Box2D/Dynamics/b2Body.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="736" selection-start-line="736" selection-end-line="736" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11970">
-          <caret line="798" selection-start-line="798" selection-end-line="798" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weapon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="32" column="113" selection-start-line="32" selection-start-column="113" selection-end-line="32" selection-end-column="113" />
-          <folding>
-            <element signature="e#89#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handWeapon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="82" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="82" />
-          <folding>
-            <element signature="e#95#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/Back1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/Back1.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/Back.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/tileset.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/TestEditedLev.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32949" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/level1.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/texture.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/TestEdited.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="64" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/GrassLand/level2.tmx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/object.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/level.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="52" selection-start-column="3" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#238#255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameCore.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="e#91#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grenade.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/virtualPlayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="78" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/virtualPlayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grenade.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding>
-            <element signature="e#81#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handWeapon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="154" column="38" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#99#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/object.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/level.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="243" column="45" selection-start-line="243" selection-start-column="45" selection-end-line="243" selection-end-column="45" />
-          <folding>
-            <element signature="e#41#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameCore.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10590">
-          <caret line="712" column="26" selection-start-line="712" selection-start-column="26" selection-end-line="712" selection-end-column="26" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-            <marker date="1558701600312" expanded="true" signature="5457:6322" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#387#864#0" />
-            <element signature="e#891#918#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weapon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="164" column="47" lean-forward="true" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state width="1802" height="154" key="GridCell.Tab.0.bottom" timestamp="1606161477776">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477776" />
+    <state width="1802" height="154" key="GridCell.Tab.0.center" timestamp="1606161477775">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477775" />
+    <state width="1802" height="154" key="GridCell.Tab.0.left" timestamp="1606161477775">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477775" />
+    <state width="1802" height="154" key="GridCell.Tab.0.right" timestamp="1606161477775">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477775" />
+    <state width="1802" height="154" key="GridCell.Tab.1.bottom" timestamp="1606161477777">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477777" />
+    <state width="1802" height="154" key="GridCell.Tab.1.center" timestamp="1606161477777">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477777" />
+    <state width="1802" height="154" key="GridCell.Tab.1.left" timestamp="1606161477777">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477777" />
+    <state width="1802" height="154" key="GridCell.Tab.1.right" timestamp="1606161477777">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="1802" height="154" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1606161477777" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1605891998559">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605891998559" />
   </component>
 </project>

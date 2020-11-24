@@ -15,37 +15,39 @@
 class player : public object {
 public:
 
-	int counter = 0;
+    int counter = 0;
 
     void print();
+
     bool grab = false;
     float speed = 10;
     float strength = 3;
-    std::set<object *>reachableObjects;
-    object* cariedObject;
+    std::set<object *> reachableObjects;
+    object *cariedObject;
     int remainingJumpSteps = 1;
     int jumpHeight = 200;
     b2RevoluteJoint *JointToHold = nullptr;
     bool canTake = false;
-    bool moveRight= false;
-    bool moveLeft= false;
-   // int direction = 0;// -1 = left, 1 = right
+    bool moveRight = false;
+    bool moveLeft = false;
+    // int direction = 0;// -1 = left, 1 = right
 
     bool is_on_ground();
+
     int is_on_wall();
-    b2World& world;
 
-    void grabe(b2World &, object*flipObject = nullptr, bool is_flip = false);
+    b2World &world;
 
-    void update();
+    void grabe(b2World &, object *flipObject = nullptr, bool is_flip = false);
+
+    void update(std::vector<sf::UdpSocket> &, int player_index, bool need_to_send);
+
     void death(int x, int y);
 
 
+    void checkEvents(std::vector<sf::UdpSocket> &, sf::Event &, b2World &, int player, int player_index);
 
-
-    void checkEvents(std::vector<sf::UdpSocket>&,sf::Event &, b2World &,int player,int x);
-
-    player(b2World &world, sf::Texture &, sf::SoundBuffer& jump_buffer, int x, int y);
+    player(b2World &world, sf::Texture &, sf::SoundBuffer &jump_buffer, int x, int y);
 
     void throwObject(b2Body &);
 

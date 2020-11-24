@@ -10,48 +10,44 @@
 #include "handWeapon.h"
 #include "Map/level.h"
 
-GameCore::GameCore(sf::RenderWindow &window1, b2World &world1, int x) : window(window1), world(world1),x(x) {
+GameCore::GameCore(sf::RenderWindow &window1, b2World &world1, int player_index, int send_period) : window(
+        window1), world(world1), player_index(player_index), send_period(send_period) {
 
 }
-void GameCore::loadSoundBuffers()
-{
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/SFX/";
+
+void GameCore::loadSoundBuffers() {
+    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/Sounds/";
 
     sf::SoundBuffer shot_buffer;
-    if (!shot_buffer.loadFromFile(Path_to_res + "shotgun.wav"))
-    {
+    if (!shot_buffer.loadFromFile(Path_to_res + "shotgun.wav")) {
         printf("failure when loading sound buffer\n");
         exit(1);
     }
     SoundBuffers["ak47"] = shot_buffer;
 
     sf::SoundBuffer fire_buffer;
-    if (!fire_buffer.loadFromFile(Path_to_res + "flameThrowing.wav"))
-    {
+    if (!fire_buffer.loadFromFile(Path_to_res + "flameThrowing.wav")) {
         printf("failure when loading sound buffer\n");
         exit(1);
     }
     SoundBuffers["fire"] = fire_buffer;
 
     sf::SoundBuffer magnum_buffer;
-    if (!magnum_buffer.loadFromFile(Path_to_res + "magnum.wav"))
-    {
+    if (!magnum_buffer.loadFromFile(Path_to_res + "magnum.wav")) {
         printf("failure when loading sound buffer\n");
         exit(1);
     }
     SoundBuffers["magnum"] = magnum_buffer;
 
     sf::SoundBuffer sniper_buffer;
-    if (!sniper_buffer.loadFromFile(Path_to_res + "sniper.wav"))
-    {
+    if (!sniper_buffer.loadFromFile(Path_to_res + "sniper.wav")) {
         printf("failure when loading sound buffer\n");
         exit(1);
     }
     SoundBuffers["sniper"] = sniper_buffer;
 
     sf::SoundBuffer jump_buffer;
-    if (!jump_buffer.loadFromFile(Path_to_res + "jump.wav"))
-    {
+    if (!jump_buffer.loadFromFile(Path_to_res + "jump.wav")) {
         printf("failure when loading sound buffer\n");
         exit(1);
     }
@@ -65,7 +61,7 @@ void GameCore::addStaticObject(Level &lvl, b2World &world) {
 }
 
 
-inline std::pair<float, float> getMedian(std::vector<player> &players,std::vector<virtualPlayer> &virt) {
+inline std::pair<float, float> getMedian(std::vector<player> &players, std::vector<virtualPlayer> &virt) {
     if (players.size() != 1) {
         sf::Vector2f m;
         for (size_t i = 0; i < players.size(); ++i) {
@@ -75,11 +71,11 @@ inline std::pair<float, float> getMedian(std::vector<player> &players,std::vecto
         std::pair<float, float> temp(m.x / 2, m.y / 2);
         return temp;
     } else {
-        if(virt.size()==1){
-         sf::Vector2f m;
-         m+= players[0].bound.getPosition();
-         m+= virt[0].bound.getPosition();
-         std::pair<float ,float >temp(m.x/2,m.y/2);
+        if (virt.size() == 1) {
+            sf::Vector2f m;
+            m += players[0].bound.getPosition();
+            m += virt[0].bound.getPosition();
+            std::pair<float, float> temp(m.x / 2, m.y / 2);
             return temp;
         } else {
             sf::Vector2f m = players[0].bound.getPosition();
@@ -123,18 +119,18 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
     window.setView(view1);
     std::pair<float, float> median;
 
-    if(isLocal){
-        std::pair<b2Vec2,b2Vec2>pos;
+    if (isLocal) {
+        std::pair<b2Vec2, b2Vec2> pos;
         std::vector<Object> player1 = lvl.GetObjects("player1");
         std::vector<Object> player2 = lvl.GetObjects("player2");
-        float m = lvl.mapScaleX*(player1[0].rect.left+player1[0].rect.width/2.f);
-        float n = lvl.mapScaleY*(player1[0].rect.top+player1[0].rect.height/2.f);
+        float m = lvl.mapScaleX * (player1[0].rect.left + player1[0].rect.width / 2.f);
+        float n = lvl.mapScaleY * (player1[0].rect.top + player1[0].rect.height / 2.f);
         pos.first.x = m;
         pos.first.y = n;
-        pos.second.x = lvl.mapScaleX*(player2[0].rect.left+player2[0].rect.width/2.f);
-        pos.second.y = lvl.mapScaleY*(player2[0].rect.top+player2[0].rect.height/2.f);
+        pos.second.x = lvl.mapScaleX * (player2[0].rect.left + player2[0].rect.width / 2.f);
+        pos.second.y = lvl.mapScaleY * (player2[0].rect.top + player2[0].rect.height / 2.f);
 
-        createMovableObjects(isLocal,pos);
+        createMovableObjects(pos);
 
         std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
 
@@ -142,7 +138,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             exit(0);
         }
 
-        for (int i = 0; i <2; ++i) {
+        for (int i = 0; i < 2; ++i) {
             sf::Text text;
             text.setFont(font);
             text.setString(playerName[i]);
@@ -150,18 +146,18 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             names.push_back(text);
         }
 
-    } else{
-        std::pair<b2Vec2,b2Vec2>pos;
+    } else {
+        std::pair<b2Vec2, b2Vec2> pos;
         std::vector<Object> player1 = lvl.GetObjects("player1");
         std::vector<Object> player2 = lvl.GetObjects("player2");
-        float m = lvl.mapScaleX*(player1[0].rect.left+player1[0].rect.width/2.f);
-        float n = lvl.mapScaleY*(player1[0].rect.top+player1[0].rect.height/2.f);
+        float m = lvl.mapScaleX * (player1[0].rect.left + player1[0].rect.width / 2.f);
+        float n = lvl.mapScaleY * (player1[0].rect.top + player1[0].rect.height / 2.f);
         pos.first.x = m;
         pos.first.y = n;
-        pos.second.x = lvl.mapScaleX*(player2[0].rect.left+player2[0].rect.width/2.f);
-        pos.second.y = lvl.mapScaleY*(player2[0].rect.top+player2[0].rect.height/2.f);
+        pos.second.x = lvl.mapScaleX * (player2[0].rect.left + player2[0].rect.width / 2.f);
+        pos.second.y = lvl.mapScaleY * (player2[0].rect.top + player2[0].rect.height / 2.f);
 
-        createMovableObjects(isLocal,pos);
+        createMovableObjects(pos);
 
         std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
 
@@ -169,7 +165,13 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             exit(0);
         }
 
-
+//        for (int i = 0; i < 2; ++i) {
+//            sf::Text text;
+//            text.setFont(font);
+//            text.setString(playerName[i]);
+//            text.setCharacterSize(15);
+//            names.push_back(text);
+//        }
     }
 
     while (window.isOpen()) {
@@ -182,7 +184,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             if (event.type == sf::Event::Closed)
                 window.close();
             for (size_t i = 0; i < players.size(); ++i) {
-                players[i].checkEvents(socket, event, world, i + 1, x);
+                players[i].checkEvents(socket, event, world, i + 1, player_index);
             }
 
         }
@@ -192,16 +194,16 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
         world.Step(timeStep, velocityIterations, positionIterations);
 
 
-        updateMap(socket, x);
+        updateMap(socket);
 
         window.setView(view1);
-        median = getMedian(players,virtualPlayers);
+        median = getMedian(players, virtualPlayers);
         view1.setCenter(sf::Vector2f(median.first, median.second));
         if (players.size() > 1) {
             view1.setSize(zoom(players[0], players[1], window));
         }
-        if(virtualPlayers.size()==1){
-            view1.setSize(zoom(players[0],virtualPlayers[0],window));
+        if (virtualPlayers.size() == 1) {
+            view1.setSize(zoom(players[0], virtualPlayers[0], window));
         }
 
         window.display();
@@ -257,7 +259,13 @@ GameCore::runLoop(int x11, int x12, int y11, int y12, int x21, int x22, int y21,
     return h;
 }
 
-inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int y21,int y22, float scaleX, float scaleY,int posX,int posY,std::string& nameString, std::string& ipString,std::string name){
+inline void
+GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, int y22, float scaleX, float scaleY,
+                int posX, int posY, std::string &nameString, std::string &ipString, std::string name) {
+    /*
+     * Allows to enter the text in a box
+     *
+     */
     std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
     sf::Font font;
     if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
@@ -294,10 +302,10 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
     bool waiting = true;
     bool ipField = false;
     bool nameField = false;
-    if(!nameString.empty()){
+    if (!nameString.empty()) {
         nameField = true;
     }
-    if(!ipString.empty()){
+    if (!ipString.empty()) {
         nameField = false;
         ipField = true;
     }
@@ -310,8 +318,8 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
                 if (event.mouseButton.button == sf::Mouse::Left) {
 
                     if (event.mouseButton.x > (x11 * scaleX + posX) && event.mouseButton.x<(x12 * scaleX + posX)
-                                                                                          &&
-                                                                                          event.mouseButton.y>(
+                                                                                           &&
+                                                                                           event.mouseButton.y>(
                             y11 * scaleY + posY) && event.mouseButton.y < (y12 * scaleY + posY)) {
 
                         ipField = true;
@@ -322,8 +330,8 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
                         }
                     }
                     if (event.mouseButton.x > (x21 * scaleX + posX) && event.mouseButton.x<(x22 * scaleX + posX)
-                                                                                          &&
-                                                                                          event.mouseButton.y>(
+                                                                                           &&
+                                                                                           event.mouseButton.y>(
                             y21 * scaleY + posY) && event.mouseButton.y < (y22 * scaleY + posY)) {
                         nameField = true;
                         ipField = false;
@@ -336,7 +344,7 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
                 }
             }
             if (event.type == sf::Event::KeyPressed) {
-                if(event.key.code == sf::Keyboard::Return){
+                if (event.key.code == sf::Keyboard::Return) {
                     run = false;
                 }
                 if (event.key.code == sf::Keyboard::BackSpace) {
@@ -356,7 +364,7 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
                     waiting = false;
                     if (event.text.unicode < 128) {
                         char a = static_cast<char>(event.text.unicode);
-                        if (a >=32) {
+                        if (a >= 32) {
                             if (nameString[nameString.size() - 1] == '|')
                                 nameString = nameString.substr(0,
                                                                nameString.size() -
@@ -371,7 +379,7 @@ inline void GameCore::runIp(int x11,int x12,int y11,int y12,int x21,int x22,int 
                     waiting = false;
                     if (event.text.unicode < 128) {
                         char a = static_cast<char>(event.text.unicode);
-                        if (a >=32) {
+                        if (a >= 32) {
                             if (ipString[ipString.size() - 1] == '|')
                                 ipString = ipString.substr(0,
                                                            ipString.size() -
@@ -469,24 +477,25 @@ void GameCore::runMenu() {
     std::string ipString;
     if (h == 1) {//local
         isLocal = true;
-        while (nameString.empty()||ipString.empty())
-            runIp(223,651,401,444,702,1140,401,446,scaleX,scaleY,posX,posY,nameString,ipString,"localNames.png");
+        // HERE IP STRING IS ACTUALLY THE NAME OF SECOND PLAYER
+        while (nameString.empty() || ipString.empty())
+            runIp(223, 651, 401, 444, 702, 1140, 401, 446, scaleX, scaleY, posX, posY, nameString, ipString,
+                  "localNames.png");
 
-        if(nameString[nameString.size()-1]=='|')nameString = nameString.substr(0,nameString.size()-1);
-        if(ipString[ipString.size()-1]=='|')ipString = ipString.substr(0,ipString.size()-1);
+        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
+        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
 
         playerName.push_back(nameString);
         playerName.push_back(ipString);
         return;
     } else {
-        while (nameString.empty())
-            runIp(488,888,421,460,490,891,492,533,scaleX,scaleY,posX,posY,nameString,ipString,"Ip.png");
-
-        if(nameString[nameString.size()-1]=='|')nameString = nameString.substr(0,nameString.size()-1);
-        if(ipString[ipString.size()-1]=='|')ipString = ipString.substr(0,ipString.size()-1);
-
-        playerName.push_back(nameString);
-        playerName.push_back(ipString);
+//        while (nameString.empty()|| ipString.empty())
+//            runIp(488, 888, 421, 460, 490, 891, 492, 533, scaleX, scaleY, posX, posY, nameString, ipString, "Ip.png");
+//
+//        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
+//        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
+//        playerName.push_back(nameString);
+//        playerName.push_back(ipString);
     }
 
 
@@ -498,20 +507,20 @@ void GameCore::createEntity(std::string object, int x, int y,
 
     if (object == "player") {
 
-        class player Player1(world, Textures[playerTexture],SoundBuffers["jump"], x, y);
+        class player Player1(world, Textures[playerTexture], SoundBuffers["jump"], x, y);
         Player1.magicnumber = 47 + (int) players.size();
         players.push_back(Player1);
 
     }
     if (object == "virtualPlayer") {
 
-        class virtualPlayer Player1(world, Textures[playerTexture],SoundBuffers["jump"], x, y);
+        class virtualPlayer Player1(world, Textures[playerTexture], SoundBuffers["jump"], x, y);
         Player1.magicnumber = 47 + (int) players.size();
         virtualPlayers.push_back(Player1);
 
     }
     if (object == "grenade") {
-        class grenade grenade(world, window, Textures["grenade"], Textures["explosion"],SoundBuffers["sniper"],x,y);
+        class grenade grenade(world, window, Textures["grenade"], Textures["explosion"], SoundBuffers["sniper"], x, y);
         grenades.push_back(grenade);
     }
     if (object == "weapon") {
@@ -519,40 +528,43 @@ void GameCore::createEntity(std::string object, int x, int y,
                           Textures["shot"], SoundBuffers["ak47"], x, y);
         weapons.push_back(ak47);
     }
-    if(object == "weapon1"){
+    if (object == "weapon1") {
         class weapon sniper(world, window, Textures["sniper"], Textures["Bullet"],
-                            Textures["shot"], SoundBuffers["sniper"], x, y, 0.7, 30, 40 * (3.14159265 / 180) , 20);
+                            Textures["shot"], SoundBuffers["sniper"], x, y, 0.7, 30, 40 * (3.14159265 / 180), 20);
         weapons.push_back(sniper);
     }
-    if(object == "weapon2"){
+    if (object == "weapon2") {
         class weapon magnum(world, window, Textures["magnum"], Textures["Bullet"],
                             Textures["shot"], SoundBuffers["magnum"], x, y, 0.22, 20, 5 * (3.14159265 / 180), 3);
         weapons.push_back(magnum);
     }
     if (object == "handWeapon") {
-        class handWeapon bladeFire(world, Textures["Blade"], Textures["Fire"],SoundBuffers["fire"],x,y);
+        class handWeapon bladeFire(world, Textures["Blade"], Textures["Fire"], SoundBuffers["fire"], x, y);
         handWeapons.push_back(bladeFire);
     }
 
 
 }
 
-void GameCore::createMovableObjects(bool isLocal,std::pair<b2Vec2,b2Vec2> playerPos) {
-    if(isLocal){
+void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
+    if (isLocal) {
         createEntity("player", playerPos.first.x, playerPos.first.y, "textureSans");
         createEntity("player", playerPos.second.x, playerPos.second.y, "textureSans");
 
 
     } else {
-        if (x == 1) {
-            createEntity("player", 400, 350, "textureSans");
-            createEntity("virtualPlayer", 200, 350, "textureSans");
+
+        if (player_index == 1) {
+            //createEntity("weapon1", 200,350, "");
+            createEntity("player", 100, 0, "textureSans");
+            createEntity("virtualPlayer", 200, 0, "textureSans");
         } else {
-            createEntity("virtualPlayer", 400, 350, "textureSans");
-            createEntity("player", 200, 350, "textureSans");
+            createEntity("virtualPlayer", 100, 0, "textureSans");
+            createEntity("player", 200, 0, "textureSans");
         }
     }
-    //createEntity(window, world, "player", 200, 350, "textureSans");
+
+
     for (size_t j = 0; j < players.size(); ++j) {
         players[j].realBody->SetUserData(&players[j]);
     }
@@ -563,13 +575,13 @@ void GameCore::createMovableObjects(bool isLocal,std::pair<b2Vec2,b2Vec2> player
     }
 
     for (int i = 0; i < 2; ++i) {
-        createEntity("grenade", 250+i*100, 360, "");
+        createEntity("grenade", 250 + i * 100, 360, "");
     }
     for (size_t j = 0; j < grenades.size(); ++j) {
         grenades[j].realBody->SetUserData(&grenades[j]);
     }
-    createEntity("weapon1",200+100,500,"");
-    createEntity("weapon2",200+300,500,"");
+    createEntity("weapon1", 200 + 100, 500, "");
+    createEntity("weapon2", 200 + 300, 500, "");
     createEntity("weapon", 200, 360, "");
     createEntity("handWeapon", 600, 360, "");
 
@@ -586,27 +598,37 @@ void GameCore::initLvl(std::string name) {
 
     //mapBuilder(name);
 
-    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/"+name+"/level2.tmx");
+    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/" + name + "/level2.tmx");
 
     std::vector<Object> block = lvl.GetObjects("block");
     lvl.objInit(world, block);
 }
 
-void GameCore::updateMap(std::vector<sf::UdpSocket> &socket, int x) {
-
+void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
+    // this function is called every frame
     lvl.Draw(window);
+    //update players
     for (size_t i = 0; i < players.size(); ++i) {
-        players[i].update();
+        if (steps_past % send_period == 0){
+            players[i].update(socket, player_index, true);
+            steps_past = 0;
+        } else{
 
-        names[i].setPosition(players[i].bound.getPosition().x-players[i].bound.getSize().x/12,
-                players[i].bound.getPosition().y-players[i].bound.getSize().y/5);
+            players[i].update(socket, player_index, false);
+        }
+        steps_past++;
+
+//        names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
+//                             players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
 
         window.draw(players[i].sprite);
-        window.draw(names[i]);
+//        window.draw(names[i]);
 
     }
     for (size_t k = 0; k < virtualPlayers.size(); ++k) {
-        virtualPlayers[k].update(socket, world, x);
+        virtualPlayers[k].update(socket, world, player_index);
+//        names[1].setPosition(virtualPlayers[k].bound.getPosition().x - virtualPlayers[k].bound.getSize().x / 12,
+//                             virtualPlayers[k].bound.getPosition().y - virtualPlayers[k].bound.getSize().y / 5);
         window.draw(virtualPlayers[k].sprite);
     }
 
@@ -629,6 +651,7 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket, int x) {
 
 
 }
+
 void GameCore::loadTextures() {
     std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
     std::string Path_to_duck = "/home/leonid/CLionProjects/Resourses/Duck Game Sprites/";
@@ -707,21 +730,21 @@ void GameCore::loadTextures() {
 
 }
 
-void GameCore::mapBuilder(std::string name){
+void GameCore::mapBuilder(std::string name) {
 
     std::ifstream inFile;
     std::ofstream outFile;
     std::string s;
-    outFile.open("/home/leonid/CLionProjects/Resourses/Map/"+name+"/TestEdited");
-    inFile.open("/home/leonid/CLionProjects/Resourses/Map/"+name+"level.tmx");
-    while (getline(inFile,s)){
-        if (s.find("<tile")!=-1){
-            if(s.find("gid")==-1){
-                s =  "<tile gid=\"0\"/>";
+    outFile.open("/home/leonid/CLionProjects/Resourses/Map/" + name + "/TestEdited");
+    inFile.open("/home/leonid/CLionProjects/Resourses/Map/" + name + "level.tmx");
+    while (getline(inFile, s)) {
+        if (s.find("<tile") != -1) {
+            if (s.find("gid") == -1) {
+                s = "<tile gid=\"0\"/>";
             }
         }
-        s +="\n";
-        outFile<<s;
+        s += "\n";
+        outFile << s;
 
     }
     inFile.close();

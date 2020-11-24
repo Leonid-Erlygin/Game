@@ -3,7 +3,7 @@
 //
 
 #include "entity.h"
-#include "Box2D/Box2D.h"
+#include "include/box2d/box2d.h"
 
 
 #ifndef GAME_OBKECT_H
@@ -55,8 +55,8 @@ public:
     void flip(int dir);
 
 private:
-    float32 scale_factorX = 40;//1 м = 40 pxl
-    float32 scale_factorY = -40;
+    float scale_factorX = 40;//1 м = 40 pxl
+    float scale_factorY = -40;
 };
 
 

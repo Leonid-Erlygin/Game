@@ -44,8 +44,8 @@ private:
     int angularVelocity = 20;
     float PI2 = 3.14159265f;
     float delta = 3.14159265f / (4 * anglePartition);
-    float32 scale_factorX = 40;//1 м = 40 pxl
-    float32 scale_factorY = -40;
+    float scale_factorX = 40;//1 м = 40 pxl
+    float scale_factorY = -40;
     float delay = 0.25;
 
 

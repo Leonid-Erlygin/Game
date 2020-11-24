@@ -166,7 +166,7 @@ void weapon::weapon_update() {
 					    explosion_sprite.setPosition(sf::Vector2f(bullet.second.r.x * (40), bullet.second.r.y * (-40)));
 					    explosion_sprite.setRotation(-bullet.second.angle * (180 / PI)); //???!!!
 					    explosion_sprite.scale(1.8, 1.8);
-					    sf::IntRect rect = explosion_sprite.getTextureRect();`
+					    sf::IntRect rect = explosion_sprite.getTextureRect();
 					    explosion_sprite.setTextureRect(sf::IntRect(rect.left, rect.top, rect.width/3, rect.height));
 					    //40 is sqale ratio
 						//printf("STRIKE\n");

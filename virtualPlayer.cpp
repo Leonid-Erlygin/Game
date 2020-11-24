@@ -7,39 +7,41 @@
 #include "grenade.h"
 #include "handWeapon.h"
 
-void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int x) {
+void virtualPlayer::update(std::vector<sf::UdpSocket> &socket, b2World &world, int player_index) {
     sf::Packet packet;
     sf::IpAddress sender;
     unsigned short port;
-    int c = -1;
-    int y = -1;
-    if (socket[0].receive(packet,sender,port) == sf::Socket::Done)
-    {
+    int c = -2;
+    int key_code = -1;
+    if (socket[0].receive(packet, sender, port) == sf::Socket::Done) {
         sinhrCount++;
         packet >> c;
-    }
-    ;
+    };
 
     sf::Event event;
 
-    float32 x1 = 0;
-    float32 y1 = 0;
+    float x1 = 0;
+    float y1 = 0;
+    float vx = 0;
+    float vy = 0;
+
     if (c == sf::Event::EventType::KeyPressed || c == sf::Event::EventType::KeyReleased) {
-        packet >> y;
-        packet>>x1;
-        packet>>y1;
-        realBody->SetTransform(b2Vec2(x1,y1),0);
 
+        packet >> key_code;
         event.type = sf::Event::EventType(c);
-        event.key.code = sf::Keyboard::Key(y);
+        event.key.code = sf::Keyboard::Key(key_code);
 
-    } else{
-        c = -1;
+    } else if (c == -1){
+        packet >> x1;
+        packet >> y1;
+        packet >> vx;
+        packet >> vy;
+        realBody->SetTransform(b2Vec2(x1, y1), 0);
+        realBody->SetLinearVelocity(b2Vec2(vx,vy));
     }
 
-    if (c!=-1&&event.type == sf::Event::KeyPressed) {
-
-        if(event.key.code == sf::Keyboard::Space){
+    if (event.type == sf::Event::KeyPressed) {
+        if (event.key.code == sf::Keyboard::Space) {
             if (grab) {
                 if (cariedObject->weapon_class != NotWeapon) {
 
@@ -80,9 +82,9 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
             //Прыжки
 
 
-                if (is_on_ground()) {
-                    realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
-                }
+            if (is_on_ground()) {
+                realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
+            }
 
 
         }
@@ -96,7 +98,7 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
     }
 
 
-    if (c!=-1&&event.type == sf::Event::KeyReleased) {
+    if (event.type == sf::Event::KeyReleased) {
 
         if (event.key.code == sf::Keyboard::Right) {
             moveRight = false;
@@ -107,13 +109,14 @@ void virtualPlayer::update(std::vector<sf::UdpSocket> &socket,b2World& world,int
         }
     }
 
-    player::update();
-    if ((x1!=0||y1!=0)){
-        realBody->SetTransform(b2Vec2(x1,y1),0);
-        sinhrCount = 0;
-    }
+    player::update(socket,player_index,false); // As virtualPlayer class inherits the player class we can just use this function
+//    if ((x1 != 0 || y1 != 0)) {
+//        realBody->SetTransform(b2Vec2(x1, y1), 0);
+//        sinhrCount = 0;
+//    }
 }
 
-virtualPlayer::virtualPlayer(b2World &world, sf::Texture &Player_texture,sf::SoundBuffer&s, int x, int y) : player(world, Player_texture,
-                                                                                                 s,x, y) {
+virtualPlayer::virtualPlayer(b2World &world, sf::Texture &Player_texture, sf::SoundBuffer &s, int x, int y) : player(
+        world, Player_texture,
+        s, x, y) {
 }

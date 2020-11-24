@@ -15,7 +15,7 @@
 #include <vector>
 #include <map>
 #include <SFML/Graphics.hpp>
-#include "Box2D/Box2D.h"
+#include "../include/box2d/box2d.h"
 
 #pragma once
 
@@ -48,8 +48,8 @@ public:
     std::vector<Object> GetObjects(std::string name);
     void Draw(sf::RenderWindow &window);
     sf::Vector2i GetTileSize();
-    float32 scale_factorX = 40;//1 м = 40 pxl
-    float32 scale_factorY = -40;
+    float scale_factorX = 40;//1 м = 40 pxl
+    float scale_factorY = -40;
     float mapScaleX = 2;
     float mapScaleY = 2;
 private:

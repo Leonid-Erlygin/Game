@@ -10,7 +10,7 @@
 
 class virtualPlayer : public player {
 public:
-    void  update(std::vector<sf::UdpSocket>&,b2World&, int x);
+    void  update(std::vector<sf::UdpSocket>&,b2World&, int player_index);
     virtualPlayer(b2World &world, sf::Texture &Player_texture,sf::SoundBuffer&,int x, int y);
 
 private:

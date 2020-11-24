@@ -6,7 +6,7 @@
 #define GAME_MYCONTACTLISTENER_H
 #pragma once
 
-#include "Box2D/Dynamics/b2WorldCallbacks.h"
+#include "include/box2d/b2_world_callbacks.h"
 #include "object.h"
 #include "player.h"
 #include "handWeapon.h"

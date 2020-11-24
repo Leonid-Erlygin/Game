@@ -35,8 +35,8 @@ player::player(b2World &world, sf::Texture &Player_texture, sf::SoundBuffer& jum
     realBodyDef.type = b2_dynamicBody;
     realBodyDef.position.Set(bound.getPosition().x / scale_factorX, bound.getPosition().y / scale_factorY);
     realBody = world.CreateBody(&realBodyDef);
-    shape.SetAsBox((bound.getSize().x / (float32) (2 * scale_factorX)) * bound.getScale().x,
-                   (bound.getSize().y / (float32) (2 * scale_factorX)) * bound.getScale().y);
+    shape.SetAsBox((bound.getSize().x / (float) (2 * scale_factorX)) * bound.getScale().x,
+                   (bound.getSize().y / (float) (2 * scale_factorX)) * bound.getScale().y);
 
 
     fixture.shape = &shape;
@@ -51,8 +51,8 @@ player::player(b2World &world, sf::Texture &Player_texture, sf::SoundBuffer& jum
     fixture.friction = 0.3f;
 
     b2PolygonShape shape2;
-    shape2.SetAsBox((bound.getSize().x / (float32) (2 * scale_factorX)) * bound.getScale().x,
-                    (bound.getSize().y / (float32) (2 * scale_factorX)) * bound.getScale().y);
+    shape2.SetAsBox((bound.getSize().x / (float) (2 * scale_factorX)) * bound.getScale().x,
+                    (bound.getSize().y / (float) (2 * scale_factorX)) * bound.getScale().y);
     b2FixtureDef fixture2;
     fixture2.shape = &shape2;
     fixture2.density = 0;
@@ -257,8 +257,37 @@ void player::death(int x, int y) {
     realBody->SetTransform(b2Vec2(10,0),0);
 }
 
-void player::update()
+void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool need_to_send)
 {
+    /*
+     * Here we just perform the commands set in the key board listening time
+     *
+     *
+     *
+     *
+     */
+    if (need_to_send) {
+        sf::IpAddress recipient = sf::IpAddress::LocalHost;
+        unsigned short port;
+        if (player_index == 1) {
+            port = 54001;
+        } else {
+            port = 54000;
+        }
+        sf::Packet packet;
+        int c = -1;
+        packet << c; // тип эвента: -1
+        float x1 = realBody->GetPosition().x;
+        float y1 = realBody->GetPosition().y;
+        float vx = realBody->GetLinearVelocity().x;
+        float vy = realBody->GetLinearVelocity().y;
+        packet << x1;
+        packet << y1;
+        packet << vx;
+        packet << vy;
+        socket[1].send(packet, recipient, port);
+    }
+
     int IsOnWall = is_on_wall();
     if (is_on_ground())
     {
@@ -320,24 +349,21 @@ void player::update()
 }
 
 
-void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b2World &world, int playerInd, int x) {
+void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b2World &world, int playerInd, int player_index) {
 
     sf::IpAddress recipient = sf::IpAddress::LocalHost;
     unsigned short port;
-    if (x == 1) {
+    if (player_index == 1) {
         port = 54001;
     } else{
         port = 54000;
     }
     sf::Packet packet;
     packet<<event.type;
-    if(event.type == sf::Event::KeyPressed||event.type  == sf::Event::KeyReleased) {
+    if(event.type == sf::Event::KeyPressed || event.type  == sf::Event::KeyReleased) {
         packet << event.key.code;
     }
-    float32 x1 = realBody->GetPosition().x;
-    float32 y1 = realBody->GetPosition().y;
-    packet<<x1;
-    packet<<y1;
+
     socket[1].send(packet, recipient, port);
 
 
