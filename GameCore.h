@@ -29,6 +29,7 @@ public:
     bool isLocal;
     int steps_past = 0;
     int send_period;
+    int number_of_players;
     std::vector<std::string> playerName;
     sf::RenderWindow &window;
     std::map<std::string, sf::Texture> Textures;
@@ -36,7 +37,7 @@ public:
     std::vector<sf::Text> names;
     sf::Font font;
 
-    GameCore(sf::RenderWindow &, b2World &, int, int);
+    GameCore(sf::RenderWindow &, b2World &, int, int,int);
 
     void loadTextures();
 
@@ -48,7 +49,7 @@ public:
 
     void addStaticObject(Level &, b2World &);
 
-    void createEntity(std::string, int x, int y, std::string playerTexture);
+    void createEntity(std::string, int x, int y, std::string playerTexture, int whose);
 
     void loadSoundBuffers();
 

@@ -10,13 +10,18 @@
 #include "handWeapon.h"
 #include "Map/level.h"
 
-GameCore::GameCore(sf::RenderWindow &window1, b2World &world1, int player_index, int send_period) : window(
-        window1), world(world1), player_index(player_index), send_period(send_period) {
+GameCore::GameCore(sf::RenderWindow &window1, b2World &world1,
+                   int player_index, int send_period, int number_of_pl) :
+        window(window1),
+        world(world1),
+        player_index(player_index),
+        send_period(send_period),
+        number_of_players(number_of_pl){
 
 }
 
 void GameCore::loadSoundBuffers() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/Sounds/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/Sounds/";
 
     sf::SoundBuffer shot_buffer;
     if (!shot_buffer.loadFromFile(Path_to_res + "shotgun.wav")) {
@@ -132,7 +137,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 
         createMovableObjects(pos);
 
-        std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+        std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
 
         if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
             exit(0);
@@ -159,7 +164,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 
         createMovableObjects(pos);
 
-        std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+        std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
 
         if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
             exit(0);
@@ -215,7 +220,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 inline int
 GameCore::runLoop(int x11, int x12, int y11, int y12, int x21, int x22, int y21, int y22, float scaleX, float scaleY,
                   int posX, int posY, std::string name) {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
     sf::Texture textureMenu2;
     if (!textureMenu2.loadFromFile(Path_to_res + name)) {
         printf("Ошибка загрузики\n");
@@ -266,7 +271,7 @@ GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, i
      * Allows to enter the text in a box
      *
      */
-    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
     sf::Font font;
     if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
         exit(0);
@@ -427,7 +432,7 @@ GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, i
 }
 
 void GameCore::runMenu() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
     sf::Texture textureMenu1;
     float scaleX = 60;
     float scaleY = scaleX;
@@ -503,7 +508,7 @@ void GameCore::runMenu() {
 
 
 void GameCore::createEntity(std::string object, int x, int y,
-                            std::string playerTexture) {//Возможны проблемы
+                            std::string playerTexture, int whose = 0) {//Возможны проблемы
 
     if (object == "player") {
 
@@ -516,7 +521,9 @@ void GameCore::createEntity(std::string object, int x, int y,
 
         class virtualPlayer Player1(world, Textures[playerTexture], SoundBuffers["jump"], x, y);
         Player1.magicnumber = 47 + (int) players.size();
+        //Player1.whose_avatar = whose;
         virtualPlayers.push_back(Player1);
+
 
     }
     if (object == "grenade") {
@@ -553,15 +560,15 @@ void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
 
 
     } else {
+        for (int i = 1; i <=number_of_players; ++i) {
+            if (i == player_index){
+                createEntity("player", 100 * player_index, 0, "textureSans");
+                continue;
+            }
+            createEntity("virtualPlayer", 100 * i, 0, "textureSans", i);
 
-        if (player_index == 1) {
-            //createEntity("weapon1", 200,350, "");
-            createEntity("player", 100, 0, "textureSans");
-            createEntity("virtualPlayer", 200, 0, "textureSans");
-        } else {
-            createEntity("virtualPlayer", 100, 0, "textureSans");
-            createEntity("player", 200, 0, "textureSans");
         }
+
     }
 
 
@@ -609,10 +616,10 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
     lvl.Draw(window);
     //update players
     for (size_t i = 0; i < players.size(); ++i) {
-        if (steps_past % send_period == 0){
+        if (steps_past % send_period == 0) {
             players[i].update(socket, player_index, true);
             steps_past = 0;
-        } else{
+        } else {
 
             players[i].update(socket, player_index, false);
         }
@@ -625,11 +632,58 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
 //        window.draw(names[i]);
 
     }
-    for (size_t k = 0; k < virtualPlayers.size(); ++k) {
-        virtualPlayers[k].update(socket, world, player_index);
-//        names[1].setPosition(virtualPlayers[k].bound.getPosition().x - virtualPlayers[k].bound.getSize().x / 12,
-//                             virtualPlayers[k].bound.getPosition().y - virtualPlayers[k].bound.getSize().y / 5);
-        window.draw(virtualPlayers[k].sprite);
+
+    sf::Packet packet;
+    sf::IpAddress sender;
+    unsigned short port;
+    int c = -500;
+    int event = -300;
+    int key_code = -1;
+    int event_player_idx = -1;
+    if (socket[0].receive(packet, sender, port) == sf::Socket::Done) {
+        packet >> c;
+    };
+    if (c == -500) { // nothing happened, just update game physics
+        for (size_t k = 0; k < virtualPlayers.size(); ++k) {
+
+            virtualPlayers[k].update(socket, world, player_index, true);
+            window.draw(virtualPlayers[k].sprite);
+        }
+    } else if (c == -1) {//received coordinates of all virtual players
+        float x = 0;
+        float y = 0;
+        float vx = 0;
+        float vy = 0;
+        for (size_t k = 0; k < virtualPlayers.size(); ++k) {
+            packet >> x;
+            packet >> y;
+            packet >> vx;
+            packet >> vy;
+            virtualPlayers[k].update(socket, world, player_index, false, c, -2, -2, x, y, vx, vy);
+            window.draw(virtualPlayers[k].sprite);
+        }
+    } else if (c == -2) {
+        packet >> event_player_idx;
+        packet >> event;
+        packet >> key_code;
+        int corresponding_place;
+        if (event_player_idx < player_index) {
+            corresponding_place = event_player_idx - 1;
+        } else {
+            if (event_player_idx == player_index) {
+                exit(1);
+            }
+            corresponding_place = event_player_idx - 2;
+        }
+        for (size_t k = 0; k < virtualPlayers.size(); ++k) {
+            if (k == corresponding_place) {
+                virtualPlayers[k].update(socket, world, player_index, false, c, event, key_code);
+            } else { // usual update
+                virtualPlayers[k].update(socket, world, player_index, true);
+            }
+
+            window.draw(virtualPlayers[k].sprite);
+        }
     }
 
     for (auto iter = grenades.begin(); iter != grenades.end(); iter++) {
@@ -653,8 +707,8 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
 }
 
 void GameCore::loadTextures() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Resourses/";
-    std::string Path_to_duck = "/home/leonid/CLionProjects/Resourses/Duck Game Sprites/";
+    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+    std::string Path_to_duck = "/home/leonid/CLionProjects/Game/Resourses/Duck Game Sprites/";
 
     sf::Texture texture_ak47;
     if (!texture_ak47.loadFromFile(Path_to_duck + "ak47.png")) {

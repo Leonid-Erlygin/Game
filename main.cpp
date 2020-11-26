@@ -51,20 +51,16 @@ int main() {
     socket[1].setBlocking(false);
 
 #if 1
+    int number_of_players = 3;
     int x;
     std::cin >> x;
-    if (x == 1) {
+    int base = 54001;
 
-        if (socket[0].bind(54000) != sf::Socket::Done) {
+    if (socket[0].bind(base - x) != sf::Socket::Done) {
             exit(0);
-        }
-
-    } else {
-
-        if (socket[0].bind(54001) != sf::Socket::Done) {
-            exit(0);
-        }
     }
+
+
     //now sockets are ready to receive data on that port
 #endif
     MyContactListener myContactListenerInstance;
@@ -72,7 +68,7 @@ int main() {
     b2World world(gravity);
     sf::Music music;
 
-    if (!music.openFromFile("/home/leonid/CLionProjects/Resourses/Sounds/Megalovania.ogg")) {
+    if (!music.openFromFile("/home/leonid/CLionProjects/Game/Resourses/Sounds/Megalovania.ogg")) {
         printf("failure when loading music\n");
         return 1;
     }
@@ -84,7 +80,7 @@ int main() {
     window.setFramerateLimit(60);
 
 
-    GameCore game(window, world, x, 10);
+    GameCore game(window, world, x, 20,number_of_players);
     game.runMenu();
     if (game.isLocal) {
         game.initLvl("GrassLand");
