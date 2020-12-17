@@ -29,26 +29,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="two good. tree with bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="tree good">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/GameCore.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/player.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Game.dir/virtualPlayer.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Game" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindBox2D.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/make/FindBox2D.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/virtualPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/virtualPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tileset.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +106,11 @@
     <configuration name="Game" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Game" TARGET_NAME="Game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Game" RUN_TARGET_NAME="Game">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -219,7 +213,7 @@
       <workItem from="1607082997219" duration="4857000" />
       <workItem from="1607096349097" duration="2470000" />
       <workItem from="1607879692500" duration="616000" />
-      <workItem from="1608205356096" duration="2881000" />
+      <workItem from="1608205356096" duration="5391000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -249,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606414471027</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tree good">
+      <created>1608208498790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608208498790</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -285,52 +286,7 @@
     <MESSAGE value="Network" />
     <MESSAGE value="Resources" />
     <MESSAGE value="two good. tree with bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="two good. tree with bugs" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1606223452947">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1606223452947" />
-    <state width="1802" height="291" key="GridCell.Tab.0.bottom" timestamp="1607087855466">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855466" />
-    <state width="1802" height="291" key="GridCell.Tab.0.center" timestamp="1607087855466">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855466" />
-    <state width="1802" height="291" key="GridCell.Tab.0.left" timestamp="1607087855466">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855466" />
-    <state width="1802" height="291" key="GridCell.Tab.0.right" timestamp="1607087855466">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855466" />
-    <state width="1802" height="291" key="GridCell.Tab.1.bottom" timestamp="1607087855469">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855469" />
-    <state width="1802" height="291" key="GridCell.Tab.1.center" timestamp="1607087855468">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855468" />
-    <state width="1802" height="291" key="GridCell.Tab.1.left" timestamp="1607087855466">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855466" />
-    <state width="1802" height="291" key="GridCell.Tab.1.right" timestamp="1607087855468">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state width="1802" height="291" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1607087855468" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1605891998559">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605891998559" />
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1606414475776">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1606414475776" />
+    <MESSAGE value="tree good" />
+    <option name="LAST_COMMIT_MESSAGE" value="tree good" />
   </component>
 </project>

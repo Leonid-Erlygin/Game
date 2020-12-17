@@ -16,26 +16,26 @@
 #include "Map/level.h"
 #include "GameCore.h"
 
-void addGid() {
-
-    std::ifstream inFile;
-    std::ofstream outFile;
-    std::string s;
-    outFile.open("/home/leonid/CLionProjects/TestMap/TestEdited.tmx");
-    inFile.open("/home/leonid/CLionProjects/TestMap/Test2.tmx");
-    while (getline(inFile, s)) {
-        if (s.find("<tile") != -1) {
-            if (s.find("gid") == -1) {
-                s = "<tile gid=\"0\"/>";
-            }
-        }
-        s += "\n";
-        outFile << s;
-
-    }
-    inFile.close();
-    outFile.close();
-}
+//void addGid() {
+//
+//    std::ifstream inFile;
+//    std::ofstream outFile;
+//    std::string s;
+//    outFile.open("/home/leonid/CLionProjects/TestMap/TestEdited.tmx");
+//    inFile.open("/home/leonid/CLionProjects/TestMap/Test2.tmx");
+//    while (getline(inFile, s)) {
+//        if (s.find("<tile") != -1) {
+//            if (s.find("gid") == -1) {
+//                s = "<tile gid=\"0\"/>";
+//            }
+//        }
+//        s += "\n";
+//        outFile << s;
+//
+//    }
+//    inFile.close();
+//    outFile.close();
+//}
 
 
 int main() {
@@ -68,7 +68,7 @@ int main() {
     b2World world(gravity);
     sf::Music music;
 
-    if (!music.openFromFile("/home/leonid/CLionProjects/Game/Resourses/Sounds/Megalovania.ogg")) {
+    if (!music.openFromFile("../Resourses/Sounds/Megalovania.ogg")) {
         printf("failure when loading music\n");
         return 1;
     }

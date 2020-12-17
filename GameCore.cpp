@@ -21,7 +21,7 @@ GameCore::GameCore(sf::RenderWindow &window1, b2World &world1,
 }
 
 void GameCore::loadSoundBuffers() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/Sounds/";
+    std::string Path_to_res = "../Resourses/Sounds/";
 
     sf::SoundBuffer shot_buffer;
     if (!shot_buffer.loadFromFile(Path_to_res + "shotgun.wav")) {
@@ -137,7 +137,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 
         createMovableObjects(pos);
 
-        std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+        std::string Path_to_res = "../Resourses/";
 
         if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
             exit(0);
@@ -164,7 +164,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 
         createMovableObjects(pos);
 
-        std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+        std::string Path_to_res = "../Resourses/";
 
         if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
             exit(0);
@@ -220,7 +220,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
 inline int
 GameCore::runLoop(int x11, int x12, int y11, int y12, int x21, int x22, int y21, int y22, float scaleX, float scaleY,
                   int posX, int posY, std::string name) {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+    std::string Path_to_res = "../Resourses/";
     sf::Texture textureMenu2;
     if (!textureMenu2.loadFromFile(Path_to_res + name)) {
         printf("Ошибка загрузики\n");
@@ -271,7 +271,7 @@ GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, i
      * Allows to enter the text in a box
      *
      */
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+    std::string Path_to_res = "../Resourses/";
     sf::Font font;
     if (!font.loadFromFile(Path_to_res + "arial.ttf")) {
         exit(0);
@@ -432,7 +432,7 @@ GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, i
 }
 
 void GameCore::runMenu() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
+    std::string Path_to_res = "../Resourses/";
     sf::Texture textureMenu1;
     float scaleX = 60;
     float scaleY = scaleX;
@@ -605,7 +605,7 @@ void GameCore::initLvl(std::string name) {
 
     //mapBuilder(name);
 
-    lvl.LoadFromFile("/home/leonid/CLionProjects/Game/Map/" + name + "/level2.tmx");
+    lvl.LoadFromFile("../Map/" + name + "/level2.tmx");
 
     std::vector<Object> block = lvl.GetObjects("block");
     lvl.objInit(world, block);
@@ -713,8 +713,8 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
 }
 
 void GameCore::loadTextures() {
-    std::string Path_to_res = "/home/leonid/CLionProjects/Game/Resourses/";
-    std::string Path_to_duck = "/home/leonid/CLionProjects/Game/Resourses/Duck Game Sprites/";
+    std::string Path_to_res = "../Resourses/";
+    std::string Path_to_duck = Path_to_res+"Duck Game Sprites/";
 
     sf::Texture texture_ak47;
     if (!texture_ak47.loadFromFile(Path_to_duck + "ak47.png")) {
@@ -795,8 +795,8 @@ void GameCore::mapBuilder(std::string name) {
     std::ifstream inFile;
     std::ofstream outFile;
     std::string s;
-    outFile.open("/home/leonid/CLionProjects/Resourses/Map/" + name + "/TestEdited");
-    inFile.open("/home/leonid/CLionProjects/Resourses/Map/" + name + "level.tmx");
+    outFile.open("../Resourses/Map/" + name + "/TestEdited");
+    inFile.open("../Resourses/Map/" + name + "level.tmx");
     while (getline(inFile, s)) {
         if (s.find("<tile") != -1) {
             if (s.find("gid") == -1) {
