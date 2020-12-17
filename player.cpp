@@ -319,16 +319,26 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
                          int player_index) {
 
     sf::IpAddress recipient = sf::IpAddress::LocalHost;
-    unsigned short port;
-    port = 54002; //This is servers port
-    sf::Packet packet;
-    packet << player_index;
-    packet << event.type;
+
     if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
+        unsigned short port;
+        port = 54002; //This is servers port
+        sf::Packet packet;
+        packet << player_index;
+        packet << event.type;
         packet << event.key.code;
+        float x1 = realBody->GetPosition().x;
+        float y1 = realBody->GetPosition().y;
+        float vx = realBody->GetLinearVelocity().x;
+        float vy = realBody->GetLinearVelocity().y;
+        packet << x1;
+        packet << y1;
+        packet << vx;
+        packet << vy;
+        socket[1].send(packet, recipient, port);
     }
 
-    socket[1].send(packet, recipient, port);
+
 
 
     if (event.type == sf::Event::KeyPressed) {

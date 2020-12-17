@@ -76,11 +76,11 @@ int main() {
     //music.play();
 
     world.SetContactListener(&myContactListenerInstance);
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "My window");
+    sf::RenderWindow window(sf::VideoMode(500, 500), "My window");
     window.setFramerateLimit(60);
 
-
-    GameCore game(window, world, x, 20,number_of_players);
+    int T = 60;
+    GameCore game(window, world, x, T, number_of_players);
     game.runMenu();
     if (game.isLocal) {
         game.initLvl("GrassLand");

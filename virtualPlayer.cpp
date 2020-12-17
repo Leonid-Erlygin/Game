@@ -8,7 +8,7 @@
 #include "handWeapon.h"
 
 void
-virtualPlayer::update(std::vector<sf::UdpSocket> &socket, b2World &world, int player_index, bool update_without_package,
+virtualPlayer::update(std::vector<sf::UdpSocket> &socket, b2World &world, bool update_without_package,
                       int c, int ev, int key, float x, float y, float vx, float vy) {
 
 //    sf::Packet packet;
@@ -20,18 +20,19 @@ virtualPlayer::update(std::vector<sf::UdpSocket> &socket, b2World &world, int pl
 //        packet >> c;
 //    };
     if (update_without_package) {
-        player::update(socket, player_index,
+        player::update(socket, -1,
                        false); // As virtualPlayer class inherits the player class we can just use this function
 
     } else {
         if (c == -1) {
             realBody->SetTransform(b2Vec2(x, y), 0);
             realBody->SetLinearVelocity(b2Vec2(vx, vy));
-            player::update(socket, player_index,
+            player::update(socket,-1,
                            false); // As virtualPlayer class inherits the player class we can just use this function
         } else if (c == -2) {
             sf::Event event;
-
+            realBody->SetTransform(b2Vec2(x, y), 0);
+            realBody->SetLinearVelocity(b2Vec2(vx, vy));
             if (ev == sf::Event::EventType::KeyPressed || ev == sf::Event::EventType::KeyReleased) {
                 event.type = sf::Event::EventType(ev);
                 event.key.code = sf::Keyboard::Key(key);
@@ -106,7 +107,7 @@ virtualPlayer::update(std::vector<sf::UdpSocket> &socket, b2World &world, int pl
                     moveLeft = false;
                 }
             }
-            player::update(socket, player_index,
+            player::update(socket, -1,
                            false); // As virtualPlayer class inherits the player class we can just use this function
         }
     }

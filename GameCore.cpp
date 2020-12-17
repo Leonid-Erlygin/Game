@@ -453,7 +453,7 @@ void GameCore::runMenu() {
         Menu1.push_back(sp);
     }
     int i = 0;
-    bool run = true;
+    bool run = false; //here we decide not to display menu
     while (window.isOpen() && run) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -476,24 +476,24 @@ void GameCore::runMenu() {
     }
     scaleX = 1.414;
     scaleY = scaleX;
-    int h = runLoop(486, 887, 418, 458, 486, 887, 492, 532, scaleX, scaleY, posX, posY, "Menu2.png");
+//    int h = runLoop(486, 887, 418, 458, 486, 887, 492, 532, scaleX, scaleY, posX, posY, "Menu2.png");
 
-    std::string nameString;
-    std::string ipString;
-    if (h == 1) {//local
-        isLocal = true;
-        // HERE IP STRING IS ACTUALLY THE NAME OF SECOND PLAYER
-        while (nameString.empty() || ipString.empty())
-            runIp(223, 651, 401, 444, 702, 1140, 401, 446, scaleX, scaleY, posX, posY, nameString, ipString,
-                  "localNames.png");
-
-        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
-        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
-
-        playerName.push_back(nameString);
-        playerName.push_back(ipString);
-        return;
-    } else {
+//    std::string nameString;
+//    std::string ipString;
+//    if (h == 1) {//local
+//        isLocal = true;
+//        // HERE IP STRING IS ACTUALLY THE NAME OF SECOND PLAYER
+//        while (nameString.empty() || ipString.empty())
+//            runIp(223, 651, 401, 444, 702, 1140, 401, 446, scaleX, scaleY, posX, posY, nameString, ipString,
+//                  "localNames.png");
+//
+//        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
+//        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
+//
+//        playerName.push_back(nameString);
+//        playerName.push_back(ipString);
+//        return;
+//    } else {
 //        while (nameString.empty()|| ipString.empty())
 //            runIp(488, 888, 421, 460, 490, 891, 492, 533, scaleX, scaleY, posX, posY, nameString, ipString, "Ip.png");
 //
@@ -501,7 +501,7 @@ void GameCore::runMenu() {
 //        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
 //        playerName.push_back(nameString);
 //        playerName.push_back(ipString);
-    }
+//    }
 
 
 }
@@ -562,7 +562,7 @@ void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
     } else {
         for (int i = 1; i <=number_of_players; ++i) {
             if (i == player_index){
-                createEntity("player", 100 * player_index, 0, "textureSans");
+                createEntity("player", 100 * i, 0, "textureSans");
                 continue;
             }
             createEntity("virtualPlayer", 100 * i, 0, "textureSans", i);
@@ -620,18 +620,14 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
             players[i].update(socket, player_index, true);
             steps_past = 0;
         } else {
-
             players[i].update(socket, player_index, false);
         }
-        steps_past++;
-
 //        names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
 //                             players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
-
         window.draw(players[i].sprite);
-//        window.draw(names[i]);
-
+//      window.draw(names[i]);
     }
+    steps_past++;
 
     sf::Packet packet;
     sf::IpAddress sender;
@@ -646,7 +642,7 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
     if (c == -500) { // nothing happened, just update game physics
         for (size_t k = 0; k < virtualPlayers.size(); ++k) {
 
-            virtualPlayers[k].update(socket, world, player_index, true);
+            virtualPlayers[k].update(socket, world, true);
             window.draw(virtualPlayers[k].sprite);
         }
     } else if (c == -1) {//received coordinates of all virtual players
@@ -659,15 +655,24 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
             packet >> y;
             packet >> vx;
             packet >> vy;
-            virtualPlayers[k].update(socket, world, player_index, false, c, -2, -2, x, y, vx, vy);
+            virtualPlayers[k].update(socket, world, false, c, -2, -2, x, y, vx, vy);
             window.draw(virtualPlayers[k].sprite);
         }
     } else if (c == -2) {
         packet >> event_player_idx;
         packet >> event;
         packet >> key_code;
+        float x = 0;
+        float y = 0;
+        float vx = 0;
+        float vy = 0;
+        packet >> x;
+        packet >> y;
+        packet >> vx;
+        packet >> vy;
         int corresponding_place;
         if (event_player_idx < player_index) {
+            //printf("1\n");
             corresponding_place = event_player_idx - 1;
         } else {
             if (event_player_idx == player_index) {
@@ -675,11 +680,12 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
             }
             corresponding_place = event_player_idx - 2;
         }
+
         for (size_t k = 0; k < virtualPlayers.size(); ++k) {
             if (k == corresponding_place) {
-                virtualPlayers[k].update(socket, world, player_index, false, c, event, key_code);
+                virtualPlayers[k].update(socket, world, false, c, event, key_code, x, y, vx, vy);
             } else { // usual update
-                virtualPlayers[k].update(socket, world, player_index, true);
+                virtualPlayers[k].update(socket, world, true);
             }
 
             window.draw(virtualPlayers[k].sprite);
