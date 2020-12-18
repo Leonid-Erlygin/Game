@@ -177,6 +177,10 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             text.setCharacterSize(15);
             names.push_back(text);
         }
+        for (int i = 0; i <players.size(); ++i) {
+            players[i].serverIp = serverIp;
+            players[i].serverPort = serverPort;
+        }
     }
 
     while (window.isOpen()) {
@@ -479,7 +483,7 @@ void GameCore::runMenu() {
     scaleY = scaleX;
 
     int h = runLoop(486, 887, 418, 458, 486, 887, 492, 532, scaleX, scaleY, posX, posY, "Menu2.png");
-
+    //int h = 2;
     std::string nameString;
     std::string ipString;
     if (h == 1) {//local
@@ -496,13 +500,21 @@ void GameCore::runMenu() {
         playerName.push_back(ipString);
         return;
     } else {
-        while (nameString.empty())
+        while (nameString.empty()||ipString.empty())
             runIp(488, 888, 421, 460, 490, 891, 492, 533, scaleX, scaleY, posX, posY, nameString, ipString, "Ip.png");
 
         if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
         if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
         playerName.push_back(nameString);
-        //playerName.push_back(ipString);
+        std::string s1 = ipString.substr(0, ipString.find(":"));
+
+        std::string s2 = ipString.substr(ipString.find(':') + 1,ipString.size()-1);
+
+        serverIp = s1;
+        serverPort = std::atoi(s2.c_str());
+//          serverIp = "10.55.160.246";
+//          //serverIp = sf::IpAddress::LocalHost;
+//          serverPort = 54002;
     }
 
 
@@ -563,6 +575,7 @@ void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
 
     } else {
         for (int i = 1; i <=number_of_players; ++i) {
+
             if (i == player_index){
                 createEntity("player", 100 * i, 0, "textureSans");
                 continue;
@@ -624,11 +637,14 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
         } else {
             players[i].update(socket, player_index, false);
         }
+        if (!names.empty()){
+            names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
+                                 players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
+            window.draw(names[i]);
+        }
 
-        names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
-                             players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
         window.draw(players[i].sprite);
-        window.draw(names[i]);
+
     }
     steps_past++;
 
@@ -640,6 +656,7 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
     int key_code = -1;
     int event_player_idx = -1;
     if (socket[0].receive(packet, sender, port) == sf::Socket::Done) {
+        //printf("got_package!\n");
         packet >> c;
     };
     if (c == -500) { // nothing happened, just update game physics

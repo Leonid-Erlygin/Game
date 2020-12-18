@@ -48,10 +48,10 @@ int main() {
 #if 1
     std::vector<sf::UdpSocket> socket(2);
     socket[0].setBlocking(false);
-    socket[1].setBlocking(false);
+    socket[1].setBlocking(false);//is not used (was created for sendind, now we use first one)
 
 #if 1
-    int number_of_players = 3;
+    int number_of_players = 2;
     int x;
     std::cin >> x;
     int base = 54001;
@@ -59,7 +59,6 @@ int main() {
     if (socket[0].bind(base - x) != sf::Socket::Done) {
             exit(0);
     }
-
 
     //now sockets are ready to receive data on that port
 #endif
@@ -80,7 +79,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1024), "My window");
     window.setFramerateLimit(60);
 
-    int T = 60;
+    int T = 30;
     GameCore game(window, world, x, T, number_of_players);
     game.runMenu();
     if (game.isLocal) {

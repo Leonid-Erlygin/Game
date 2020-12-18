@@ -18,7 +18,8 @@ public:
     int counter = 0;
 
     void print();
-
+    sf::IpAddress serverIp;
+    int serverPort;
     bool grab = false;
     float speed = 10;
     float strength = 3;

@@ -9,6 +9,8 @@
 #include "handWeapon.h"
 #include "grenade.h"
 
+
+
 player::player(b2World &world, sf::Texture &Player_texture, sf::SoundBuffer &jump_buffer, int x, int y) : world(world) {
 
     jump_sound.setBuffer(jump_buffer);
@@ -247,22 +249,23 @@ void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool n
      */
     if (need_to_send) {
         //sf::IpAddress recipient = sf::IpAddress::LocalHost;
-        sf::IpAddress recipient = "10.199.0.18";
-        unsigned short port;
-        port = 54002; //This is servers port
-        sf::Packet packet;
-        packet << player_index;
-        int c = -1;
-        packet << c; // тип эвента: -1
-        float x1 = realBody->GetPosition().x;
-        float y1 = realBody->GetPosition().y;
-        float vx = realBody->GetLinearVelocity().x;
-        float vy = realBody->GetLinearVelocity().y;
-        packet << x1;
-        packet << y1;
-        packet << vx;
-        packet << vy;
-        socket[1].send(packet, recipient, port);
+
+//        unsigned short port;
+//        //port = 54002; //This is servers port
+//        sf::Packet packet;
+//        packet << player_index;
+//        int c = -1;
+//        packet << c; // тип эвента: -1
+//        float x1 = realBody->GetPosition().x;
+//        float y1 = realBody->GetPosition().y;
+//        float vx = realBody->GetLinearVelocity().x;
+//        float vy = realBody->GetLinearVelocity().y;
+//        packet << x1;
+//        packet << y1;
+//        packet << vx;
+//        packet << vy;
+//        socket[0].send(packet, serverIp, serverPort);
+
     }
 
     int IsOnWall = is_on_wall();
@@ -320,10 +323,10 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
                          int player_index) {
 
     //sf::IpAddress recipient = sf::IpAddress::LocalHost;
-    sf::IpAddress recipient = "10.199.0.18";
+    //sf::IpAddress recipient = "10.199.0.18";
     if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
         unsigned short port;
-        port = 54002; //This is servers port
+        //port = 54002; //This is servers port
         sf::Packet packet;
         packet << player_index;
         packet << event.type;
@@ -336,8 +339,8 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
         packet << y1;
         packet << vx;
         packet << vy;
-        socket[1].send(packet, recipient, port);
-
+        socket[0].send(packet, serverIp, serverPort);
+        //std::cout<<"sending to:"<<recipient<<'\n';
     }
 
 
@@ -416,7 +419,7 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
                 --remainingJumpSteps;
                 if (is_on_ground()) {
                     realBody->ApplyLinearImpulseToCenter(b2Vec2(0, jumpHeight), true);
-                    jump_sound.play();
+                    //jump_sound.play();
                 }
             }
         }

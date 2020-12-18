@@ -25,6 +25,8 @@ public:
     std::vector<handWeapon> handWeapons;
     std::vector<virtualPlayer> virtualPlayers;
     b2World &world;
+    sf::IpAddress serverIp;
+    int serverPort;
     int player_index;
     bool isLocal;
     int steps_past = 0;
