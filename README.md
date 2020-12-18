@@ -1,6 +1,6 @@
 ## Client part of multiplayer game
 ### How to compile:
-1)use 
+1)use  
 $ sudo apt-get install libsfml-dev
 for installig SFML on your linux machine
 2) Now you need to compile and link (in Cmakefile) Box2d library.  
