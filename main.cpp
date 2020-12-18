@@ -64,6 +64,7 @@ int main() {
     //now sockets are ready to receive data on that port
 #endif
     MyContactListener myContactListenerInstance;
+
     b2Vec2 gravity(0.0f, -15.81f);
     b2World world(gravity);
     sf::Music music;
@@ -72,11 +73,11 @@ int main() {
         printf("failure when loading music\n");
         return 1;
     }
-    music.setVolume(22.f);
+    music.setVolume(1.f);
     //music.play();
 
     world.SetContactListener(&myContactListenerInstance);
-    sf::RenderWindow window(sf::VideoMode(500, 500), "My window");
+    sf::RenderWindow window(sf::VideoMode(1920, 1024), "My window");
     window.setFramerateLimit(60);
 
     int T = 60;

@@ -143,7 +143,7 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             exit(0);
         }
 
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < playerName.size(); ++i) {
             sf::Text text;
             text.setFont(font);
             text.setString(playerName[i]);
@@ -170,13 +170,13 @@ void GameCore::runLevel(std::vector<sf::UdpSocket> &socket) {
             exit(0);
         }
 
-//        for (int i = 0; i < 2; ++i) {
-//            sf::Text text;
-//            text.setFont(font);
-//            text.setString(playerName[i]);
-//            text.setCharacterSize(15);
-//            names.push_back(text);
-//        }
+        for (int i = 0; i < playerName.size(); ++i) {
+            sf::Text text;
+            text.setFont(font);
+            text.setString(playerName[i]);
+            text.setCharacterSize(15);
+            names.push_back(text);
+        }
     }
 
     while (window.isOpen()) {
@@ -432,6 +432,7 @@ GameCore::runIp(int x11, int x12, int y11, int y12, int x21, int x22, int y21, i
 }
 
 void GameCore::runMenu() {
+
     std::string Path_to_res = "../Resourses/";
     sf::Texture textureMenu1;
     float scaleX = 60;
@@ -453,7 +454,7 @@ void GameCore::runMenu() {
         Menu1.push_back(sp);
     }
     int i = 0;
-    bool run = false; //here we decide not to display menu
+    bool run = true; //here we decide not to display menu
     while (window.isOpen() && run) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -476,32 +477,33 @@ void GameCore::runMenu() {
     }
     scaleX = 1.414;
     scaleY = scaleX;
-//    int h = runLoop(486, 887, 418, 458, 486, 887, 492, 532, scaleX, scaleY, posX, posY, "Menu2.png");
 
-//    std::string nameString;
-//    std::string ipString;
-//    if (h == 1) {//local
-//        isLocal = true;
-//        // HERE IP STRING IS ACTUALLY THE NAME OF SECOND PLAYER
-//        while (nameString.empty() || ipString.empty())
-//            runIp(223, 651, 401, 444, 702, 1140, 401, 446, scaleX, scaleY, posX, posY, nameString, ipString,
-//                  "localNames.png");
-//
-//        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
-//        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
-//
-//        playerName.push_back(nameString);
-//        playerName.push_back(ipString);
-//        return;
-//    } else {
-//        while (nameString.empty()|| ipString.empty())
-//            runIp(488, 888, 421, 460, 490, 891, 492, 533, scaleX, scaleY, posX, posY, nameString, ipString, "Ip.png");
-//
-//        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
-//        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
-//        playerName.push_back(nameString);
-//        playerName.push_back(ipString);
-//    }
+    int h = runLoop(486, 887, 418, 458, 486, 887, 492, 532, scaleX, scaleY, posX, posY, "Menu2.png");
+
+    std::string nameString;
+    std::string ipString;
+    if (h == 1) {//local
+        isLocal = true;
+        // HERE IP STRING IS ACTUALLY THE NAME OF SECOND PLAYER
+        while (nameString.empty() || ipString.empty())
+            runIp(223, 651, 401, 444, 702, 1140, 401, 446, scaleX, scaleY, posX, posY, nameString, ipString,
+                  "localNames.png");
+
+        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
+        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
+
+        playerName.push_back(nameString);
+        playerName.push_back(ipString);
+        return;
+    } else {
+        while (nameString.empty())
+            runIp(488, 888, 421, 460, 490, 891, 492, 533, scaleX, scaleY, posX, posY, nameString, ipString, "Ip.png");
+
+        if (nameString[nameString.size() - 1] == '|')nameString = nameString.substr(0, nameString.size() - 1);
+        if (ipString[ipString.size() - 1] == '|')ipString = ipString.substr(0, ipString.size() - 1);
+        playerName.push_back(nameString);
+        //playerName.push_back(ipString);
+    }
 
 
 }
@@ -582,14 +584,14 @@ void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
     }
 
     for (int i = 0; i < 2; ++i) {
-        createEntity("grenade", 250 + i * 100, 360, "");
+        createEntity("grenade", 700 + i * 100, 360, "");
     }
     for (size_t j = 0; j < grenades.size(); ++j) {
         grenades[j].realBody->SetUserData(&grenades[j]);
     }
-    createEntity("weapon1", 200 + 100, 500, "");
-    createEntity("weapon2", 200 + 300, 500, "");
-    createEntity("weapon", 200, 360, "");
+    createEntity("weapon1", 200 + 200, 500, "");
+    createEntity("weapon2", 200 + 400, 500, "");
+    createEntity("weapon", 1000, 360, "");
     createEntity("handWeapon", 600, 360, "");
 
     for (size_t j = 0; j < weapons.size(); ++j) {
@@ -622,10 +624,11 @@ void GameCore::updateMap(std::vector<sf::UdpSocket> &socket) {
         } else {
             players[i].update(socket, player_index, false);
         }
-//        names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
-//                             players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
+
+        names[i].setPosition(players[i].bound.getPosition().x - players[i].bound.getSize().x / 12,
+                             players[i].bound.getPosition().y - players[i].bound.getSize().y / 5);
         window.draw(players[i].sprite);
-//      window.draw(names[i]);
+        window.draw(names[i]);
     }
     steps_past++;
 

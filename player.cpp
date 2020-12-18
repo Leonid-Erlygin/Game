@@ -246,7 +246,8 @@ void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool n
      *
      */
     if (need_to_send) {
-        sf::IpAddress recipient = sf::IpAddress::LocalHost;
+        //sf::IpAddress recipient = sf::IpAddress::LocalHost;
+        sf::IpAddress recipient = "10.199.0.18";
         unsigned short port;
         port = 54002; //This is servers port
         sf::Packet packet;
@@ -318,8 +319,8 @@ void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool n
 void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b2World &world, int playerInd,
                          int player_index) {
 
-    sf::IpAddress recipient = sf::IpAddress::LocalHost;
-
+    //sf::IpAddress recipient = sf::IpAddress::LocalHost;
+    sf::IpAddress recipient = "10.199.0.18";
     if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
         unsigned short port;
         port = 54002; //This is servers port
@@ -336,6 +337,7 @@ void player::checkEvents(std::vector<sf::UdpSocket> &socket, sf::Event &event, b
         packet << vx;
         packet << vy;
         socket[1].send(packet, recipient, port);
+
     }
 
 
