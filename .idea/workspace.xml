@@ -29,9 +29,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="fix9">
+    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="fix10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build_box2d.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build_project.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/player.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,11 +99,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Game" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Game" TARGET_NAME="Game" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Game" RUN_TARGET_NAME="Game">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -110,6 +107,11 @@
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -221,7 +223,8 @@
       <workItem from="1608282648381" duration="1578000" />
       <workItem from="1608296443948" duration="149000" />
       <workItem from="1608311538143" duration="9455000" />
-      <workItem from="1608369987322" duration="10167000" />
+      <workItem from="1608369987322" duration="10238000" />
+      <workItem from="1608390926860" duration="4391000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -349,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608381287187</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix10">
+      <created>1608382309748</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608382309748</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -399,18 +409,19 @@
     <MESSAGE value="fix7" />
     <MESSAGE value="fix8" />
     <MESSAGE value="fix9" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix9" />
+    <MESSAGE value="fix10" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix10" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/GameCore.cpp" line="507">
-        <watch expression="x" />
+      <inline-watch fileUrl="file://$PROJECT_DIR$/GameCore.cpp" line="508">
+        <watch expression="s1" />
       </inline-watch>
       <inline-watch fileUrl="file://$PROJECT_DIR$/GameCore.cpp" line="510">
         <watch expression="s2" />
       </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/GameCore.cpp" line="508">
-        <watch expression="s1" />
+      <inline-watch fileUrl="file://$PROJECT_DIR$/GameCore.cpp" line="507">
+        <watch expression="x" />
       </inline-watch>
     </watches-manager>
   </component>

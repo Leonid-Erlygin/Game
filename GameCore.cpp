@@ -596,7 +596,7 @@ void GameCore::createMovableObjects(std::pair<b2Vec2, b2Vec2> playerPos) {
         virtualPlayers[j].realBody->SetUserData(&virtualPlayers[j]);
     }
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 10; ++i) {
         createEntity("grenade", 700 + i * 100, 360, "");
     }
     for (size_t j = 0; j < grenades.size(); ++j) {

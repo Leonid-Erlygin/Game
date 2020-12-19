@@ -285,7 +285,7 @@ void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool n
             grabe(world, nullptr, true); //throw
             grabe(world, obj, true); //grab again with different position
         }
-        if (1/*IsOnWall >= 0*/) //not push a wall
+        if (IsOnWall >= 0) //not push a wall
         {
             realBody->SetLinearVelocity(b2Vec2(speed, realBody->GetLinearVelocity().y));
         }
@@ -304,7 +304,7 @@ void player::update(std::vector<sf::UdpSocket> &socket, int player_index, bool n
             grabe(world, obj, true); //grab again with different position
 
         }
-        if (1/*IsOnWall <= 0*/) // not push a wall
+        if (IsOnWall <= 0) // not push a wall
         {
 
             realBody->SetLinearVelocity(b2Vec2(-speed, realBody->GetLinearVelocity().y));

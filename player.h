@@ -24,7 +24,7 @@ public:
     float speed = 10;
     float strength = 3;
     std::set<object *> reachableObjects;
-    object *cariedObject;
+    object *cariedObject = nullptr;
     int remainingJumpSteps = 1;
     int jumpHeight = 200;
     b2RevoluteJoint *JointToHold = nullptr;
