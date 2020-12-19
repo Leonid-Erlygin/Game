@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="32">
 <tileset firstgid="1" name="texture" tilewidth="16" tileheight="16">
-<image source="/home/leonid/CLionProjects/Game/Map/GrassLand/texture.png" trans="6d9fb9" width="1920" height="1080"/>
+<image source="../Map/GrassLand/texture.png" trans="6d9fb9" width="1920" height="1080"/>
 </tileset>
 
  <layer id="1" name="Слой тайлов 1" width="60" height="50">
