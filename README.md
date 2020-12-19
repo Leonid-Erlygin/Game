@@ -5,7 +5,7 @@ $ sudo apt-get install libsfml-dev
 for installig SFML on your linux machine
 2) Here CMake 3.13 or higher is required. Check your version with   
 $ cmake --version  
-if you do not have right one, just run install_cmake.sh script
+if you do not have right one, just run install_cmake.sh(DO NOT RUN IF YOU DONT WANT TO REINSTALL CMake) script
 
 Now to install Box2d library just run build_project.sh script  
 
