@@ -38,7 +38,7 @@
 //}
 
 
-int main() {
+int main(int argc, char ** argv) {
 #if 0
     int x;
     printf("%d", x);
@@ -52,6 +52,9 @@ int main() {
 
 #if 1
     int number_of_players = 2;
+    if (argc > 1){
+        number_of_players = atoi(argv[1]);
+    }
     int x;
     std::cin >> x;
     int base = 54001;
