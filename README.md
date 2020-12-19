@@ -1,6 +1,6 @@
 ## Client part of multiplayer game
 ### How to compile:
-1) use  
+1) Use  
 $ sudo apt-get install libsfml-dev  
 for installig SFML on your linux machine
 2) Here CMake 3.13 or higher is required. Check your version with   
