@@ -1,7 +1,9 @@
 #!/bin/bash
 
 sudo apt-get purge cmake
+
 sudo apt-get install libssl-dev
+sudo apt-get install xorg-dev libglu1-mesa-dev
 
 version=3.16
 build=3

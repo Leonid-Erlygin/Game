@@ -29,11 +29,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="fix10">
+    <list default="true" id="1b4fe2e3-8a76-4be0-bcfd-22dcf5415871" name="Default Changelist" comment="cmake_installation_script">
+      <change afterPath="$PROJECT_DIR$/build_box2d.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_project.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build_project.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +223,7 @@
       <workItem from="1608296443948" duration="149000" />
       <workItem from="1608311538143" duration="9455000" />
       <workItem from="1608369987322" duration="10238000" />
-      <workItem from="1608390926860" duration="4391000" />
+      <workItem from="1608390926860" duration="5823000" />
     </task>
     <task id="LOCAL-00001" summary="2 boxes">
       <created>1550525122633</created>
@@ -359,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608382309748</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="cmake_installation_script">
+      <created>1608395995720</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608395995720</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -410,7 +416,8 @@
     <MESSAGE value="fix8" />
     <MESSAGE value="fix9" />
     <MESSAGE value="fix10" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix10" />
+    <MESSAGE value="cmake_installation_script" />
+    <option name="LAST_COMMIT_MESSAGE" value="cmake_installation_script" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
