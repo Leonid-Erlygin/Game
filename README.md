@@ -7,7 +7,7 @@ for installig SFML on your linux machine
 $ cmake --version  
 if you do not have right one, just run install_cmake.sh(DO NOT RUN IF YOU DONT WANT TO REINSTALL CMake) script
 
-Now to install Box2d library just run build_project.sh script  
+Now to install Box2d library just run build_box2d.sh script  
 
 3) To build the project run build_project.sh
 
