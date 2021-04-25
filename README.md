@@ -7,9 +7,9 @@ for installig SFML on your linux machine
 $ cmake --version  
 if you do not have right one, just run install_cmake.sh(DO NOT RUN IF YOU DONT WANT TO REINSTALL CMake) script
 
-Now to install Box2d library just run build_box2d.sh script  
+3) Now to install Box2d library just run build_box2d.sh script  
 
-3) To build the project run build_project.sh
+4) To build the project run build_project.sh
 
 To run the game go to cmake-build-debug foulder and run Game file with an argument corresponding to number of players.  
 Then enter your player index(1 , 2, ... ect). So if you have two player game, you, for example, enter 1 index and your freind 2 index here.
